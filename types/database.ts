@@ -1,48 +1,52 @@
+export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[]
+
 export interface Database {
   public: {
     Tables: {
       customers: {
         Row: {
           id: string
+          email: string
           first_name: string
           last_name: string
-          email: string
           phone: string
-          emergency_contact_name: string
-          emergency_contact_phone: string
+          date_of_birth: string | null
+          emergency_contact_name: string | null
+          emergency_contact_phone: string | null
           medical_conditions: string | null
-          medications: string | null
+          current_medications: string | null
           allergies: string | null
           created_at: string
-          updated_at: string | null
+          updated_at: string
         }
         Insert: {
           id?: string
+          email: string
           first_name: string
           last_name: string
-          email: string
           phone: string
-          emergency_contact_name: string
-          emergency_contact_phone: string
+          date_of_birth?: string | null
+          emergency_contact_name?: string | null
+          emergency_contact_phone?: string | null
           medical_conditions?: string | null
-          medications?: string | null
+          current_medications?: string | null
           allergies?: string | null
           created_at?: string
-          updated_at?: string | null
+          updated_at?: string
         }
         Update: {
           id?: string
+          email?: string
           first_name?: string
           last_name?: string
-          email?: string
           phone?: string
-          emergency_contact_name?: string
-          emergency_contact_phone?: string
+          date_of_birth?: string | null
+          emergency_contact_name?: string | null
+          emergency_contact_phone?: string | null
           medical_conditions?: string | null
-          medications?: string | null
+          current_medications?: string | null
           allergies?: string | null
-          created_at?: string
-          updated_at?: string | null
+          updated_at?: string
         }
       }
       services: {
@@ -51,86 +55,32 @@ export interface Database {
           name: string
           description: string
           price: number
-          duration: number
+          duration_minutes: number
           category: string
           is_active: boolean
           created_at: string
-          updated_at: string | null
+          updated_at: string
         }
         Insert: {
           id?: string
           name: string
           description: string
           price: number
-          duration: number
+          duration_minutes: number
           category: string
           is_active?: boolean
           created_at?: string
-          updated_at?: string | null
+          updated_at?: string
         }
         Update: {
           id?: string
           name?: string
           description?: string
           price?: number
-          duration?: number
+          duration_minutes?: number
           category?: string
           is_active?: boolean
-          created_at?: string
-          updated_at?: string | null
-        }
-      }
-      bookings: {
-        Row: {
-          id: string
-          customer_id: string
-          service_id: string
-          appointment_date: string
-          appointment_time: string
-          location_type: string
-          address: string
-          city: string
-          state: string
-          zip_code: string
-          special_requests: string | null
-          total_amount: number
-          status: string
-          created_at: string
-          updated_at: string | null
-        }
-        Insert: {
-          id?: string
-          customer_id: string
-          service_id: string
-          appointment_date: string
-          appointment_time: string
-          location_type: string
-          address: string
-          city: string
-          state: string
-          zip_code: string
-          special_requests?: string | null
-          total_amount: number
-          status: string
-          created_at?: string
-          updated_at?: string | null
-        }
-        Update: {
-          id?: string
-          customer_id?: string
-          service_id?: string
-          appointment_date?: string
-          appointment_time?: string
-          location_type?: string
-          address?: string
-          city?: string
-          state?: string
-          zip_code?: string
-          special_requests?: string | null
-          total_amount?: number
-          status?: string
-          created_at?: string
-          updated_at?: string | null
+          updated_at?: string
         }
       }
       add_ons: {
@@ -141,7 +91,7 @@ export interface Database {
           price: number
           is_active: boolean
           created_at: string
-          updated_at: string | null
+          updated_at: string
         }
         Insert: {
           id?: string
@@ -150,7 +100,7 @@ export interface Database {
           price: number
           is_active?: boolean
           created_at?: string
-          updated_at?: string | null
+          updated_at?: string
         }
         Update: {
           id?: string
@@ -158,8 +108,65 @@ export interface Database {
           description?: string
           price?: number
           is_active?: boolean
+          updated_at?: string
+        }
+      }
+      bookings: {
+        Row: {
+          id: string
+          customer_id: string
+          service_id: string
+          booking_date: string
+          booking_time: string
+          status: "pending" | "confirmed" | "in_progress" | "completed" | "cancelled"
+          location_type: string
+          address: string
+          city: string
+          state: string
+          zip_code: string
+          special_requests: string | null
+          total_amount: number
+          payment_status: "pending" | "paid" | "refunded"
+          payment_method: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          customer_id: string
+          service_id: string
+          booking_date: string
+          booking_time: string
+          status?: "pending" | "confirmed" | "in_progress" | "completed" | "cancelled"
+          location_type: string
+          address: string
+          city: string
+          state: string
+          zip_code: string
+          special_requests?: string | null
+          total_amount: number
+          payment_status?: "pending" | "paid" | "refunded"
+          payment_method?: string | null
           created_at?: string
-          updated_at?: string | null
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          customer_id?: string
+          service_id?: string
+          booking_date?: string
+          booking_time?: string
+          status?: "pending" | "confirmed" | "in_progress" | "completed" | "cancelled"
+          location_type?: string
+          address?: string
+          city?: string
+          state?: string
+          zip_code?: string
+          special_requests?: string | null
+          total_amount?: number
+          payment_status?: "pending" | "paid" | "refunded"
+          payment_method?: string | null
+          updated_at?: string
         }
       }
       booking_add_ons: {
@@ -176,7 +183,7 @@ export interface Database {
           booking_id: string
           add_on_id: string
           quantity?: number
-          price?: number
+          price: number
           created_at?: string
         }
         Update: {
@@ -185,7 +192,6 @@ export interface Database {
           add_on_id?: string
           quantity?: number
           price?: number
-          created_at?: string
         }
       }
     }
@@ -193,26 +199,33 @@ export interface Database {
       booking_details: {
         Row: {
           booking_id: string
-          customer_id: string
           customer_name: string
           customer_email: string
           customer_phone: string
-          service_id: string
           service_name: string
           service_price: number
-          appointment_date: string
-          appointment_time: string
+          booking_date: string
+          booking_time: string
+          status: string
           location_type: string
           address: string
           city: string
           state: string
           zip_code: string
           total_amount: number
-          status: string
-          created_at: string
+          payment_status: string
           add_ons: string | null
         }
       }
+    }
+    Functions: {
+      [_ in never]: never
+    }
+    Enums: {
+      [_ in never]: never
+    }
+    CompositeTypes: {
+      [_ in never]: never
     }
   }
 }

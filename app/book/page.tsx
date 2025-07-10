@@ -79,231 +79,317 @@ export default function BookPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Book Your IV Therapy Session</h1>
-          <p className="text-xl text-gray-600">Schedule your personalized IV therapy treatment</p>
+    <>
+      {/* Hero Section */}
+      <section className="relative py-16 md:py-24 bg-muted">
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Book Your IV Therapy Session</h1>
+            <p className="text-lg text-muted-foreground mb-8">Schedule your personalized IV therapy treatment</p>
+          </div>
         </div>
+      </section>
 
-        <Card className="shadow-xl">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Calendar className="h-6 w-6 text-blue-600" />
-              Booking Form
-            </CardTitle>
-            <CardDescription>Fill out the form below to schedule your IV therapy session</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form id="booking-form" action={handleSubmit} className="space-y-6">
-              {/* Personal Information */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="firstName" className="flex items-center gap-2">
-                    <User className="h-4 w-4" />
-                    First Name
-                  </Label>
-                  <Input id="firstName" name="firstName" required />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="lastName">Last Name</Label>
-                  <Input id="lastName" name="lastName" required />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="email" className="flex items-center gap-2">
-                    <Mail className="h-4 w-4" />
-                    Email
-                  </Label>
-                  <Input id="email" name="email" type="email" required />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="phone" className="flex items-center gap-2">
-                    <Phone className="h-4 w-4" />
-                    Phone
-                  </Label>
-                  <Input id="phone" name="phone" type="tel" required />
-                </div>
-              </div>
-
-              {/* Service Selection */}
-              <div className="space-y-2">
-                <Label htmlFor="service">Select Service</Label>
-                <Select name="service" required>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Choose your IV therapy service" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {services.map((service) => (
-                      <SelectItem key={service.id} value={service.id}>
-                        {service.name} - ${service.price.toLocaleString()} MXN
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              {/* Add-ons */}
-              <div className="space-y-4">
-                <Label>Add-ons (Optional)</Label>
+      {/* Booking Form */}
+      <section className="py-16 md:py-24">
+        <div className="container max-w-4xl">
+          <form id="booking-form" action={handleSubmit} className="space-y-8">
+            {/* Personal Information */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <User className="h-5 w-5" />
+                  Personal Information
+                </CardTitle>
+                <CardDescription>Please provide your personal details</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {addOns.map((addOn) => (
-                    <div key={addOn.id} className="flex items-center space-x-2">
-                      <Checkbox
-                        id={addOn.id}
-                        name="addOns"
-                        value={addOn.id}
-                        checked={selectedAddOns.includes(addOn.id)}
-                        onCheckedChange={(checked) => handleAddOnChange(addOn.id, checked as boolean)}
-                      />
-                      <Label htmlFor={addOn.id} className="text-sm">
-                        {addOn.name} - ${addOn.price.toLocaleString()} MXN
-                      </Label>
-                    </div>
-                  ))}
+                  <div>
+                    <Label htmlFor="firstName">First Name *</Label>
+                    <Input id="firstName" name="firstName" required />
+                  </div>
+                  <div>
+                    <Label htmlFor="lastName">Last Name *</Label>
+                    <Input id="lastName" name="lastName" required />
+                  </div>
                 </div>
-              </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="email">Email *</Label>
+                    <Input id="email" name="email" type="email" required />
+                  </div>
+                  <div>
+                    <Label htmlFor="phone">Phone *</Label>
+                    <Input id="phone" name="phone" type="tel" required />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
-              {/* Date and Time */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="date" className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4" />
-                    Preferred Date
-                  </Label>
-                  <Input id="date" name="date" type="date" min={new Date().toISOString().split("T")[0]} required />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="time" className="flex items-center gap-2">
-                    <Clock className="h-4 w-4" />
-                    Preferred Time
-                  </Label>
-                  <Select name="time" required>
+            {/* Service Selection */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Service Selection</CardTitle>
+                <CardDescription>Choose your IV therapy service</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <Label htmlFor="service">Treatment *</Label>
+                  <Select name="service" required>
                     <SelectTrigger>
-                      <SelectValue placeholder="Select time" />
+                      <SelectValue placeholder="Select your treatment" />
                     </SelectTrigger>
                     <SelectContent>
-                      {timeSlots.map((time) => (
-                        <SelectItem key={time} value={time}>
-                          {time}
+                      {services.map((service) => (
+                        <SelectItem key={service.id} value={service.id}>
+                          {service.name} - ${service.price.toLocaleString()} MXN
                         </SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
                 </div>
-              </div>
 
-              {/* Location */}
-              <div className="space-y-4">
-                <Label>Location Type</Label>
-                <Select name="locationType" required>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select location type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="home">Home Visit</SelectItem>
-                    <SelectItem value="office">Office Visit</SelectItem>
-                    <SelectItem value="hotel">Hotel Visit</SelectItem>
-                    <SelectItem value="event">Event Location</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
+                <div>
+                  <Label>Add-ons (Optional)</Label>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                    {addOns.map((addOn) => (
+                      <div key={addOn.id} className="flex items-center space-x-2">
+                        <Checkbox
+                          id={addOn.id}
+                          name="addOns"
+                          value={addOn.id}
+                          checked={selectedAddOns.includes(addOn.id)}
+                          onCheckedChange={(checked) => handleAddOnChange(addOn.id, checked as boolean)}
+                        />
+                        <Label htmlFor={addOn.id} className="text-sm">
+                          {addOn.name} - ${addOn.price.toLocaleString()} MXN
+                        </Label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
-              {/* Address */}
-              <div className="space-y-4">
-                <Label htmlFor="address" className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4" />
-                  Address
-                </Label>
-                <Input id="address" name="address" placeholder="Street address" required />
+            {/* Date & Time */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Calendar className="h-5 w-5" />
+                  Date & Time
+                </CardTitle>
+                <CardDescription>Select your preferred appointment time</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="date">Date *</Label>
+                    <Input id="date" name="date" type="date" min={new Date().toISOString().split("T")[0]} required />
+                  </div>
+                  <div>
+                    <Label htmlFor="time">Time *</Label>
+                    <Select name="time" required>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Select time" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {timeSlots.map((time) => (
+                          <SelectItem key={time} value={time}>
+                            {time}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Location */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <MapPin className="h-5 w-5" />
+                  Location
+                </CardTitle>
+                <CardDescription>Where would you like your treatment?</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <Label htmlFor="locationType">Location Type *</Label>
+                  <Select name="locationType" required>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select location type" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="home">Home Visit</SelectItem>
+                      <SelectItem value="hotel">Hotel Visit</SelectItem>
+                      <SelectItem value="office">Office Visit</SelectItem>
+                      <SelectItem value="event">Event Location</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div>
+                  <Label htmlFor="address">Address *</Label>
+                  <Input id="address" name="address" placeholder="Street address" required />
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="city">City</Label>
+                  <div>
+                    <Label htmlFor="city">City *</Label>
                     <Input id="city" name="city" required />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="state">State</Label>
+                  <div>
+                    <Label htmlFor="state">State *</Label>
                     <Input id="state" name="state" required />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="zipCode">Zip Code</Label>
+                  <div>
+                    <Label htmlFor="zipCode">Zip Code *</Label>
                     <Input id="zipCode" name="zipCode" required />
                   </div>
                 </div>
-              </div>
+              </CardContent>
+            </Card>
 
-              {/* Emergency Contact */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="emergencyContact">Emergency Contact Name</Label>
-                  <Input id="emergencyContact" name="emergencyContact" required />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="emergencyPhone">Emergency Contact Phone</Label>
-                  <Input id="emergencyPhone" name="emergencyPhone" type="tel" required />
-                </div>
-              </div>
-
-              {/* Medical Information */}
-              <div className="space-y-4">
-                <div className="space-y-2">
+            {/* Medical Information */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Medical Information</CardTitle>
+                <CardDescription>Help us provide safe treatment</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
                   <Label htmlFor="medicalConditions">Medical Conditions</Label>
                   <Textarea
                     id="medicalConditions"
                     name="medicalConditions"
-                    rows={3}
                     placeholder="List any medical conditions..."
                   />
                 </div>
-                <div className="space-y-2">
+
+                <div>
                   <Label htmlFor="medications">Current Medications</Label>
-                  <Textarea id="medications" name="medications" rows={3} placeholder="List current medications..." />
+                  <Textarea id="medications" name="medications" placeholder="List current medications..." />
                 </div>
-                <div className="space-y-2">
+
+                <div>
                   <Label htmlFor="allergies">Allergies</Label>
-                  <Textarea id="allergies" name="allergies" rows={3} placeholder="List any allergies..." />
+                  <Textarea id="allergies" name="allergies" placeholder="List any allergies..." />
                 </div>
-              </div>
+              </CardContent>
+            </Card>
 
-              {/* Special Requests */}
-              <div className="space-y-2">
-                <Label htmlFor="specialRequests">Special Requests</Label>
-                <Textarea
-                  id="specialRequests"
-                  name="specialRequests"
-                  rows={3}
-                  placeholder="Any special requests or notes..."
-                />
-              </div>
+            {/* Emergency Contact */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Emergency Contact</CardTitle>
+                <CardDescription>Required for safety purposes</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="emergencyContact">Emergency Contact Name *</Label>
+                    <Input id="emergencyContact" name="emergencyContact" required />
+                  </div>
+                  <div>
+                    <Label htmlFor="emergencyPhone">Emergency Contact Phone *</Label>
+                    <Input id="emergencyPhone" name="emergencyPhone" type="tel" required />
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
-              {/* Submit Button */}
-              <Button
-                type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg"
-                disabled={isPending}
-              >
+            {/* Special Requests */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Special Requests</CardTitle>
+                <CardDescription>Any additional information or requests</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div>
+                  <Label htmlFor="specialRequests">Additional Requests</Label>
+                  <Textarea
+                    id="specialRequests"
+                    name="specialRequests"
+                    placeholder="Any special requests or notes..."
+                  />
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Submit Button */}
+            <div className="text-center">
+              <Button type="submit" size="lg" className="w-full md:w-auto" disabled={isPending}>
                 {isPending ? "Submitting..." : "Book Appointment"}
               </Button>
+              <p className="text-sm text-muted-foreground mt-4">
+                We'll contact you within 24 hours to confirm your appointment
+              </p>
+            </div>
+          </form>
 
-              {/* Message Display */}
-              {message && (
-                <div
-                  className={`p-4 rounded-md ${
-                    message.type === "success"
-                      ? "bg-green-50 text-green-800 border border-green-200"
-                      : "bg-red-50 text-red-800 border border-red-200"
-                  }`}
-                >
-                  {message.text}
-                </div>
-              )}
-            </form>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
+          {/* Success/Error Messages */}
+          {message && (
+            <div
+              className={`mt-6 p-4 rounded-lg ${
+                message.type === "success"
+                  ? "bg-green-50 border border-green-200 text-green-800"
+                  : "bg-red-50 border border-red-200 text-red-800"
+              }`}
+            >
+              <p>{message.text}</p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Contact Info */}
+      <section className="py-16 md:py-24 bg-muted">
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Need Help?</h2>
+            <p className="text-lg text-muted-foreground">Contact us if you have any questions</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <Card>
+              <CardHeader>
+                <Phone className="h-8 w-8 mx-auto text-primary mb-2" />
+                <CardTitle>Call Us</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg font-semibold">+52 (998) 123-4567</p>
+                <p className="text-sm text-muted-foreground">Available 24/7</p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <Mail className="h-8 w-8 mx-auto text-primary mb-2" />
+                <CardTitle>Email Us</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg font-semibold">info@vitaflow.com</p>
+                <p className="text-sm text-muted-foreground">Response within 2 hours</p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <Clock className="h-8 w-8 mx-auto text-primary mb-2" />
+                <CardTitle>Service Hours</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-lg font-semibold">8:00 AM - 8:00 PM</p>
+                <p className="text-sm text-muted-foreground">7 days a week</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+    </>
   )
 }

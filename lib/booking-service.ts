@@ -1,171 +1,211 @@
-import { supabase } from "@/lib/supabase"
+import { createServerClient } from "@/lib/supabase"
+import type { Database } from "@/types/database"
+
+type Customer = Database["public"]["Tables"]["customers"]["Insert"]
+type Booking = Database["public"]["Tables"]["bookings"]["Insert"]
+type BookingAddOn = Database["public"]["Tables"]["booking_add_ons"]["Insert"]
 
 export interface BookingData {
-  customer: {
-    first_name: string
-    last_name: string
-    email: string
-    phone: string
-    emergency_contact_name: string
-    emergency_contact_phone: string
-    medical_conditions?: string | null
-    medications?: string | null
-    allergies?: string | null
-  }
-  booking: {
-    service_id: string
-    appointment_date: string
-    appointment_time: string
-    location_type: string
-    address: string
-    city: string
-    state: string
-    zip_code: string
-    special_requests?: string | null
-    status: string
-  }
-  addOns: string[]
+  customer: Customer
+  booking: Omit<Booking, "customer_id">
+  addOns: Array<{
+    add_on_id: string
+    quantity: number
+    price: number
+  }>
 }
 
 export class BookingService {
-  static async createBooking(data: BookingData): Promise<{ success: boolean; bookingId?: string; error?: string }> {
+  private supabase = createServerClient()
+
+  async createBooking(bookingData: BookingData) {
     try {
-      // Create customer
-      const { data: customerData, error: customerError } = await supabase
+      // First, get the service details to calculate total
+      const { data: service, error: serviceError } = await this.supabase
+        .from("services")
+        .select("*")
+        .eq("id", bookingData.booking.service_id)
+        .single()
+
+      if (serviceError) throw new Error("Service not found")
+
+      // Calculate total amount
+      const addOnTotal = bookingData.addOns.reduce((sum, addOn) => sum + addOn.price * addOn.quantity, 0)
+      const totalAmount = service.price + addOnTotal
+
+      // Start a transaction by creating customer first
+      const { data: customer, error: customerError } = await this.supabase
         .from("customers")
-        .insert(data.customer)
+        .upsert(bookingData.customer, {
+          onConflict: "email",
+          ignoreDuplicates: false,
+        })
         .select()
         .single()
 
-      if (customerError) {
-        throw new Error(`Customer creation failed: ${customerError.message}`)
-      }
+      if (customerError) throw customerError
 
-      // Get service details for pricing
-      const { data: serviceData, error: serviceError } = await supabase
-        .from("services")
-        .select("price")
-        .eq("id", data.booking.service_id)
-        .single()
-
-      if (serviceError) {
-        throw new Error(`Service lookup failed: ${serviceError.message}`)
-      }
-
-      // Get add-on prices
-      let addOnTotal = 0
-      if (data.addOns.length > 0) {
-        const { data: addOnData, error: addOnError } = await supabase
-          .from("add_ons")
-          .select("price")
-          .in("id", data.addOns)
-
-        if (addOnError) {
-          throw new Error(`Add-on lookup failed: ${addOnError.message}`)
-        }
-
-        addOnTotal = addOnData.reduce((sum, addOn) => sum + addOn.price, 0)
-      }
-
-      const totalAmount = serviceData.price + addOnTotal
-
-      // Create booking
-      const { data: bookingData, error: bookingError } = await supabase
+      // Create the booking with calculated total
+      const { data: booking, error: bookingError } = await this.supabase
         .from("bookings")
         .insert({
-          ...data.booking,
-          customer_id: customerData.id,
+          ...bookingData.booking,
+          customer_id: customer.id,
           total_amount: totalAmount,
         })
         .select()
         .single()
 
-      if (bookingError) {
-        throw new Error(`Booking creation failed: ${bookingError.message}`)
-      }
+      if (bookingError) throw bookingError
 
-      // Create booking add-ons
-      if (data.addOns.length > 0) {
-        const bookingAddOns = data.addOns.map((addOnId) => ({
-          booking_id: bookingData.id,
-          add_on_id: addOnId,
-          quantity: 1,
-          price: 0, // This will be updated with actual price
+      // Add the add-ons if any
+      if (bookingData.addOns.length > 0) {
+        const addOnsToInsert = bookingData.addOns.map((addOn) => ({
+          booking_id: booking.id,
+          add_on_id: addOn.add_on_id,
+          quantity: addOn.quantity,
+          price: addOn.price,
         }))
 
-        const { error: addOnError } = await supabase.from("booking_add_ons").insert(bookingAddOns)
+        const { error: addOnsError } = await this.supabase.from("booking_add_ons").insert(addOnsToInsert)
 
-        if (addOnError) {
-          throw new Error(`Booking add-ons creation failed: ${addOnError.message}`)
-        }
+        if (addOnsError) throw addOnsError
       }
 
-      return { success: true, bookingId: bookingData.id }
+      return { success: true, booking, customer }
     } catch (error) {
-      console.error("Booking creation error:", error)
-      return {
-        success: false,
-        error: error instanceof Error ? error.message : "Unknown error occurred",
-      }
+      console.error("Error creating booking:", error)
+      return { success: false, error: error.message }
     }
   }
 
-  static async getBookingById(id: string) {
-    const { data, error } = await supabase
-      .from("bookings")
-      .select(`
-        *,
-        customers (*),
-        services (*),
-        booking_add_ons (
-          add_ons (*)
-        )
-      `)
-      .eq("id", id)
-      .single()
+  async getBooking(bookingId: string) {
+    try {
+      const { data, error } = await this.supabase
+        .from("booking_details")
+        .select("*")
+        .eq("booking_id", bookingId)
+        .single()
 
-    if (error) {
-      throw new Error(`Failed to fetch booking: ${error.message}`)
+      if (error) throw error
+
+      return { success: true, data }
+    } catch (error) {
+      console.error("Error fetching booking:", error)
+      return { success: false, error: error.message }
     }
-
-    return data
   }
 
-  static async getAllBookings() {
-    const { data, error } = await supabase
-      .from("bookings")
-      .select(`
-        *,
-        customers (*),
-        services (*),
-        booking_add_ons (
-          add_ons (*)
-        )
-      `)
-      .order("created_at", { ascending: false })
+  async getCustomerBookings(customerId: string) {
+    try {
+      const { data, error } = await this.supabase
+        .from("booking_details")
+        .select("*")
+        .eq("customer_id", customerId)
+        .order("booking_date", { ascending: false })
 
-    if (error) {
-      throw new Error(`Failed to fetch bookings: ${error.message}`)
+      if (error) throw error
+
+      return { success: true, data }
+    } catch (error) {
+      console.error("Error fetching customer bookings:", error)
+      return { success: false, error: error.message }
     }
-
-    return data
   }
 
-  static async updateBookingStatus(id: string, status: string) {
-    const { data, error } = await supabase
-      .from("bookings")
-      .update({
-        status,
-        updated_at: new Date().toISOString(),
-      })
-      .eq("id", id)
-      .select()
-      .single()
+  async updateBookingStatus(bookingId: string, status: string) {
+    try {
+      const { data, error } = await this.supabase
+        .from("bookings")
+        .update({
+          status: status as any,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", bookingId)
+        .select()
+        .single()
 
-    if (error) {
-      throw new Error(`Failed to update booking status: ${error.message}`)
+      if (error) throw error
+
+      return { success: true, data }
+    } catch (error) {
+      console.error("Error updating booking status:", error)
+      return { success: false, error: error.message }
     }
+  }
 
-    return data
+  async cancelBooking(bookingId: string) {
+    try {
+      const { data, error } = await this.supabase
+        .from("bookings")
+        .update({
+          status: "cancelled",
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", bookingId)
+        .select()
+        .single()
+
+      if (error) throw error
+
+      return { success: true, data }
+    } catch (error) {
+      console.error("Error cancelling booking:", error)
+      return { success: false, error: error.message }
+    }
+  }
+
+  async getServices() {
+    try {
+      const { data, error } = await this.supabase
+        .from("services")
+        .select("*")
+        .eq("is_active", true)
+        .order("category", { ascending: true })
+
+      if (error) throw error
+
+      return { success: true, data }
+    } catch (error) {
+      console.error("Error fetching services:", error)
+      return { success: false, error: error.message }
+    }
+  }
+
+  async getAddOns() {
+    try {
+      const { data, error } = await this.supabase
+        .from("add_ons")
+        .select("*")
+        .eq("is_active", true)
+        .order("name", { ascending: true })
+
+      if (error) throw error
+
+      return { success: true, data }
+    } catch (error) {
+      console.error("Error fetching add-ons:", error)
+      return { success: false, error: error.message }
+    }
+  }
+
+  async checkAvailability(date: string, time: string) {
+    try {
+      const { data, error } = await this.supabase
+        .from("bookings")
+        .select("id")
+        .eq("booking_date", date)
+        .eq("booking_time", time)
+        .in("status", ["pending", "confirmed", "in_progress"])
+
+      if (error) throw error
+
+      return { success: true, available: data.length === 0 }
+    } catch (error) {
+      console.error("Error checking availability:", error)
+      return { success: false, error: error.message }
+    }
   }
 }
+
+export const bookingService = new BookingService()

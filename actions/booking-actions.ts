@@ -1,6 +1,7 @@
 "use server"
 
-import { BookingService, type BookingData } from "@/lib/booking-service"
+import { bookingService } from "@/lib/booking-service"
+import type { BookingData } from "@/lib/booking-service"
 
 export async function submitBooking(formData: FormData) {
   try {
@@ -9,7 +10,7 @@ export async function submitBooking(formData: FormData) {
     const lastName = formData.get("lastName") as string
     const email = formData.get("email") as string
     const phone = formData.get("phone") as string
-    const service = formData.get("service") as string
+    const serviceId = formData.get("service") as string
     const date = formData.get("date") as string
     const time = formData.get("time") as string
     const locationType = formData.get("locationType") as string
@@ -24,91 +25,115 @@ export async function submitBooking(formData: FormData) {
     const allergies = formData.get("allergies") as string
     const specialRequests = formData.get("specialRequests") as string
 
-    // Get all selected add-ons
-    const addOns = formData.getAll("addOns") as string[]
+    // Get selected add-ons
+    const addOns = []
+    const addOnIds = formData.getAll("addOns") as string[]
 
-    // Validate required fields
-    if (
-      !firstName ||
-      !lastName ||
-      !email ||
-      !phone ||
-      !service ||
-      !date ||
-      !time ||
-      !locationType ||
-      !address ||
-      !city ||
-      !state ||
-      !zipCode ||
-      !emergencyContact ||
-      !emergencyPhone
-    ) {
-      return { success: false, error: "Please fill in all required fields." }
+    // Map add-on IDs to prices (you'll need to fetch these from database in production)
+    const addOnPrices = {
+      "b12-boost": 300,
+      "glutathione-push": 500,
+      "extra-vitamin-c": 250,
+      "zinc-boost": 200,
+      "anti-nausea": 300,
+      "pain-reliever": 300,
+    }
+
+    for (const addOnId of addOnIds) {
+      if (addOnPrices[addOnId]) {
+        addOns.push({
+          add_on_id: addOnId,
+          quantity: 1,
+          price: addOnPrices[addOnId],
+        })
+      }
+    }
+
+    // Check availability
+    const availabilityCheck = await bookingService.checkAvailability(date, time)
+    if (!availabilityCheck.success || !availabilityCheck.available) {
+      return {
+        success: false,
+        error: "The selected time slot is not available. Please choose a different time.",
+      }
     }
 
     // Prepare booking data
     const bookingData: BookingData = {
       customer: {
+        email,
         first_name: firstName,
         last_name: lastName,
-        email: email,
-        phone: phone,
+        phone,
         emergency_contact_name: emergencyContact,
         emergency_contact_phone: emergencyPhone,
         medical_conditions: medicalConditions || null,
-        medications: medications || null,
+        current_medications: medications || null,
         allergies: allergies || null,
       },
       booking: {
-        service_id: service,
-        appointment_date: date,
-        appointment_time: time,
+        service_id: serviceId,
+        booking_date: date,
+        booking_time: time,
         location_type: locationType,
-        address: address,
-        city: city,
-        state: state,
+        address,
+        city,
+        state,
         zip_code: zipCode,
         special_requests: specialRequests || null,
+        total_amount: 0, // This will be calculated in the service
         status: "pending",
+        payment_status: "pending",
       },
-      addOns: addOns,
+      addOns,
     }
 
-    // Create booking
-    const result = await BookingService.createBooking(bookingData)
+    // Create the booking
+    const result = await bookingService.createBooking(bookingData)
 
     if (result.success) {
       return {
         success: true,
-        message: `Booking confirmed! Your booking ID is ${result.bookingId}. We'll contact you shortly to confirm your appointment.`,
-        bookingId: result.bookingId,
+        message: "Booking submitted successfully! We will contact you within 24 hours to confirm your appointment.",
+        bookingId: result.booking.id,
       }
     } else {
-      return { success: false, error: result.error || "Failed to create booking." }
+      return {
+        success: false,
+        error: result.error || "Failed to create booking. Please try again.",
+      }
     }
   } catch (error) {
     console.error("Booking submission error:", error)
-    return { success: false, error: "An unexpected error occurred. Please try again." }
+    return {
+      success: false,
+      error: "An unexpected error occurred. Please try again.",
+    }
   }
 }
 
-export async function getBookingDetails(id: string) {
+export async function getBookingDetails(bookingId: string) {
   try {
-    const booking = await BookingService.getBookingById(id)
-    return { success: true, data: booking }
+    const result = await bookingService.getBooking(bookingId)
+    return result
   } catch (error) {
-    console.error("Get booking error:", error)
-    return { success: false, error: error instanceof Error ? error.message : "Failed to fetch booking details." }
+    console.error("Error fetching booking details:", error)
+    return {
+      success: false,
+      error: "Failed to fetch booking details",
+    }
   }
 }
 
-export async function updateBookingStatus(id: string, status: string) {
+export async function updateBookingStatus(bookingId: string, status: string) {
   try {
-    const booking = await BookingService.updateBookingStatus(id, status)
-    return { success: true, data: booking }
+    const result = await bookingService.updateBookingStatus(bookingId, status)
+    return result
   } catch (error) {
-    console.error("Update booking status error:", error)
-    return { success: false, error: error instanceof Error ? error.message : "Failed to update booking status." }
+    console.error("Error updating booking status:", error)
+    return {
+      success: false,
+      error: "Failed to update booking status",
+    }
   }
 }
