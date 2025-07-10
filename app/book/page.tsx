@@ -1,8 +1,6 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
+import { useState, useTransition } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -12,502 +10,300 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox"
 import { Calendar, Clock, MapPin, Phone, Mail, User } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
+import { submitBooking } from "@/actions/booking-actions"
 
 export default function BookPage() {
   const { t } = useLanguage()
-
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    service: "",
-    date: "",
-    time: "",
-    locationType: "",
-    address: "",
-    city: "",
-    state: "",
-    zipCode: "",
-    addOns: [] as string[],
-    specialRequests: "",
-    emergencyContact: "",
-    emergencyPhone: "",
-    medicalConditions: "",
-    medications: "",
-    allergies: "",
-    consent: false,
-    hipaa: false,
-  })
+  const [isPending, startTransition] = useTransition()
+  const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null)
+  const [selectedAddOns, setSelectedAddOns] = useState<string[]>([])
 
   const services = [
-    { id: "hydration-boost", name: "Hydration Boost", price: "$149" },
-    { id: "immune-defense", name: "Immune Defense", price: "$179" },
-    { id: "energy-revitalize", name: "Energy Revitalize", price: "$199" },
-    { id: "recovery-plus", name: "Recovery Plus", price: "$219" },
-    { id: "beauty-glow", name: "Beauty Glow", price: "$229" },
-    { id: "detox-cleanse", name: "Detox Cleanse", price: "$199" },
-    { id: "athletic-performance", name: "Athletic Performance", price: "$249" },
-    { id: "hangover-relief", name: "Hangover Relief", price: "$179" },
-    { id: "weight-loss-support", name: "Weight Loss Support", price: "$219" },
-    { id: "anti-aging", name: "Anti-Aging", price: "$259" },
-    { id: "stress-relief", name: "Stress Relief", price: "$189" },
-    { id: "brain-boost", name: "Brain Boost", price: "$209" },
-    { id: "migraine-relief", name: "Migraine Relief", price: "$199" },
-    { id: "fertility-support", name: "Fertility Support", price: "$239" },
-    { id: "post-workout", name: "Post-Workout Recovery", price: "$189" },
-    { id: "jet-lag-recovery", name: "Jet Lag Recovery", price: "$169" },
-    { id: "seasonal-allergy", name: "Seasonal Allergy Relief", price: "$159" },
-    { id: "custom-formula", name: "Custom Formula", price: "From $249" },
+    { id: "hangover-relief", name: "IV Hangover Relief", price: 3200 },
+    { id: "dehydration-recovery", name: "IV Dehydration Recovery", price: 2200 },
+    { id: "food-poisoning", name: "IV Food Poisoning Recovery", price: 2500 },
+    { id: "myers-cocktail", name: "IV Myers Cocktail", price: 2400 },
+    { id: "jet-lag-reset", name: "IV Jet Lag Reset", price: 2400 },
+    { id: "energy-boost", name: "IV Energy Boost", price: 2500 },
+    { id: "muscle-recovery", name: "IV Muscle Recovery", price: 2600 },
+    { id: "iron-recharge", name: "IV Iron Recharge", price: 2100 },
+    { id: "nad-revival", name: "IV NAD+ Revival", price: 3200 },
+    { id: "antiviral-defense", name: "IV Antiviral Defense", price: 2300 },
+    { id: "immune-shield", name: "IV Immune Shield", price: 2600 },
+    { id: "megadose-vitamin-c", name: "IV Megadose Vitamin C", price: 2300 },
+    { id: "full-body-detox", name: "IV Full Body Detox", price: 2400 },
+    { id: "heavy-metal-cleanse", name: "IV Heavy Metal Cleanse", price: 2600 },
+    { id: "glutathione-glow", name: "IV Glutathione Glow", price: 2700 },
+    { id: "anti-inflammatory", name: "IV Anti-Inflammatory", price: 2500 },
+    { id: "rejuvenation", name: "All-Inclusive Rejuvenation IV", price: 2700 },
+    { id: "rejuvenation-extra", name: "All-Inclusive Rejuvenation IV (Extra Strength)", price: 3000 },
   ]
 
   const addOns = [
-    { id: "b12-boost", name: "Vitamin B12 Boost", price: "$25" },
-    { id: "glutathione-push", name: "Glutathione Push", price: "$35" },
-    { id: "extra-vitamin-c", name: "Extra Vitamin C", price: "$25" },
-    { id: "zinc-boost", name: "Zinc Boost", price: "$20" },
-    { id: "anti-nausea", name: "Anti-Nausea Medication", price: "$30" },
-    { id: "pain-reliever", name: "Pain Reliever", price: "$30" },
+    { id: "b12-boost", name: "Vitamin B12 Boost", price: 300 },
+    { id: "glutathione-push", name: "Glutathione Push", price: 500 },
+    { id: "extra-vitamin-c", name: "Extra Vitamin C", price: 250 },
+    { id: "zinc-boost", name: "Zinc Boost", price: 200 },
+    { id: "anti-nausea", name: "Anti-Nausea Medication", price: 300 },
+    { id: "pain-reliever", name: "Pain Reliever", price: 300 },
   ]
 
-  const timeSlots = [
-    "8:00 AM",
-    "9:00 AM",
-    "10:00 AM",
-    "11:00 AM",
-    "12:00 PM",
-    "1:00 PM",
-    "2:00 PM",
-    "3:00 PM",
-    "4:00 PM",
-    "5:00 PM",
-    "6:00 PM",
-  ]
+  const timeSlots = ["08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"]
 
   const handleAddOnChange = (addOnId: string, checked: boolean) => {
-    setFormData((prev) => ({
-      ...prev,
-      addOns: checked ? [...prev.addOns, addOnId] : prev.addOns.filter((id) => id !== addOnId),
-    }))
+    if (checked) {
+      setSelectedAddOns([...selectedAddOns, addOnId])
+    } else {
+      setSelectedAddOns(selectedAddOns.filter((id) => id !== addOnId))
+    }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
-    alert("Booking request submitted! We'll contact you within 24 hours to confirm your appointment.")
+  async function handleSubmit(formData: FormData) {
+    startTransition(async () => {
+      try {
+        const result = await submitBooking(formData)
+
+        if (result.success) {
+          setMessage({ type: "success", text: result.message })
+          // Reset form
+          const form = document.getElementById("booking-form") as HTMLFormElement
+          form?.reset()
+          setSelectedAddOns([])
+        } else {
+          setMessage({ type: "error", text: result.error })
+        }
+      } catch (error) {
+        setMessage({ type: "error", text: "An unexpected error occurred. Please try again." })
+      }
+    })
   }
 
   return (
-    <>
-      {/* Hero Section */}
-      <section className="relative py-16 md:py-24 bg-muted">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">{t("booking.title")}</h1>
-            <p className="text-lg text-muted-foreground mb-8">{t("booking.subtitle")}</p>
-          </div>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Book Your IV Therapy Session</h1>
+          <p className="text-xl text-gray-600">Schedule your personalized IV therapy treatment</p>
         </div>
-      </section>
 
-      {/* Booking Form */}
-      <section className="py-16 md:py-24">
-        <div className="container max-w-4xl">
-          <form onSubmit={handleSubmit} className="space-y-8">
-            {/* Personal Information */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <User className="h-5 w-5" />
-                  {t("booking.personal.title")}
-                </CardTitle>
-                <CardDescription>{t("booking.personal.subtitle")}</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="firstName">{t("booking.personal.firstName")} *</Label>
-                    <Input
-                      id="firstName"
-                      value={formData.firstName}
-                      onChange={(e) => setFormData((prev) => ({ ...prev, firstName: e.target.value }))}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="lastName">{t("booking.personal.lastName")} *</Label>
-                    <Input
-                      id="lastName"
-                      value={formData.lastName}
-                      onChange={(e) => setFormData((prev) => ({ ...prev, lastName: e.target.value }))}
-                      required
-                    />
-                  </div>
+        <Card className="shadow-xl">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Calendar className="h-6 w-6 text-blue-600" />
+              Booking Form
+            </CardTitle>
+            <CardDescription>Fill out the form below to schedule your IV therapy session</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form id="booking-form" action={handleSubmit} className="space-y-6">
+              {/* Personal Information */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="firstName" className="flex items-center gap-2">
+                    <User className="h-4 w-4" />
+                    First Name
+                  </Label>
+                  <Input id="firstName" name="firstName" required />
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="email">{t("booking.personal.email")} *</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="phone">{t("booking.personal.phone")} *</Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) => setFormData((prev) => ({ ...prev, phone: e.target.value }))}
-                      required
-                    />
-                  </div>
+                <div className="space-y-2">
+                  <Label htmlFor="lastName">Last Name</Label>
+                  <Input id="lastName" name="lastName" required />
                 </div>
-              </CardContent>
-            </Card>
+              </div>
 
-            {/* Service Selection */}
-            <Card>
-              <CardHeader>
-                <CardTitle>{t("booking.service.title")}</CardTitle>
-                <CardDescription>{t("booking.service.subtitle")}</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <Label htmlFor="service">{t("booking.service.treatment")} *</Label>
-                  <Select
-                    value={formData.service}
-                    onValueChange={(value) => setFormData((prev) => ({ ...prev, service: value }))}
-                  >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="email" className="flex items-center gap-2">
+                    <Mail className="h-4 w-4" />
+                    Email
+                  </Label>
+                  <Input id="email" name="email" type="email" required />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="phone" className="flex items-center gap-2">
+                    <Phone className="h-4 w-4" />
+                    Phone
+                  </Label>
+                  <Input id="phone" name="phone" type="tel" required />
+                </div>
+              </div>
+
+              {/* Service Selection */}
+              <div className="space-y-2">
+                <Label htmlFor="service">Select Service</Label>
+                <Select name="service" required>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Choose your IV therapy service" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {services.map((service) => (
+                      <SelectItem key={service.id} value={service.id}>
+                        {service.name} - ${service.price.toLocaleString()} MXN
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Add-ons */}
+              <div className="space-y-4">
+                <Label>Add-ons (Optional)</Label>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {addOns.map((addOn) => (
+                    <div key={addOn.id} className="flex items-center space-x-2">
+                      <Checkbox
+                        id={addOn.id}
+                        name="addOns"
+                        value={addOn.id}
+                        checked={selectedAddOns.includes(addOn.id)}
+                        onCheckedChange={(checked) => handleAddOnChange(addOn.id, checked as boolean)}
+                      />
+                      <Label htmlFor={addOn.id} className="text-sm">
+                        {addOn.name} - ${addOn.price.toLocaleString()} MXN
+                      </Label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Date and Time */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="date" className="flex items-center gap-2">
+                    <Calendar className="h-4 w-4" />
+                    Preferred Date
+                  </Label>
+                  <Input id="date" name="date" type="date" min={new Date().toISOString().split("T")[0]} required />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="time" className="flex items-center gap-2">
+                    <Clock className="h-4 w-4" />
+                    Preferred Time
+                  </Label>
+                  <Select name="time" required>
                     <SelectTrigger>
-                      <SelectValue placeholder={t("booking.service.selectTreatment")} />
+                      <SelectValue placeholder="Select time" />
                     </SelectTrigger>
                     <SelectContent>
-                      {services.map((service) => (
-                        <SelectItem key={service.id} value={service.id}>
-                          {service.name} - {service.price}
+                      {timeSlots.map((time) => (
+                        <SelectItem key={time} value={time}>
+                          {time}
                         </SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
                 </div>
+              </div>
 
-                <div>
-                  <Label>{t("booking.service.addons")}</Label>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-                    {addOns.map((addOn) => (
-                      <div key={addOn.id} className="flex items-center space-x-2">
-                        <Checkbox
-                          id={addOn.id}
-                          checked={formData.addOns.includes(addOn.id)}
-                          onCheckedChange={(checked) => handleAddOnChange(addOn.id, checked as boolean)}
-                        />
-                        <Label htmlFor={addOn.id} className="text-sm">
-                          {addOn.name} - {addOn.price}
-                        </Label>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+              {/* Location */}
+              <div className="space-y-4">
+                <Label>Location Type</Label>
+                <Select name="locationType" required>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select location type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="home">Home Visit</SelectItem>
+                    <SelectItem value="office">Office Visit</SelectItem>
+                    <SelectItem value="hotel">Hotel Visit</SelectItem>
+                    <SelectItem value="event">Event Location</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
 
-            {/* Date & Time */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Calendar className="h-5 w-5" />
-                  {t("booking.datetime.title")}
-                </CardTitle>
-                <CardDescription>{t("booking.datetime.subtitle")}</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="date">{t("booking.datetime.date")} *</Label>
-                    <Input
-                      id="date"
-                      type="date"
-                      value={formData.date}
-                      onChange={(e) => setFormData((prev) => ({ ...prev, date: e.target.value }))}
-                      min={new Date().toISOString().split("T")[0]}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="time">{t("booking.datetime.time")} *</Label>
-                    <Select
-                      value={formData.time}
-                      onValueChange={(value) => setFormData((prev) => ({ ...prev, time: value }))}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder={t("booking.datetime.selectTime")} />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {timeSlots.map((time) => (
-                          <SelectItem key={time} value={time}>
-                            {time}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Location */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <MapPin className="h-5 w-5" />
-                  {t("booking.location.title")}
-                </CardTitle>
-                <CardDescription>{t("booking.location.subtitle")}</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <Label htmlFor="locationType">{t("booking.location.type")} *</Label>
-                  <Select
-                    value={formData.locationType}
-                    onValueChange={(value) => setFormData((prev) => ({ ...prev, locationType: value }))}
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder={t("booking.location.selectType")} />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="home">{t("booking.location.types.home")}</SelectItem>
-                      <SelectItem value="hotel">{t("booking.location.types.hotel")}</SelectItem>
-                      <SelectItem value="office">{t("booking.location.types.office")}</SelectItem>
-                      <SelectItem value="event">{t("booking.location.types.event")}</SelectItem>
-                      <SelectItem value="other">{t("booking.location.types.other")}</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <Label htmlFor="address">{t("booking.location.address")} *</Label>
-                  <Input
-                    id="address"
-                    value={formData.address}
-                    onChange={(e) => setFormData((prev) => ({ ...prev, address: e.target.value }))}
-                    placeholder={t("booking.location.addressPlaceholder")}
-                    required
-                  />
-                </div>
+              {/* Address */}
+              <div className="space-y-4">
+                <Label htmlFor="address" className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4" />
+                  Address
+                </Label>
+                <Input id="address" name="address" placeholder="Street address" required />
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div>
-                    <Label htmlFor="city">{t("booking.location.city")} *</Label>
-                    <Input
-                      id="city"
-                      value={formData.city}
-                      onChange={(e) => setFormData((prev) => ({ ...prev, city: e.target.value }))}
-                      required
-                    />
+                  <div className="space-y-2">
+                    <Label htmlFor="city">City</Label>
+                    <Input id="city" name="city" required />
                   </div>
-                  <div>
-                    <Label htmlFor="state">{t("booking.location.state")} *</Label>
-                    <Input
-                      id="state"
-                      value={formData.state}
-                      onChange={(e) => setFormData((prev) => ({ ...prev, state: e.target.value }))}
-                      required
-                    />
+                  <div className="space-y-2">
+                    <Label htmlFor="state">State</Label>
+                    <Input id="state" name="state" required />
                   </div>
-                  <div>
-                    <Label htmlFor="zipCode">{t("booking.location.zipCode")} *</Label>
-                    <Input
-                      id="zipCode"
-                      value={formData.zipCode}
-                      onChange={(e) => setFormData((prev) => ({ ...prev, zipCode: e.target.value }))}
-                      required
-                    />
+                  <div className="space-y-2">
+                    <Label htmlFor="zipCode">Zip Code</Label>
+                    <Input id="zipCode" name="zipCode" required />
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
 
-            {/* Medical Information */}
-            <Card>
-              <CardHeader>
-                <CardTitle>{t("booking.medical.title")}</CardTitle>
-                <CardDescription>{t("booking.medical.subtitle")}</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <Label htmlFor="medicalConditions">{t("booking.medical.conditions")}</Label>
+              {/* Emergency Contact */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="emergencyContact">Emergency Contact Name</Label>
+                  <Input id="emergencyContact" name="emergencyContact" required />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="emergencyPhone">Emergency Contact Phone</Label>
+                  <Input id="emergencyPhone" name="emergencyPhone" type="tel" required />
+                </div>
+              </div>
+
+              {/* Medical Information */}
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="medicalConditions">Medical Conditions</Label>
                   <Textarea
                     id="medicalConditions"
-                    value={formData.medicalConditions}
-                    onChange={(e) => setFormData((prev) => ({ ...prev, medicalConditions: e.target.value }))}
-                    placeholder={t("booking.medical.conditionsPlaceholder")}
+                    name="medicalConditions"
+                    rows={3}
+                    placeholder="List any medical conditions..."
                   />
                 </div>
-
-                <div>
-                  <Label htmlFor="medications">{t("booking.medical.medications")}</Label>
-                  <Textarea
-                    id="medications"
-                    value={formData.medications}
-                    onChange={(e) => setFormData((prev) => ({ ...prev, medications: e.target.value }))}
-                    placeholder={t("booking.medical.medicationsPlaceholder")}
-                  />
+                <div className="space-y-2">
+                  <Label htmlFor="medications">Current Medications</Label>
+                  <Textarea id="medications" name="medications" rows={3} placeholder="List current medications..." />
                 </div>
-
-                <div>
-                  <Label htmlFor="allergies">{t("booking.medical.allergies")}</Label>
-                  <Textarea
-                    id="allergies"
-                    value={formData.allergies}
-                    onChange={(e) => setFormData((prev) => ({ ...prev, allergies: e.target.value }))}
-                    placeholder={t("booking.medical.allergiesPlaceholder")}
-                  />
+                <div className="space-y-2">
+                  <Label htmlFor="allergies">Allergies</Label>
+                  <Textarea id="allergies" name="allergies" rows={3} placeholder="List any allergies..." />
                 </div>
-              </CardContent>
-            </Card>
+              </div>
 
-            {/* Emergency Contact */}
-            <Card>
-              <CardHeader>
-                <CardTitle>{t("booking.emergency.title")}</CardTitle>
-                <CardDescription>{t("booking.emergency.subtitle")}</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="emergencyContact">{t("booking.emergency.name")} *</Label>
-                    <Input
-                      id="emergencyContact"
-                      value={formData.emergencyContact}
-                      onChange={(e) => setFormData((prev) => ({ ...prev, emergencyContact: e.target.value }))}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="emergencyPhone">{t("booking.emergency.phone")} *</Label>
-                    <Input
-                      id="emergencyPhone"
-                      type="tel"
-                      value={formData.emergencyPhone}
-                      onChange={(e) => setFormData((prev) => ({ ...prev, emergencyPhone: e.target.value }))}
-                      required
-                    />
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+              {/* Special Requests */}
+              <div className="space-y-2">
+                <Label htmlFor="specialRequests">Special Requests</Label>
+                <Textarea
+                  id="specialRequests"
+                  name="specialRequests"
+                  rows={3}
+                  placeholder="Any special requests or notes..."
+                />
+              </div>
 
-            {/* Special Requests */}
-            <Card>
-              <CardHeader>
-                <CardTitle>{t("booking.special.title")}</CardTitle>
-                <CardDescription>{t("booking.special.subtitle")}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div>
-                  <Label htmlFor="specialRequests">{t("booking.special.requests")}</Label>
-                  <Textarea
-                    id="specialRequests"
-                    value={formData.specialRequests}
-                    onChange={(e) => setFormData((prev) => ({ ...prev, specialRequests: e.target.value }))}
-                    placeholder={t("booking.special.requestsPlaceholder")}
-                  />
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Consent & Agreement */}
-            <Card>
-              <CardHeader>
-                <CardTitle>{t("booking.consent.title")}</CardTitle>
-                <CardDescription>{t("booking.consent.subtitle")}</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-start space-x-2">
-                  <Checkbox
-                    id="consent"
-                    checked={formData.consent}
-                    onCheckedChange={(checked) => setFormData((prev) => ({ ...prev, consent: checked as boolean }))}
-                    required
-                  />
-                  <Label htmlFor="consent" className="text-sm leading-relaxed">
-                    {t("booking.consent.treatment")} *
-                  </Label>
-                </div>
-
-                <div className="flex items-start space-x-2">
-                  <Checkbox
-                    id="hipaa"
-                    checked={formData.hipaa}
-                    onCheckedChange={(checked) => setFormData((prev) => ({ ...prev, hipaa: checked as boolean }))}
-                    required
-                  />
-                  <Label htmlFor="hipaa" className="text-sm leading-relaxed">
-                    {t("booking.consent.hipaa")} *
-                  </Label>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Submit Button */}
-            <div className="text-center">
-              <Button type="submit" size="lg" className="w-full md:w-auto">
-                {t("booking.submit.button")}
+              {/* Submit Button */}
+              <Button
+                type="submit"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg"
+                disabled={isPending}
+              >
+                {isPending ? "Submitting..." : "Book Appointment"}
               </Button>
-              <p className="text-sm text-muted-foreground mt-4">{t("booking.submit.note")}</p>
-            </div>
-          </form>
-        </div>
-      </section>
 
-      {/* Contact Info */}
-      <section className="py-16 md:py-24 bg-muted">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("booking.help.title")}</h2>
-            <p className="text-lg text-muted-foreground">{t("booking.help.subtitle")}</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <Card>
-              <CardHeader>
-                <Phone className="h-8 w-8 mx-auto text-primary mb-2" />
-                <CardTitle>{t("booking.help.call.title")}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-lg font-semibold">{t("booking.help.call.number")}</p>
-                <p className="text-sm text-muted-foreground">{t("booking.help.call.hours")}</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <Mail className="h-8 w-8 mx-auto text-primary mb-2" />
-                <CardTitle>{t("booking.help.email.title")}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-lg font-semibold">{t("booking.help.email.address")}</p>
-                <p className="text-sm text-muted-foreground">{t("booking.help.email.response")}</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <Clock className="h-8 w-8 mx-auto text-primary mb-2" />
-                <CardTitle>{t("booking.help.hours.title")}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-lg font-semibold">{t("booking.help.hours.time")}</p>
-                <p className="text-sm text-muted-foreground">{t("booking.help.hours.days")}</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-    </>
+              {/* Message Display */}
+              {message && (
+                <div
+                  className={`p-4 rounded-md ${
+                    message.type === "success"
+                      ? "bg-green-50 text-green-800 border border-green-200"
+                      : "bg-red-50 text-red-800 border border-red-200"
+                  }`}
+                >
+                  {message.text}
+                </div>
+              )}
+            </form>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
   )
 }

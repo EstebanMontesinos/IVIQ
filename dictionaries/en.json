@@ -4,21 +4,21 @@
     "services": "Services",
     "pricing": "Pricing",
     "benefits": "Benefits",
-    "about": "About Us",
-    "book": "Book Now"
+    "about": "About",
+    "book": "Book"
   },
   "hero": {
-    "title": "Premium IV Therapy Delivered To You",
+    "title": "Premium IV Therapy Delivered to You",
     "subtitle": "Experience the benefits of IV therapy in the comfort of your home or hotel with our mobile service.",
     "bookNow": "Book Now",
     "viewServices": "View Services"
   },
   "features": {
     "title": "Why Choose IVIQ?",
-    "subtitle": "We bring professional IV therapy services directly to you, providing convenience without compromising on quality.",
+    "subtitle": "We bring professional IV therapy services directly to you, providing convenience without compromising quality.",
     "convenient": {
       "title": "Convenient & Time-Saving",
-      "description": "No need to travel or wait in clinics. We come to you at your preferred time and location."
+      "description": "No need to travel or wait in clinics. We come to you on your schedule and preferred location."
     },
     "mobile": {
       "title": "Mobile Service",
@@ -29,13 +29,102 @@
       "description": "All treatments are administered by licensed healthcare professionals with extensive experience."
     }
   },
+  "treatments": {
+    "title": "Our Popular Treatments",
+    "subtitle": "Customized IV therapy treatments to meet your specific health and wellness needs.",
+    "viewAll": "View All Services",
+    "hydration": {
+      "title": "Hydration Boost",
+      "description": "Replenishes fluids and electrolytes for optimal hydration.",
+      "price": "$2,200 MXN"
+    },
+    "immune": {
+      "title": "Immune Defense",
+      "description": "Strengthens your immune system with our vitamin-rich formula.",
+      "price": "$2,600 MXN"
+    },
+    "energy": {
+      "title": "Energy Revival",
+      "description": "Combat fatigue and boost energy levels naturally.",
+      "price": "$2,500 MXN"
+    },
+    "recovery": {
+      "title": "Recovery Plus",
+      "description": "Accelerate recovery from intense physical activity or hangovers.",
+      "price": "$2,600 MXN"
+    },
+    "beauty": {
+      "title": "Beauty Glow",
+      "description": "Enhance skin health and appearance from within.",
+      "price": "$2,700 MXN"
+    },
+    "custom": {
+      "title": "Custom Formula",
+      "description": "Personalized IV therapy tailored to your specific needs.",
+      "price": "From $2,200 MXN"
+    }
+  },
+  "benefits": {
+    "title": "The Benefits of IV Therapy",
+    "absorption": {
+      "title": "100% Absorption",
+      "description": "IV therapy delivers nutrients directly to your bloodstream, ensuring 100% absorption compared to oral supplements."
+    },
+    "immediate": {
+      "title": "Immediate Effects",
+      "description": "Feel the benefits immediately as nutrients are delivered directly to your cells where they're needed most."
+    },
+    "customized": {
+      "title": "Customized Treatment",
+      "description": "Each IV formula can be tailored to address your specific health concerns and wellness goals."
+    },
+    "preventative": {
+      "title": "Preventative Health",
+      "description": "Regular IV therapy can help maintain optimal health and prevent deficiencies before they cause problems."
+    },
+    "learnMore": "Learn More About Benefits"
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Don't just take our word for it. Here's what our clients say about their experience with IVIQ.",
+    "clients": {
+      "sarah": {
+        "quote": "The convenience of having IV therapy at my hotel while traveling for business has been a game-changer. I always book IVIQ when I'm in town."
+      },
+      "michael": {
+        "quote": "After trying their Recovery Plus treatment for my hangover, I was back to normal in no time. The staff was professional and the service was excellent."
+      },
+      "jennifer": {
+        "quote": "I've been getting monthly immune boost IVs and haven't gotten sick once this year. The mobile service makes it so easy to maintain my health routine."
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to Experience IVIQ?",
+    "subtitle": "Book your mobile IV therapy session today and start feeling better.",
+    "book": "Book Your Appointment"
+  },
+  "footer": {
+    "description": "Premium mobile IV therapy services delivered to your home or hotel.",
+    "quickLinks": "Quick Links",
+    "information": "Information",
+    "legal": "Legal",
+    "copyright": "All rights reserved."
+  },
+  "common": {
+    "bookNow": "Book Now",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us",
+    "getStarted": "Get Started",
+    "readMore": "Read More"
+  },
   "services": {
     "title": "Our IV Therapy Services",
     "subtitle": "Discover our comprehensive range of premium mobile IV therapy treatments designed to enhance your health and wellness.",
     "bookNow": "Book Now",
     "bookThis": "Book This Treatment",
     "keyIngredients": "Key Ingredients:",
-    "benefits": "Primary Benefits:",
+    "benefits": "Key Benefits:",
     "duration": "Treatment Duration:",
     "addons": {
       "title": "Optional Add-ons",
@@ -43,18 +132,18 @@
     },
     "cta": {
       "title": "Ready to Experience the Benefits?",
-      "subtitle": "Book your mobile IV therapy session today and start feeling your best."
+      "subtitle": "Book your mobile IV therapy session today and start feeling better."
     },
     "formulas": {
       "hangover": {
         "title": "IV Hangover Relief",
-        "description": "Revive and recover quickly from alcohol consumption. This therapy detoxifies your body, eliminates toxins, and rehydrates effectively, providing rapid relief from hangover symptoms.",
-        "price": "$179",
+        "description": "Revive and recover quickly from alcohol consumption. This therapy detoxifies your body, eliminates toxins, and effectively rehydrates, providing rapid relief from hangover symptoms.",
+        "price": "$3,200 MXN",
         "duration": "45-60 minutes",
         "ingredients": [
           "1000ml Normal Saline for rapid rehydration",
-          "Ondansetron 4mg (Anti-nausea medication)",
-          "Ketorolac 30mg (Anti-inflammatory pain relief)",
+          "Ondansetron 4mg (anti-nausea medication)",
+          "Ketorolac 30mg (anti-inflammatory pain relief)",
           "B-Complex Vitamins (B1, B2, B3, B5, B6)",
           "Magnesium Sulfate 2g (muscle relaxation)",
           "Zinc Sulfate 5mg (liver support)",
@@ -64,16 +153,16 @@
           "Rapid rehydration and electrolyte restoration",
           "Complete elimination of acetaldehyde toxins",
           "Immediate relief from nausea and vomiting",
-          "Significant reduction of headache and body aches",
-          "Restoration of energy levels within 30 minutes",
+          "Significant reduction in headache and body aches",
+          "Energy level restoration within 30 minutes",
           "Enhanced liver detoxification and recovery",
           "Prevention of prolonged hangover symptoms"
         ]
       },
       "dehydration": {
         "title": "IV Dehydration Recovery",
-        "description": "Feel refreshed and revitalized with rapid fluid replacement. Replenish electrolytes, boost energy, and improve your mood with this essential hydration therapy.",
-        "price": "$149",
+        "description": "Feel fresh and revitalized with rapid fluid replacement. Replenishes electrolytes, boosts energy, and improves your mood with this essential hydration therapy.",
+        "price": "$2,200 MXN",
         "duration": "30-45 minutes",
         "ingredients": [
           "1000ml Lactated Ringer's Solution",
@@ -85,7 +174,7 @@
           "Dextrose 5% (immediate energy source)"
         ],
         "benefits": [
-          "Immediate restoration of fluid volume (within 15 minutes)",
+          "Immediate fluid volume restoration (within 15 minutes)",
           "Complete electrolyte balance optimization",
           "Enhanced cellular hydration and function",
           "Improved cognitive function and mental clarity",
@@ -96,12 +185,12 @@
       },
       "foodPoisoning": {
         "title": "IV Food Poisoning & Stomach Flu Recovery",
-        "description": "Accelerate recovery from gastrointestinal distress. This therapy helps heal your stomach lining and is ideal for treating food poisoning and all gastrointestinal symptoms.",
-        "price": "$199",
+        "description": "Accelerate recovery from gastrointestinal distress. This therapy helps heal the stomach lining and is ideal for treating food poisoning and all gastrointestinal symptoms.",
+        "price": "$2,500 MXN",
         "duration": "45-60 minutes",
         "ingredients": [
           "1000ml Normal Saline with electrolytes",
-          "Ondansetron 8mg (powerful anti-nausea)",
+          "Ondansetron 8mg (potent anti-nausea)",
           "Famotidine 20mg (stomach acid reducer)",
           "B-Complex Vitamins (digestive support)",
           "Vitamin C 1000mg (immune support)",
@@ -109,24 +198,24 @@
           "Prochlorperazine 10mg (severe nausea relief)"
         ],
         "benefits": [
-          "Rapid relief from nausea and vomiting (within 20 minutes)",
+          "Rapid nausea and vomiting relief (within 20 minutes)",
           "Stomach lining protection and accelerated healing",
           "Complete restoration of lost fluids and nutrients",
-          "Improved digestive function and gut health",
+          "Enhanced digestive function and gut health",
           "Accelerated recovery time (50% faster)",
           "Prevention of severe dehydration complications",
-          "Enhanced immune response to fight infection"
+          "Improved immune response to fight infections"
         ]
       },
       "myers": {
         "title": "IV Myers Cocktail",
         "description": "The gold standard of IV therapy. This classic formula boosts red blood cell production, accelerates muscle recovery, improves sleep quality, and strengthens your immune system.",
-        "price": "$189",
+        "price": "$2,400 MXN",
         "duration": "45-60 minutes",
         "ingredients": [
           "Magnesium Chloride 2-5g (muscle and nerve function)",
           "Calcium Gluconate 100-200mg (bone and muscle health)",
-          "Vitamin B Complex (energy metabolism)",
+          "B-Complex Vitamins (energy metabolism)",
           "Vitamin B12 1000mcg (red blood cell production)",
           "Vitamin C 5-15g (immune and collagen support)",
           "Normal Saline 250-1000ml (hydration base)",
@@ -139,13 +228,13 @@
           "Reduced muscle fatigue and faster recovery",
           "Increased red blood cell production and oxygen delivery",
           "Support for chronic fatigue syndrome symptoms",
-          "Enhanced overall wellness and vitality"
+          "Overall wellness and vitality enhancement"
         ]
       },
       "energy": {
         "title": "IV Energy Boost",
         "description": "Combat fatigue and low energy with a scientifically formulated blend of IV fluids, electrolytes, vitamins, and antioxidants designed to revitalize your body at the cellular level.",
-        "price": "$199",
+        "price": "$2,500 MXN",
         "duration": "45-60 minutes",
         "ingredients": [
           "Vitamin B12 5000mcg (methylcobalamin form)",
@@ -159,7 +248,7 @@
         "benefits": [
           "Significant increase in energy levels (up to 8 hours)",
           "Enhanced mental clarity and cognitive focus",
-          "Improved physical endurance and stamina",
+          "Improved physical endurance and vigor",
           "Better mood regulation and motivation",
           "Optimized cellular energy production (ATP synthesis)",
           "Reduced chronic fatigue symptoms",
@@ -168,11 +257,11 @@
       },
       "muscle": {
         "title": "IV Muscle Recovery",
-        "description": "Optimize athletic performance and recovery. This therapy enhances muscle regeneration, reduces inflammation, and includes amino acids and nutrients essential for peak physical condition.",
-        "price": "$219",
+        "description": "Optimize athletic performance and recovery. This therapy enhances muscle regeneration, reduces inflammation, and includes essential amino acids and nutrients for peak fitness.",
+        "price": "$2,600 MXN",
         "duration": "60-75 minutes",
         "ingredients": [
-          "Branched-Chain Amino Acids (BCAA) 10g",
+          "Branched-Chain Amino Acids (BCAAs) 10g",
           "L-Glutamine 5g (muscle repair)",
           "Creatine Monohydrate 3g (energy storage)",
           "Magnesium Sulfate 3g (muscle function)",
@@ -185,7 +274,7 @@
           "Reduced exercise-induced inflammation",
           "Enhanced protein synthesis and muscle building",
           "Improved athletic performance and power output",
-          "Faster recovery between intense workouts",
+          "Faster recovery between intense training sessions",
           "Prevention of muscle breakdown (catabolism)",
           "Reduced delayed onset muscle soreness (DOMS)"
         ]
@@ -193,10 +282,10 @@
       "antiviral": {
         "title": "IV Antiviral Defense",
         "description": "Strengthen your body's natural defense against viral infections. This powerful formula uses high-dose vitamin C and zinc to target pathogens and enhance immune response.",
-        "price": "$209",
+        "price": "$2,300 MXN",
         "duration": "60-75 minutes",
         "ingredients": [
-          "High-dose Vitamin C 10-25g (immune enhancement)",
+          "High-Dose Vitamin C 10-25g (immune enhancement)",
           "Zinc Sulfate 15mg (antiviral properties)",
           "Glutathione 1200mg (master antioxidant)",
           "Selenium 200mcg (immune function)",
@@ -206,8 +295,8 @@
         ],
         "benefits": [
           "Enhanced antiviral immune response (3x stronger)",
-          "Reduced viral replication and load",
-          "Shortened duration of illness (by 2-3 days)",
+          "Reduced viral replication and viral load",
+          "Shortened illness duration (2-3 days)",
           "Improved white blood cell function",
           "Powerful antioxidant protection against free radicals",
           "Support for respiratory health and function",
@@ -217,13 +306,13 @@
       "immune": {
         "title": "IV Immune Shield",
         "description": "Comprehensive immune system support with essential nutrients. This therapy strengthens your body's defenses, helping you recover from infections while promoting long-term wellness.",
-        "price": "$189",
+        "price": "$2,600 MXN",
         "duration": "45-60 minutes",
         "ingredients": [
           "Vitamin C 5-10g (immune cell activation)",
           "Zinc Sulfate 10mg (immune function)",
           "Glutathione 600mg (cellular protection)",
-          "B-Complex Vitamins (energy for immune cells)",
+          "B-Complex Vitamins (immune cell energy)",
           "Selenium 100mcg (antioxidant enzyme)",
           "Vitamin D3 5000 IU (immune regulation)",
           "Magnesium Chloride 2g (immune cell function)"
@@ -235,17 +324,17 @@
           "Faster recovery from colds, flu, and viruses",
           "Reduced oxidative stress and inflammation",
           "Long-term immune health maintenance",
-          "Better seasonal allergy management"
+          "Better management of seasonal allergies"
         ]
       },
       "megaC": {
         "title": "IV Megadose Vitamin C",
         "description": "High-dose vitamin C therapy for maximum immune support and detoxification. This treatment acts as a powerful antioxidant, promoting cellular repair and enhancing overall vitality.",
-        "price": "$229",
+        "price": "$2,300 MXN",
         "duration": "60-90 minutes",
         "ingredients": [
-          "High-dose Vitamin C 25-50g (maximum therapeutic dose)",
-          "Magnesium Chloride 3g (cofactor for vitamin C)",
+          "High-Dose Vitamin C 25-50g (maximum therapeutic dose)",
+          "Magnesium Chloride 3g (vitamin C cofactor)",
           "Calcium Gluconate 200mg (cellular stability)",
           "B-Complex Vitamins (cellular energy)",
           "Glutathione 600mg (antioxidant synergy)",
@@ -254,9 +343,9 @@
         "benefits": [
           "Maximum antioxidant protection (10x normal levels)",
           "Enhanced collagen synthesis for skin and joints",
-          "Improved immune system function",
+          "Boosted immune system function",
           "Powerful cellular detoxification",
-          "Anti-aging effects at cellular level",
+          "Anti-aging effects at the cellular level",
           "Support for cancer treatment recovery",
           "Enhanced wound healing and tissue repair"
         ]
@@ -264,7 +353,7 @@
       "detox": {
         "title": "IV Full Body Detox",
         "description": "Comprehensive cellular detoxification to eliminate harmful toxins. This therapy enhances liver function, boosts your immune system, and restores your body's natural balance.",
-        "price": "$249",
+        "price": "$2,400 MXN",
         "duration": "60-75 minutes",
         "ingredients": [
           "Glutathione 1200mg (master detoxifier)",
@@ -280,7 +369,7 @@
           "Elimination of free radicals and toxins",
           "Improved cellular energy production",
           "Better skin health and radiant appearance",
-          "Reduced inflammation markers (CRP, IL-6)",
+          "Reduced inflammatory markers (CRP, IL-6)",
           "Optimized metabolic function",
           "Enhanced mental clarity and focus"
         ]
@@ -288,7 +377,7 @@
       "heavyMetal": {
         "title": "IV Heavy Metal Cleanse",
         "description": "Specialized chelation therapy to remove heavy metals and environmental toxins. This treatment improves circulation, reduces inflammation, and supports overall health.",
-        "price": "$279",
+        "price": "$2,600 MXN",
         "duration": "75-90 minutes",
         "ingredients": [
           "EDTA 1-3g (heavy metal chelation)",
@@ -312,10 +401,10 @@
       "glutathione": {
         "title": "IV Glutathione Glow",
         "description": "Master antioxidant therapy for cellular detoxification and radiant skin. This treatment boosts immunity, reduces oxidative stress, and enhances your natural glow from within.",
-        "price": "$239",
+        "price": "$2,700 MXN",
         "duration": "45-60 minutes",
         "ingredients": [
-          "High-dose Glutathione 1500mg (reduced form)",
+          "High-Dose Glutathione 1500mg (reduced form)",
           "Vitamin C 5g (glutathione recycling)",
           "Biotin 10mg (skin and hair health)",
           "B-Complex Vitamins (cellular energy)",
@@ -323,43 +412,43 @@
           "Selenium 200mcg (glutathione enzyme)"
         ],
         "benefits": [
-          "Skin brightening and whitening effects (visible in 3-5 sessions)",
+          "Skin lightening and brightening effects (visible in 3-5 sessions)",
           "Powerful cellular detoxification",
           "Enhanced immune system function",
           "Reduced signs of aging and wrinkles",
           "Improved skin elasticity and texture",
           "Protection against UV damage",
-          "Enhanced liver function and detox"
+          "Enhanced liver function and detoxification"
         ]
       },
       "antiInflammatory": {
         "title": "IV Anti-Inflammatory",
-        "description": "Advanced inflammation reduction therapy combining curcumin, glutathione, and targeted nutrients to combat oxidative stress and support tissue repair for chronic and acute conditions.",
-        "price": "$229",
+        "description": "Advanced inflammation reduction therapy combining turmeric, glutathione, and targeted nutrients to combat oxidative stress and support tissue repair for chronic and acute conditions.",
+        "price": "$2,500 MXN",
         "duration": "60-75 minutes",
         "ingredients": [
-          "Curcumin 500mg (potent anti-inflammatory)",
+          "Turmeric 500mg (potent anti-inflammatory)",
           "Glutathione 1000mg (oxidative stress reduction)",
           "Vitamin C 5g (collagen synthesis)",
           "Magnesium Sulfate 2g (muscle relaxation)",
           "Quercetin 250mg (natural antihistamine)",
           "B-Complex Vitamins (cellular repair)",
-          "Omega-3 fatty acids 1g (inflammation resolution)"
+          "Omega-3 Fatty Acids 1g (inflammation resolution)"
         ],
         "benefits": [
           "Significant inflammation reduction (CRP levels drop 40-60%)",
           "Pain relief for chronic conditions (arthritis, fibromyalgia)",
           "Enhanced tissue repair and healing",
           "Improved joint mobility and flexibility",
-          "Reduced inflammatory markers throughout body",
+          "Reduced inflammatory markers throughout the body",
           "Support for autoimmune conditions",
           "Better exercise recovery and performance"
         ]
       },
       "jetLag": {
         "title": "IV Jet Lag Reset",
-        "description": "Restore your natural circadian rhythm quickly and effectively. This specialized therapy contains melatonin, vitamins, and relaxants to help reset your sleep cycle after travel.",
-        "price": "$199",
+        "description": "Restore your natural circadian rhythm quickly and effectively. This specialized therapy contains melatonin, vitamins, and relaxants to help reset your sleep cycle after traveling.",
+        "price": "$2,400 MXN",
         "duration": "45-60 minutes",
         "ingredients": [
           "Melatonin 3mg (circadian rhythm regulation)",
@@ -374,16 +463,16 @@
           "Rapid sleep cycle adjustment (1-2 days vs 1 week)",
           "Reduced travel fatigue and exhaustion",
           "Improved sleep quality and duration",
-          "Enhanced mental alertness during day",
+          "Enhanced daytime mental alertness",
           "Faster adaptation to new time zones",
-          "Reduced anxiety and travel stress",
+          "Reduced travel anxiety and stress",
           "Better mood regulation and emotional balance"
         ]
       },
       "iron": {
         "title": "IV Iron Recharge",
-        "description": "Combat iron deficiency anemia and chronic fatigue. This therapy safely increases iron levels, boosts red blood cell production, and enhances oxygen delivery throughout your body.",
-        "price": "$219",
+        "description": "Combat iron deficiency anemia and chronic fatigue. This therapy safely boosts iron levels, enhances red blood cell production, and improves oxygen delivery throughout your body.",
+        "price": "$2,100 MXN",
         "duration": "60-90 minutes",
         "ingredients": [
           "Iron Sucrose 200mg (bioavailable iron)",
@@ -405,8 +494,8 @@
       },
       "nad": {
         "title": "IV NAD+ Revival",
-        "description": "Cutting-edge anti-aging therapy that provides cellular energy at the mitochondrial level. NAD+ supports DNA repair, metabolism regulation, and neurological function.",
-        "price": "$349",
+        "description": "Cutting-edge anti-aging therapy that provides cellular energy at the mitochondrial level. NAD+ supports DNA repair, metabolic regulation, and neurological function.",
+        "price": "$3,200 MXN",
         "duration": "2-4 hours",
         "ingredients": [
           "NAD+ 250-500mg (cellular energy coenzyme)",
@@ -421,18 +510,18 @@
           "Improved cognitive function and mental clarity",
           "DNA repair and anti-aging effects",
           "Better metabolism and weight management",
-          "Increased physical endurance and stamina",
+          "Increased physical endurance and vigor",
           "Support for addiction recovery",
           "Enhanced longevity and healthspan"
         ]
       },
       "rejuvenation": {
-        "title": "All-Inclusive Rejuvenation IV",
+        "title": "IV All-Inclusive Rejuvenation",
         "description": "Comprehensive wellness therapy with a powerful blend of vitamins, minerals, and antioxidants. This treatment promotes cellular regeneration, boosts collagen, and enhances overall vitality.",
-        "price": "$299",
+        "price": "$2,700 MXN",
         "duration": "75-90 minutes",
         "ingredients": [
-          "Comprehensive Multivitamin blend (A, D, E, K, B-complex)",
+          "Comprehensive multivitamin blend (A, D, E, K, B-complex)",
           "Glutathione 800mg (cellular protection)",
           "Vitamin C 10g (collagen synthesis)",
           "Biotin 10mg (hair, skin, nails)",
@@ -443,7 +532,7 @@
         "benefits": [
           "Complete nutritional optimization",
           "Enhanced skin health and youthful appearance",
-          "Improved energy and overall vitality",
+          "Improved overall energy and vitality",
           "Stronger hair and nails",
           "Better immune system function",
           "Enhanced mental clarity and mood",
@@ -451,16 +540,16 @@
         ]
       },
       "rejuvenationExtra": {
-        "title": "All-Inclusive Rejuvenation IV (Extra Strength)",
+        "title": "IV All-Inclusive Rejuvenation (Extra Strength)",
         "description": "The ultimate wellness experience with maximum-dose nutrients. This premium therapy amplifies all rejuvenation benefits, maximizing hydration, cellular repair, and anti-aging effects.",
-        "price": "$399",
+        "price": "$3,000 MXN",
         "duration": "90-120 minutes",
         "ingredients": [
-          "High-dose Multivitamin complex (therapeutic levels)",
+          "High-dose multivitamin complex (therapeutic levels)",
           "Glutathione 1500mg (maximum antioxidant)",
-          "Vitamin C 25g (mega-dose therapy)",
+          "Vitamin C 25g (megadose therapy)",
           "Biotin 20mg (beauty enhancement)",
-          "Collagen peptides 5g (skin elasticity)",
+          "Collagen Peptides 5g (skin elasticity)",
           "CoQ10 200mg (cellular energy)",
           "Alpha-Lipoic Acid 600mg (universal antioxidant)",
           "Premium mineral blend (optimized ratios)"
@@ -470,101 +559,12 @@
           "Superior skin rejuvenation and glow",
           "Optimal cellular regeneration and repair",
           "Enhanced collagen production (visible results)",
-          "Peak energy and vitality levels",
+          "Peak energy levels and vitality",
           "Comprehensive wellness optimization",
           "Premium longevity and healthspan support"
         ]
       }
     }
-  },
-  "treatments": {
-    "title": "Our Popular Treatments",
-    "subtitle": "Customized IV therapy treatments to meet your specific health and wellness needs.",
-    "viewAll": "View All Services",
-    "hydration": {
-      "title": "Hydration Boost",
-      "description": "Replenish fluids and electrolytes for optimal hydration.",
-      "price": "$149"
-    },
-    "immune": {
-      "title": "Immune Defense",
-      "description": "Strengthen your immune system with our vitamin-packed formula.",
-      "price": "$179"
-    },
-    "energy": {
-      "title": "Energy Revitalize",
-      "description": "Combat fatigue and boost energy levels naturally.",
-      "price": "$199"
-    },
-    "recovery": {
-      "title": "Recovery Plus",
-      "description": "Accelerate recovery from intense physical activity or hangovers.",
-      "price": "$219"
-    },
-    "beauty": {
-      "title": "Beauty Glow",
-      "description": "Enhance skin health and appearance from within.",
-      "price": "$229"
-    },
-    "custom": {
-      "title": "Custom Formula",
-      "description": "Personalized IV therapy tailored to your specific needs.",
-      "price": "From $249"
-    }
-  },
-  "benefits": {
-    "title": "The Benefits of IV Therapy",
-    "absorption": {
-      "title": "100% Absorption",
-      "description": "IV therapy delivers nutrients directly into your bloodstream, ensuring 100% absorption compared to oral supplements."
-    },
-    "immediate": {
-      "title": "Immediate Effects",
-      "description": "Feel the benefits immediately as nutrients are delivered directly to your cells where they're needed most."
-    },
-    "customized": {
-      "title": "Customized Treatment",
-      "description": "Each IV formula can be tailored to address your specific health concerns and wellness goals."
-    },
-    "preventative": {
-      "title": "Preventative Health",
-      "description": "Regular IV therapy can help maintain optimal health and prevent deficiencies before they cause problems."
-    },
-    "learnMore": "Learn More About Benefits"
-  },
-  "testimonials": {
-    "title": "What Our Clients Say",
-    "subtitle": "Don't just take our word for it. Here's what our clients have to say about their IVIQ experience.",
-    "clients": {
-      "sarah": {
-        "quote": "The convenience of having IV therapy at my hotel while traveling for business has been a game-changer. I always book IVIQ when I'm in town."
-      },
-      "michael": {
-        "quote": "After trying their Recovery Plus treatment for my hangover, I was back to normal in no time. The staff was professional and the service was excellent."
-      },
-      "jennifer": {
-        "quote": "I've been getting monthly immune boosting IVs and haven't been sick once this year. The mobile service makes it so easy to maintain my health routine."
-      }
-    }
-  },
-  "cta": {
-    "title": "Ready to Experience IVIQ?",
-    "subtitle": "Book your mobile IV therapy session today and start feeling your best.",
-    "book": "Book Your Appointment"
-  },
-  "footer": {
-    "description": "Premium mobile IV therapy services delivered to your home or hotel.",
-    "quickLinks": "Quick Links",
-    "information": "Information",
-    "legal": "Legal",
-    "copyright": "All rights reserved."
-  },
-  "common": {
-    "bookNow": "Book Now",
-    "learnMore": "Learn More",
-    "contactUs": "Contact Us",
-    "getStarted": "Get Started",
-    "readMore": "Read More"
   },
   "pricing": {
     "title": "Transparent Pricing",
@@ -577,7 +577,7 @@
       "single": {
         "name": "Single Session",
         "description": "Perfect for first-time clients or occasional treatments.",
-        "price": "From $149",
+        "price": "From $2,100 MXN",
         "features": [
           "Choose any IV therapy treatment",
           "One-time payment",
@@ -590,12 +590,12 @@
       "monthly": {
         "name": "Monthly Wellness",
         "description": "Our most popular option for regular wellness maintenance.",
-        "price": "From $399/month",
+        "price": "From $6,500 MXN/month",
         "features": [
           "3 IV treatments per month",
-          "10% off all add-ons",
+          "10% discount on all add-ons",
           "Priority scheduling",
-          "Complimentary wellness consultation",
+          "Free wellness consultation",
           "Mobile service included"
         ],
         "buttonText": "Subscribe Now",
@@ -604,10 +604,10 @@
       "premium": {
         "name": "Premium Package",
         "description": "Comprehensive wellness for those serious about their health.",
-        "price": "From $699/month",
+        "price": "From $12,000 MXN/month",
         "features": [
           "6 IV treatments per month",
-          "15% off all add-ons",
+          "15% discount on all add-ons",
           "VIP priority scheduling",
           "Monthly wellness consultation",
           "Mobile service included",
@@ -617,7 +617,7 @@
       }
     },
     "individual": {
-      "title": "Individual Treatment Prices",
+      "title": "Individual Treatment Pricing",
       "subtitle": "All treatments include mobile service to your location.",
       "treatments": "IV Therapy Treatments",
       "addons": "Add-ons"
@@ -635,19 +635,19 @@
       "questions": {
         "travel": {
           "question": "Is there an additional travel fee?",
-          "answer": "No, our prices include mobile service within our standard service area. For locations outside our service area, a small travel fee may apply."
+          "answer": "No, our pricing includes mobile service within our standard service area. For locations outside our service area, a small travel fee may apply."
         },
         "insurance": {
-          "question": "Do you accept insurance?",
-          "answer": "Currently, we do not accept insurance. However, you may be able to use your HSA or FSA for payment. We provide detailed receipts for your records."
+          "question": "Do you accept health insurance?",
+          "answer": "Currently, we do not accept health insurance. However, you can use your HSA or FSA for payment. We provide detailed receipts for your records."
         },
         "payment": {
-          "question": "What forms of payment do you accept?",
+          "question": "What payment methods do you accept?",
           "answer": "We accept all major credit cards, cash, HSA/FSA cards, and mobile payment options like Apple Pay and Google Pay."
         },
         "cancellation": {
           "question": "Can I cancel or reschedule my appointment?",
-          "answer": "Yes, you can reschedule or cancel your appointment up to 24 hours before your scheduled time without any fees. Cancellations within 24 hours may incur a cancellation fee."
+          "answer": "Yes, you can reschedule or cancel your appointment up to 24 hours before your scheduled time without any charges. Cancellations within 24 hours may incur a cancellation fee."
         }
       }
     },
@@ -663,7 +663,7 @@
     "story": {
       "title": "Our Story",
       "content": [
-        "IVIQ was founded in 2023 with a simple yet powerful vision: to make high-quality IV therapy accessible, convenient, and personalized for everyone. Our founder, Dr. Sarah Johnson, recognized the growing need for preventative healthcare solutions that fit into busy modern lifestyles.",
+        "IVIQ was founded in 2023 with a simple yet powerful vision: to make high-quality IV therapy accessible, convenient, and personalized for everyone. Our founder, Dr. Sarah Johnson, recognized the growing need for preventative healthcare solutions that fit into modern busy lifestyles.",
         "After years of working in emergency medicine, Dr. Johnson saw firsthand how IV therapy could dramatically improve patient outcomes. She realized that many people could benefit from IV therapy not just in emergency situations, but as part of their regular wellness routine.",
         "Today, IVIQ serves hundreds of clients across the metro area, providing everything from hydration therapy to immune support, energy enhancement, and recovery treatments. We're proud to be at the forefront of the mobile healthcare revolution."
       ],
@@ -679,7 +679,7 @@
         },
         {
           "title": "Patient-Centered Care",
-          "description": "Every treatment is personalized to meet your unique health needs and wellness goals."
+          "description": "Every treatment is customized to meet your unique health needs and wellness goals."
         },
         {
           "title": "Convenience",
@@ -699,7 +699,7 @@
           "name": "Dr. Sarah Johnson",
           "title": "Medical Director & Founder",
           "credentials": "MD, Emergency Medicine",
-          "bio": "Dr. Johnson brings over 15 years of emergency medicine experience to IVIQ. She founded the company with a vision to make high-quality IV therapy accessible and convenient for everyone. Her expertise in critical care and patient safety ensures the highest standards of treatment."
+          "bio": "Dr. Johnson brings over 15 years of emergency medicine experience to IVIQ. She founded the company with the vision of making high-quality IV therapy accessible and convenient for everyone. Her expertise in critical care and patient safety ensures the highest standards of treatment."
         },
         {
           "name": "Michael Chen",
@@ -717,20 +717,20 @@
     },
     "certifications": {
       "title": "Certifications & Compliance",
-      "description": "IVIQ maintains the highest standards of medical care and regulatory compliance. We are committed to providing safe, effective treatments while protecting your privacy and health information.",
+      "description": "IVIQ maintains the highest standards of healthcare and regulatory compliance. We're committed to providing safe and effective treatments while protecting your privacy and health information.",
       "items": [
         "Licensed healthcare professionals on staff",
-        "HIPAA compliant privacy practices",
+        "HIPAA-compliant privacy practices",
         "FDA-approved medications and supplies",
-        "State health department regulations compliance",
+        "State health department regulation compliance",
         "Comprehensive liability insurance",
-        "Regular continuing education and training"
+        "Ongoing education and regular training"
       ]
     },
     "serviceAreas": {
       "title": "Service Areas",
-      "subtitle": "We proudly serve the greater metropolitan area, bringing IV therapy directly to your location.",
-      "description": "Our mobile IV therapy service covers a wide area, ensuring that professional healthcare comes to you wherever you are. We serve:",
+      "subtitle": "We proudly serve the greater metro area, bringing IV therapy directly to your location.",
+      "description": "Our mobile IV therapy service covers a wide area, ensuring professional healthcare comes to you wherever you are. We serve:",
       "locations": [
         "Residential homes and apartments",
         "Hotels and resorts",
@@ -738,7 +738,7 @@
         "Event venues",
         "Fitness centers and spas"
       ],
-      "note": "Service area includes the metro area and surrounding suburbs. Contact us to confirm availability in your specific location."
+      "note": "Service area includes the metro area and surrounding suburbs. Contact us to confirm availability for your specific location."
     },
     "cta": {
       "title": "Ready to Experience IVIQ?",
@@ -758,7 +758,7 @@
       "items": [
         {
           "title": "100% Absorption",
-          "description": "IV therapy delivers nutrients directly into your bloodstream, ensuring 100% absorption compared to oral supplements which typically have only 20-50% absorption rates due to the digestive process."
+          "description": "IV therapy delivers nutrients directly to your bloodstream, ensuring 100% absorption compared to oral supplements which typically have only 20-50% absorption rates due to the digestive process."
         },
         {
           "title": "Immediate Effects",
@@ -785,9 +785,9 @@
     "howItWorks": {
       "title": "How IV Therapy Works",
       "description": [
-        "IV therapy works by delivering nutrients directly into your bloodstream, bypassing the digestive system which can reduce the absorption of vitamins and minerals.",
+        "IV therapy works by delivering nutrients directly to your bloodstream, bypassing the digestive system that can reduce the absorption of vitamins and minerals.",
         "When nutrients are delivered intravenously, your body can absorb 100% of what it needs, compared to as little as 20% absorption from oral supplements.",
-        "This direct delivery method allows for higher doses of nutrients to be administered safely and effectively, providing immediate benefits and therapeutic effects that oral supplements simply cannot match."
+        "This direct delivery method allows higher doses of nutrients to be administered safely and effectively, providing immediate benefits and therapeutic effects that oral supplements simply cannot match."
       ],
       "steps": [
         {
@@ -805,7 +805,7 @@
       ]
     },
     "conditions": {
-      "title": "Conditions That Benefit From IV Therapy",
+      "title": "Conditions That Benefit from IV Therapy",
       "subtitle": "IV therapy can help with a wide range of health concerns and wellness goals.",
       "items": [
         {
@@ -818,7 +818,7 @@
           ]
         },
         {
-          "title": "Fatigue & Low Energy",
+          "title": "Fatigue and Low Energy",
           "benefits": [
             "Increased energy levels",
             "Improved mental clarity",
@@ -846,7 +846,13 @@
         },
         {
           "title": "Hangover Relief",
-          "benefits": ["Rapid hydration", "Toxin removal", "Nausea relief", "Headache reduction", "Energy restoration"]
+          "benefits": [
+            "Rapid hydration",
+            "Toxin elimination",
+            "Nausea relief",
+            "Headache reduction",
+            "Energy restoration"
+          ]
         },
         {
           "title": "Skin Health",
@@ -860,14 +866,126 @@
       ]
     },
     "safety": {
-      "title": "Safety & Professional Care",
+      "title": "Safety and Professional Care",
       "description": "At IVIQ, your safety is our top priority. All of our IV therapy treatments are:",
       "items": [
         "Administered by licensed healthcare professionals",
         "Customized based on your health history and needs",
         "Prepared using sterile techniques and medical-grade equipment",
-        "Monitored throughout the treatment process"
+        "Monitored throughout the treatment process",
+        "Compliant with all health and safety regulations"
+      ],
+      "note": "We follow strict protocols to ensure your treatment is both safe and effective. Our team is trained in emergency procedures and carries all necessary medical equipment."
+    },
+    "cta": {
+      "title": "Experience the Benefits Today",
+      "subtitle": "Ready to feel the difference IV therapy can make? Book your appointment now.",
+      "button": "Book Your Appointment"
+    }
+  },
+  "booking": {
+    "title": "Book Your IV Therapy Session",
+    "subtitle": "Schedule your mobile IV therapy appointment and experience the benefits of professional healthcare delivered to your location.",
+    "personal": {
+      "title": "Personal Information",
+      "subtitle": "Please provide your contact information for appointment confirmation.",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "phone": "Phone Number"
+    },
+    "service": {
+      "title": "Select Your Treatment",
+      "subtitle": "Choose your IV therapy treatment and any additional add-ons.",
+      "treatment": "IV Therapy Treatment",
+      "selectTreatment": "Select a treatment",
+      "addons": "Add-ons (Optional)"
+    },
+    "datetime": {
+      "title": "Date & Time",
+      "subtitle": "Select your preferred appointment date and time.",
+      "date": "Preferred Date",
+      "time": "Preferred Time",
+      "selectTime": "Select a time"
+    },
+    "location": {
+      "title": "Service Location",
+      "subtitle": "Where would you like to receive your IV therapy treatment?",
+      "type": "Location Type",
+      "selectType": "Select location type",
+      "types": {
+        "home": "Home/Residence",
+        "hotel": "Hotel",
+        "office": "Office",
+        "event": "Event Venue",
+        "other": "Other"
+      },
+      "address": "Address",
+      "addressPlaceholder": "123 Main Street, Apt 4B",
+      "city": "City",
+      "state": "State",
+      "zipCode": "Zip Code"
+    },
+    "medical": {
+      "title": "Medical Information",
+      "subtitle": "This information helps us provide safe and effective treatment. All information is kept confidential.",
+      "conditions": "Current Medical Conditions",
+      "conditionsPlaceholder": "Please list any current medical conditions, recent surgeries, or ongoing health concerns",
+      "medications": "Current Medications",
+      "medicationsPlaceholder": "Please list all medications, supplements, and vitamins you are currently taking",
+      "allergies": "Allergies",
+      "allergiesPlaceholder": "Please list any known allergies to medications, foods, or other substances"
+    },
+    "emergency": {
+      "title": "Emergency Contact",
+      "subtitle": "Please provide an emergency contact in case we need to reach someone during your treatment.",
+      "name": "Emergency Contact Name",
+      "relationship": "Relationship",
+      "phone": "Phone Number"
+    },
+    "notes": {
+      "title": "Additional Notes",
+      "subtitle": "Is there anything else you'd like us to know about your appointment?",
+      "placeholder": "Any special requests, questions, or additional information you'd like to share..."
+    },
+    "consent": {
+      "title": "Consent and Agreement",
+      "items": [
+        "I confirm that all medical information provided is accurate and complete",
+        "I understand that IV therapy is a medical procedure and carries potential risks",
+        "I agree to the terms of service and privacy policy",
+        "I consent to receive follow-up communications about my appointment"
       ]
+    },
+    "summary": {
+      "title": "Booking Summary",
+      "treatment": "Treatment:",
+      "addons": "Add-ons:",
+      "date": "Date:",
+      "time": "Time:",
+      "location": "Location:",
+      "total": "Total:"
+    },
+    "submit": "Book Appointment",
+    "submitting": "Processing...",
+    "success": {
+      "title": "Booking Confirmed!",
+      "message": "Your IV therapy appointment has been successfully scheduled. You'll receive a confirmation email shortly with all your appointment details.",
+      "next": "What's Next:",
+      "steps": [
+        "You'll receive a confirmation email within 15 minutes",
+        "Our team will contact you 24 hours before your appointment to confirm",
+        "Make sure to stay hydrated and eat before your treatment",
+        "Have your ID and any current medications ready for review"
+      ],
+      "contact": "If you have any questions or need to reschedule, contact us at (555) 123-4567.",
+      "bookAnother": "Book Another Appointment"
+    },
+    "validation": {
+      "required": "This field is required",
+      "email": "Please enter a valid email address",
+      "phone": "Please enter a valid phone number",
+      "consent": "You must agree to the terms to continue"
     }
   }
 }
