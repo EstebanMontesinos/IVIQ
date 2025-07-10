@@ -142,37 +142,60 @@ export default function Home() {
             {[
               {
                 key: "hydration",
-                features: ["1000ml Fluid", "Electrolytes", "B Vitamins", "30-45 min treatment"],
+                features: [
+                  "1000ml " + (t("language") === "es" ? "Fluido" : "Fluid"),
+                  t("language") === "es" ? "Electrolitos" : "Electrolytes",
+                  t("language") === "es" ? "Vitaminas B" : "B Vitamins",
+                  t("language") === "es" ? "Tratamiento de 30-45 min" : "30-45 min treatment",
+                ],
               },
               {
                 key: "immune",
-                features: ["Vitamin C", "Zinc", "Glutathione", "B-Complex", "45-60 min treatment"],
+                features: [
+                  t("language") === "es" ? "Vitamina C" : "Vitamin C",
+                  t("language") === "es" ? "Zinc" : "Zinc",
+                  t("language") === "es" ? "Glutatión" : "Glutathione",
+                  t("language") === "es" ? "Complejo B" : "B-Complex",
+                  t("language") === "es" ? "Tratamiento de 45-60 min" : "45-60 min treatment",
+                ],
               },
               {
                 key: "energy",
-                features: ["B12", "Amino Acids", "Magnesium", "Taurine", "45-60 min treatment"],
+                features: [
+                  "B12",
+                  t("language") === "es" ? "Aminoácidos" : "Amino Acids",
+                  t("language") === "es" ? "Magnesio" : "Magnesium",
+                  t("language") === "es" ? "Taurina" : "Taurine",
+                  t("language") === "es" ? "Tratamiento de 45-60 min" : "45-60 min treatment",
+                ],
               },
               {
                 key: "recovery",
                 features: [
-                  "Anti-nausea medication",
-                  "Pain reliever",
-                  "Electrolytes",
-                  "Antioxidants",
-                  "45-60 min treatment",
+                  t("language") === "es" ? "Medicamento anti-náusea" : "Anti-nausea medication",
+                  t("language") === "es" ? "Analgésico" : "Pain reliever",
+                  t("language") === "es" ? "Electrolitos" : "Electrolytes",
+                  t("language") === "es" ? "Antioxidantes" : "Antioxidants",
+                  t("language") === "es" ? "Tratamiento de 45-60 min" : "45-60 min treatment",
                 ],
               },
               {
                 key: "beauty",
-                features: ["Glutathione", "Biotin", "Vitamin C", "Collagen support", "45-60 min treatment"],
+                features: [
+                  t("language") === "es" ? "Glutatión" : "Glutathione",
+                  t("language") === "es" ? "Biotina" : "Biotin",
+                  t("language") === "es" ? "Vitamina C" : "Vitamin C",
+                  t("language") === "es" ? "Apoyo de colágeno" : "Collagen support",
+                  t("language") === "es" ? "Tratamiento de 45-60 min" : "45-60 min treatment",
+                ],
               },
               {
                 key: "custom",
                 features: [
-                  "Consultation included",
-                  "Customized ingredients",
-                  "Personalized dosing",
-                  "45-60 min treatment",
+                  t("language") === "es" ? "Consulta incluida" : "Consultation included",
+                  t("language") === "es" ? "Ingredientes personalizados" : "Customized ingredients",
+                  t("language") === "es" ? "Dosificación personalizada" : "Personalized dosing",
+                  t("language") === "es" ? "Tratamiento de 45-60 min" : "45-60 min treatment",
                 ],
               },
             ].map((treatment, index) => (

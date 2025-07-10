@@ -1,305 +1,322 @@
 "use client"
 
-import Link from "next/link"
-import Image from "next/image"
+import { useLanguage } from "@/contexts/language-context"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { CheckCircle, Clock, Zap, Shield, Sparkles, Heart } from "lucide-react"
-import { useLanguage } from "@/contexts/language-context"
+import { Droplets, Zap, Shield, Heart, Sparkles, Plus, CheckCircle } from "lucide-react"
+import Link from "next/link"
 
 export default function ServicesPage() {
   const { t } = useLanguage()
 
-  const serviceCategories = [
+  const treatments = [
     {
-      title: "Recovery & Wellness",
-      icon: <Heart className="h-6 w-6" />,
-      color: "bg-green-100 text-green-800",
-      services: [
-        { key: "hangover", image: "/images/iv-hangover-relief.png" },
-        { key: "dehydration", image: "/images/iv-dehydration-recovery.png" },
-        { key: "foodPoisoning", image: "/images/iv-food-poisoning.png" },
-        { key: "myers", image: "/images/iv-myers-cocktail.png" },
-        { key: "jetLag", image: "/images/iv-jet-lag-reset.png" },
+      id: "hangover-relief",
+      name: t("services.formulas.hangover.title") || "IV Hangover Relief",
+      description: t("services.formulas.hangover.description") || "Revive and recover quickly from alcohol consumption",
+      price: t("services.formulas.hangover.price") || "$3,200 MXN",
+      duration: t("services.formulas.hangover.duration") || "45-60 minutes",
+      benefits: t("services.formulas.hangover.benefits") || [
+        "Rapid rehydration and electrolyte restoration",
+        "Complete elimination of acetaldehyde toxins",
+        "Immediate relief from nausea and vomiting",
+        "Significant reduction in headache and body aches",
       ],
+      ingredients: t("services.formulas.hangover.ingredients") || [
+        "1000ml Normal Saline for rapid rehydration",
+        "Ondansetron 4mg (anti-nausea medication)",
+        "Ketorolac 30mg (anti-inflammatory pain relief)",
+        "B-Complex Vitamins (B1, B2, B3, B5, B6)",
+      ],
+      icon: Zap,
+      popular: true,
     },
     {
-      title: "Energy & Performance",
-      icon: <Zap className="h-6 w-6" />,
-      color: "bg-yellow-100 text-yellow-800",
-      services: [
-        { key: "energy", image: "/images/iv-energy-boost.png" },
-        { key: "muscle", image: "/images/iv-muscle-recovery.png" },
-        { key: "iron", image: "/images/iv-iron-recharge.png" },
-        { key: "nad", image: "/images/iv-nad-revival.png" },
+      id: "dehydration-recovery",
+      name: t("services.formulas.dehydration.title") || "IV Dehydration Recovery",
+      description:
+        t("services.formulas.dehydration.description") || "Feel fresh and revitalized with rapid fluid replacement",
+      price: t("services.formulas.dehydration.price") || "$2,200 MXN",
+      duration: t("services.formulas.dehydration.duration") || "30-45 minutes",
+      benefits: t("services.formulas.dehydration.benefits") || [
+        "Immediate fluid volume restoration",
+        "Complete electrolyte balance optimization",
+        "Enhanced cellular hydration and function",
+        "Improved cognitive function and mental clarity",
       ],
+      ingredients: t("services.formulas.dehydration.ingredients") || [
+        "1000ml Lactated Ringer's Solution",
+        "Sodium Chloride 154mEq/L",
+        "Potassium Chloride 4mEq/L",
+        "Magnesium Chloride 2mEq/L",
+      ],
+      icon: Droplets,
     },
     {
-      title: "Immune Support",
-      icon: <Shield className="h-6 w-6" />,
-      color: "bg-blue-100 text-blue-800",
-      services: [
-        { key: "antiviral", image: "/images/iv-antiviral-defense.png" },
-        { key: "immune", image: "/images/iv-immune-shield.png" },
-        { key: "megaC", image: "/images/iv-megadose-vitamin-c.png" },
+      id: "immune-shield",
+      name: t("services.formulas.immune.title") || "IV Immune Shield",
+      description:
+        t("services.formulas.immune.description") || "Comprehensive immune system support with essential nutrients",
+      price: t("services.formulas.immune.price") || "$2,600 MXN",
+      duration: t("services.formulas.immune.duration") || "45-60 minutes",
+      benefits: t("services.formulas.immune.benefits") || [
+        "Strengthened immune system function",
+        "Enhanced antibody production and response",
+        "Improved resistance to infections",
+        "Faster recovery from colds, flu, and viruses",
       ],
+      ingredients: t("services.formulas.immune.ingredients") || [
+        "Vitamin C 5-10g",
+        "Zinc Sulfate 10mg",
+        "Glutathione 600mg",
+        "B-Complex Vitamins",
+      ],
+      icon: Shield,
     },
     {
-      title: "Detox & Anti-Aging",
-      icon: <Sparkles className="h-6 w-6" />,
-      color: "bg-purple-100 text-purple-800",
-      services: [
-        { key: "detox", image: "/images/iv-full-body-detox.png" },
-        { key: "heavyMetal", image: "/images/iv-heavy-metal-cleanse.png" },
-        { key: "glutathione", image: "/images/iv-glutathione-glow.png" },
-        { key: "antiInflammatory", image: "/images/iv-anti-inflammatory.png" },
+      id: "energy-boost",
+      name: t("services.formulas.energy.title") || "IV Energy Boost",
+      description:
+        t("services.formulas.energy.description") ||
+        "Combat fatigue and low energy with scientifically formulated blend",
+      price: t("services.formulas.energy.price") || "$2,500 MXN",
+      duration: t("services.formulas.energy.duration") || "45-60 minutes",
+      benefits: t("services.formulas.energy.benefits") || [
+        "Significant increase in energy levels",
+        "Enhanced mental clarity and cognitive focus",
+        "Improved physical endurance and vigor",
+        "Better mood regulation and motivation",
       ],
+      ingredients: t("services.formulas.energy.ingredients") || [
+        "Vitamin B12 5000mcg",
+        "B-Complex Vitamins",
+        "Taurine 500mg",
+        "L-Carnitine 500mg",
+      ],
+      icon: Zap,
     },
     {
-      title: "Premium Rejuvenation",
-      icon: <Sparkles className="h-6 w-6" />,
-      color: "bg-pink-100 text-pink-800",
-      services: [
-        { key: "rejuvenation", image: "/images/iv-rejuvenation.png" },
-        { key: "rejuvenationExtra", image: "/images/iv-rejuvenation-extra.png" },
+      id: "muscle-recovery",
+      name: t("services.formulas.muscle.title") || "IV Muscle Recovery",
+      description: t("services.formulas.muscle.description") || "Optimize athletic performance and recovery",
+      price: t("services.formulas.muscle.price") || "$2,600 MXN",
+      duration: t("services.formulas.muscle.duration") || "60-75 minutes",
+      benefits: t("services.formulas.muscle.benefits") || [
+        "Accelerated muscle tissue repair",
+        "Reduced exercise-induced inflammation",
+        "Enhanced protein synthesis and muscle building",
+        "Improved athletic performance and power output",
       ],
+      ingredients: t("services.formulas.muscle.ingredients") || [
+        "Branched-Chain Amino Acids (BCAAs) 10g",
+        "L-Glutamine 5g",
+        "Creatine Monohydrate 3g",
+        "Magnesium Sulfate 3g",
+      ],
+      icon: Heart,
+    },
+    {
+      id: "glutathione-glow",
+      name: t("services.formulas.glutathione.title") || "IV Glutathione Glow",
+      description:
+        t("services.formulas.glutathione.description") ||
+        "Master antioxidant therapy for cellular detoxification and radiant skin",
+      price: t("services.formulas.glutathione.price") || "$2,700 MXN",
+      duration: t("services.formulas.glutathione.duration") || "45-60 minutes",
+      benefits: t("services.formulas.glutathione.benefits") || [
+        "Skin lightening and brightening effects",
+        "Powerful cellular detoxification",
+        "Enhanced immune system function",
+        "Reduced signs of aging and wrinkles",
+      ],
+      ingredients: t("services.formulas.glutathione.ingredients") || [
+        "High-Dose Glutathione 1500mg",
+        "Vitamin C 5g",
+        "Biotin 10mg",
+        "B-Complex Vitamins",
+      ],
+      icon: Sparkles,
     },
   ]
 
   const addOns = [
     {
-      title: "Vitamin B12 Boost",
-      description: "Extra energy and metabolism support.",
-      price: "$25",
+      name: "Vitamin B12 Boost",
+      description: "Enhanced energy and metabolism support",
+      price: "$300 MXN",
     },
     {
-      title: "Glutathione Push",
-      description: "Master antioxidant for detoxification and skin brightening.",
-      price: "$35",
+      name: "Glutathione Push",
+      description: "Master antioxidant for detoxification",
+      price: "$500 MXN",
     },
     {
-      title: "Extra Vitamin C",
-      description: "Additional immune and collagen support.",
-      price: "$25",
+      name: "Extra Vitamin C",
+      description: "Additional immune system support",
+      price: "$250 MXN",
     },
     {
-      title: "Zinc Boost",
-      description: "Enhanced immune function and wound healing.",
-      price: "$20",
+      name: "Zinc Boost",
+      description: "Immune function and wound healing",
+      price: "$200 MXN",
     },
     {
-      title: "Anti-Nausea Medication",
-      description: "Relief from nausea and stomach discomfort.",
-      price: "$30",
+      name: "Anti-Nausea Medication",
+      description: "Relief from nausea and vomiting",
+      price: "$300 MXN",
     },
     {
-      title: "Pain Reliever",
-      description: "Non-narcotic pain relief for headaches or discomfort.",
-      price: "$30",
+      name: "Pain Reliever",
+      description: "Anti-inflammatory pain management",
+      price: "$300 MXN",
+    },
+    {
+      name: "Magnesium Boost",
+      description: "Muscle relaxation and nerve function",
+      price: "$250 MXN",
+    },
+    {
+      name: "Biotin Beauty Boost",
+      description: "Hair, skin, and nail health",
+      price: "$350 MXN",
     },
   ]
 
   return (
-    <>
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 bg-muted">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">{t("services.title")}</h1>
-            <p className="text-lg text-muted-foreground mb-8">{t("services.subtitle")}</p>
-            <Button asChild>
-              <Link href="/book">{t("services.bookNow")}</Link>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">{t("services.title") || "Our IV Therapy Services"}</h1>
+            <p className="text-lg text-muted-foreground mb-8">
+              {t("services.subtitle") ||
+                "Discover our comprehensive range of premium mobile IV therapy treatments designed to enhance your health and wellness."}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Treatments Section */}
+      <section className="py-16 md:py-24">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("treatments.title") || "Our Popular Treatments"}</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t("treatments.subtitle") ||
+                "Customized IV therapy treatments to meet your specific health and wellness needs."}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {treatments.map((treatment) => {
+              const IconComponent = treatment.icon
+              return (
+                <Card
+                  key={treatment.id}
+                  className="relative overflow-hidden hover:shadow-xl transition-all duration-300 group flex flex-col"
+                >
+                  {treatment.popular && (
+                    <Badge className="absolute top-4 right-4 z-10 bg-gradient-to-r from-orange-500 to-pink-500">
+                      {t("common.popular") || "Popular"}
+                    </Badge>
+                  )}
+
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-2 bg-primary/10 rounded-lg">
+                        <IconComponent className="h-6 w-6 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <CardTitle className="text-xl mb-1">{treatment.name}</CardTitle>
+                        <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                          <span className="font-semibold text-primary text-lg">{treatment.price}</span>
+                          <span>{treatment.duration}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <CardDescription className="text-gray-600 line-clamp-3">{treatment.description}</CardDescription>
+                  </CardHeader>
+
+                  <CardContent className="flex-1">
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-600" />
+                          {t("services.keyIngredients") || "Key Ingredients"}:
+                        </h4>
+                        <ul className="space-y-1">
+                          {Array.isArray(treatment.ingredients)
+                            ? treatment.ingredients.slice(0, 3).map((ingredient, index) => (
+                                <li key={index} className="text-sm text-gray-600 flex items-start">
+                                  <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2 flex-shrink-0 mt-2" />
+                                  {ingredient}
+                                </li>
+                              ))
+                            : null}
+                        </ul>
+                      </div>
+
+                      <div>
+                        <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-600" />
+                          {t("services.benefits") || "Key Benefits"}:
+                        </h4>
+                        <ul className="space-y-1">
+                          {Array.isArray(treatment.benefits)
+                            ? treatment.benefits.slice(0, 3).map((benefit, index) => (
+                                <li key={index} className="text-sm text-gray-600 flex items-start">
+                                  <div className="w-1.5 h-1.5 bg-green-600 rounded-full mr-2 flex-shrink-0 mt-2" />
+                                  {benefit}
+                                </li>
+                              ))
+                            : null}
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="mt-6 pt-4 border-t">
+                      <Button className="w-full" asChild>
+                        <Link href="/book">{t("services.bookThis") || "Book This Treatment"}</Link>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              )
+            })}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" variant="outline" asChild>
+              <Link href="/pricing">{t("treatments.viewAll") || "View All Pricing"}</Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Services by Category */}
-      <section className="py-16 md:py-24">
-        <div className="container">
-          {serviceCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="mb-20">
-              <div className="text-center mb-12">
-                <div className="flex items-center justify-center gap-3 mb-4">
-                  <Badge className={`${category.color} px-4 py-2 text-sm font-medium`}>
-                    {category.icon}
-                    <span className="ml-2">{category.title}</span>
-                  </Badge>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {category.services.map((service, index) => {
-                  const serviceData = {
-                    title: t(`services.formulas.${service.key}.title`),
-                    description: t(`services.formulas.${service.key}.description`),
-                    price: t(`services.formulas.${service.key}.price`),
-                    duration: t(`services.formulas.${service.key}.duration`),
-                    ingredients: t(`services.formulas.${service.key}.ingredients`),
-                    benefits: t(`services.formulas.${service.key}.benefits`),
-                  }
-
-                  return (
-                    <Card key={index} className="flex flex-col h-full hover:shadow-lg transition-shadow">
-                      {/* Service Image */}
-                      <div className="relative h-48 overflow-hidden rounded-t-lg">
-                        <Image
-                          src={service.image || "/placeholder.svg?height=200&width=400"}
-                          alt={serviceData.title}
-                          fill
-                          className="object-cover transition-transform hover:scale-105"
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        />
-                      </div>
-
-                      <CardHeader className="pb-3">
-                        <div className="flex items-start justify-between">
-                          <CardTitle className="text-xl leading-tight">{serviceData.title}</CardTitle>
-                          <Badge variant="secondary" className="ml-2 shrink-0">
-                            {serviceData.price}
-                          </Badge>
-                        </div>
-                        <CardDescription className="text-sm leading-relaxed line-clamp-3">
-                          {serviceData.description}
-                        </CardDescription>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <Clock className="h-4 w-4" />
-                          <span>{serviceData.duration}</span>
-                        </div>
-                      </CardHeader>
-
-                      <CardContent className="flex-1 flex flex-col pt-0">
-                        <div className="mb-4 flex-1">
-                          <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
-                            <CheckCircle className="h-4 w-4 text-primary" />
-                            {t("services.keyIngredients")}
-                          </h4>
-                          <ul className="space-y-1 text-sm">
-                            {Array.isArray(serviceData.ingredients) ? (
-                              serviceData.ingredients.slice(0, 3).map((ingredient, i) => (
-                                <li key={i} className="text-muted-foreground">
-                                  • {ingredient}
-                                </li>
-                              ))
-                            ) : (
-                              <li className="text-muted-foreground">• {serviceData.ingredients}</li>
-                            )}
-                            {Array.isArray(serviceData.ingredients) && serviceData.ingredients.length > 3 && (
-                              <li className="text-xs text-muted-foreground italic">
-                                +{serviceData.ingredients.length - 3} more ingredients
-                              </li>
-                            )}
-                          </ul>
-                        </div>
-
-                        <div className="mb-6">
-                          <h4 className="text-sm font-semibold mb-2 flex items-center gap-2">
-                            <Zap className="h-4 w-4 text-primary" />
-                            {t("services.benefits")}
-                          </h4>
-                          <ul className="space-y-1 text-sm">
-                            {Array.isArray(serviceData.benefits) ? (
-                              serviceData.benefits.slice(0, 3).map((benefit, i) => (
-                                <li key={i} className="text-muted-foreground">
-                                  • {benefit}
-                                </li>
-                              ))
-                            ) : (
-                              <li className="text-muted-foreground">• {serviceData.benefits}</li>
-                            )}
-                            {Array.isArray(serviceData.benefits) && serviceData.benefits.length > 3 && (
-                              <li className="text-xs text-muted-foreground italic">
-                                +{serviceData.benefits.length - 3} more benefits
-                              </li>
-                            )}
-                          </ul>
-                        </div>
-
-                        <Button className="w-full mt-auto" asChild>
-                          <Link href={`/book?service=${service.key}`}>{t("services.bookThis")}</Link>
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  )
-                })}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Featured Service Spotlight */}
+      {/* Add-ons Section */}
       <section className="py-16 md:py-24 bg-muted">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("services.featured.title")}</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t("services.featured.subtitle")}</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("services.addons.title") || "Optional Add-ons"}</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t("services.addons.subtitle") || "Enhance your IV therapy experience with these beneficial add-ons."}
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-96 lg:h-[500px] overflow-hidden rounded-lg">
-              <Image
-                src="/images/megaboost-iv-bag.png"
-                alt="MegaBoost IV Treatment"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-
-            <div className="space-y-6">
-              <Badge className="bg-primary/10 text-primary px-4 py-2">{t("services.featured.badge")}</Badge>
-              <h3 className="text-2xl md:text-3xl font-bold">{t("services.featured.name")}</h3>
-              <p className="text-lg text-muted-foreground">{t("services.featured.description")}</p>
-
-              <div className="space-y-4">
-                <h4 className="text-lg font-semibold flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-primary" />
-                  {t("services.keyIngredients")}
-                </h4>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• High-dose Vitamin C (2000mg)</li>
-                  <li>• B-Complex vitamins</li>
-                  <li>• Magnesium & Zinc</li>
-                  <li>• Glutathione boost</li>
-                  <li>• Essential amino acids</li>
-                </ul>
-              </div>
-
-              <div className="flex items-center gap-4 pt-4">
-                <div className="text-3xl font-bold text-primary">$199</div>
-                <div className="text-sm text-muted-foreground">
-                  <Clock className="h-4 w-4 inline mr-1" />
-                  45-60 minutes
-                </div>
-              </div>
-
-              <Button size="lg" asChild>
-                <Link href="/book?service=energy">{t("services.bookThis")}</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Add-Ons Section */}
-      <section className="py-16 md:py-24">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("services.addOns.title")}</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{t("services.addOns.subtitle")}</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {addOns.map((addOn, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <CardTitle className="text-lg">{addOn.title}</CardTitle>
-                  <div className="text-2xl font-bold text-primary">{addOn.price}</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {addOns.map((addon, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Plus className="h-5 w-5 text-primary" />
+                    <CardTitle className="text-lg">{addon.name}</CardTitle>
+                  </div>
+                  {addon.price && <div className="text-sm font-semibold text-primary">{addon.price}</div>}
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">{addOn.description}</p>
+                  <p className="text-sm text-muted-foreground">{addon.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -307,21 +324,79 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
-        <div className="container text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("services.cta.title")}</h2>
-          <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">{t("services.cta.subtitle")}</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" asChild>
-              <Link href="/book">{t("services.cta.bookNow")}</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link href="/pricing">{t("services.cta.viewPricing")}</Link>
-            </Button>
+      {/* Process Section */}
+      <section className="py-16 md:py-24">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("services.process.title") || "How It Works"}</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t("services.process.subtitle") || "Simple steps to get your IV therapy treatment"}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-primary">1</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">{t("services.process.step1.title") || "Book Online"}</h3>
+              <p className="text-muted-foreground">
+                {t("services.process.step1.description") ||
+                  "Choose your treatment and schedule your appointment online"}
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-primary">2</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">{t("services.process.step2.title") || "We Come to You"}</h3>
+              <p className="text-muted-foreground">
+                {t("services.process.step2.description") ||
+                  "Our licensed professionals arrive at your location with all equipment"}
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-primary">3</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">{t("services.process.step3.title") || "Relax & Recover"}</h3>
+              <p className="text-muted-foreground">
+                {t("services.process.step3.description") ||
+                  "Relax while receiving your personalized IV therapy treatment"}
+              </p>
+            </div>
           </div>
         </div>
       </section>
-    </>
+
+      {/* CTA Section */}
+      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              {t("services.cta.title") || "Ready to Experience the Benefits?"}
+            </h2>
+            <p className="text-xl mb-8 opacity-90">
+              {t("services.cta.subtitle") || "Book your mobile IV therapy session today and start feeling better."}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" variant="secondary" className="text-primary">
+                <Link href="/book">{t("services.bookNow") || "Book Now"}</Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
+              >
+                <Link href="/pricing">{t("services.viewPricing") || "View Pricing"}</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }

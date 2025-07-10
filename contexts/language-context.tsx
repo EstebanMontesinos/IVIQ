@@ -7,7 +7,7 @@ type Language = "en" | "es"
 interface LanguageContextType {
   language: Language
   setLanguage: (lang: Language) => void
-  t: (key: string) => string
+  t: (key: string) => any
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
@@ -23,30 +23,32 @@ const dictionaries = {
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>("en")
-  const [isLoaded, setIsLoaded] = useState(false)
+  const [isHydrated, setIsHydrated] = useState(false)
 
-  // Load language from localStorage on mount
+  // Load language from localStorage on mount (client-side only)
   useEffect(() => {
-    const savedLanguage = localStorage.getItem("language") as Language
-    if (savedLanguage && ["en", "es"].includes(savedLanguage)) {
-      setLanguageState(savedLanguage)
+    if (typeof window !== "undefined") {
+      const savedLanguage = localStorage.getItem("language") as Language
+      if (savedLanguage && ["en", "es"].includes(savedLanguage)) {
+        setLanguageState(savedLanguage)
+      }
+      setIsHydrated(true)
     }
-    setIsLoaded(true)
   }, [])
 
-  // Save language to localStorage when it changes
+  // Save language to localStorage when it changes (client-side only)
   useEffect(() => {
-    if (isLoaded) {
+    if (typeof window !== "undefined" && isHydrated) {
       localStorage.setItem("language", language)
     }
-  }, [language, isLoaded])
+  }, [language, isHydrated])
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang)
   }
 
-  // Translation function
-  const t = (key: string): string => {
+  // Enhanced translation function that handles nested objects and arrays
+  const t = (key: string): any => {
     const keys = key.split(".")
     let value: any = dictionaries[language]
 
@@ -55,24 +57,19 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         value = value[k]
       } else {
         // Fallback to English if key not found
-        value = dictionaries.en
+        let fallbackValue: any = dictionaries.en
         for (const fallbackKey of keys) {
-          if (value && typeof value === "object" && fallbackKey in value) {
-            value = value[fallbackKey]
+          if (fallbackValue && typeof fallbackValue === "object" && fallbackKey in fallbackValue) {
+            fallbackValue = fallbackValue[fallbackKey]
           } else {
             return key // Return key if not found in fallback
           }
         }
-        break
+        return fallbackValue
       }
     }
 
-    return typeof value === "string" ? value : key
-  }
-
-  // Don't render until language is loaded from localStorage
-  if (!isLoaded) {
-    return null
+    return value !== undefined ? value : key
   }
 
   return <LanguageContext.Provider value={{ language, setLanguage, t }}>{children}</LanguageContext.Provider>
