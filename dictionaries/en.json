@@ -1,0 +1,873 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "pricing": "Pricing",
+    "benefits": "Benefits",
+    "about": "About Us",
+    "book": "Book Now"
+  },
+  "hero": {
+    "title": "Premium IV Therapy Delivered To You",
+    "subtitle": "Experience the benefits of IV therapy in the comfort of your home or hotel with our mobile service.",
+    "bookNow": "Book Now",
+    "viewServices": "View Services"
+  },
+  "features": {
+    "title": "Why Choose IVIQ?",
+    "subtitle": "We bring professional IV therapy services directly to you, providing convenience without compromising on quality.",
+    "convenient": {
+      "title": "Convenient & Time-Saving",
+      "description": "No need to travel or wait in clinics. We come to you at your preferred time and location."
+    },
+    "mobile": {
+      "title": "Mobile Service",
+      "description": "Available at your home, hotel, office, or event. Our mobile service covers the entire metro area."
+    },
+    "professional": {
+      "title": "Professional Care",
+      "description": "All treatments are administered by licensed healthcare professionals with extensive experience."
+    }
+  },
+  "services": {
+    "title": "Our IV Therapy Services",
+    "subtitle": "Discover our comprehensive range of premium mobile IV therapy treatments designed to enhance your health and wellness.",
+    "bookNow": "Book Now",
+    "bookThis": "Book This Treatment",
+    "keyIngredients": "Key Ingredients:",
+    "benefits": "Primary Benefits:",
+    "duration": "Treatment Duration:",
+    "addons": {
+      "title": "Optional Add-ons",
+      "subtitle": "Enhance your IV therapy experience with these beneficial add-ons."
+    },
+    "cta": {
+      "title": "Ready to Experience the Benefits?",
+      "subtitle": "Book your mobile IV therapy session today and start feeling your best."
+    },
+    "formulas": {
+      "hangover": {
+        "title": "IV Hangover Relief",
+        "description": "Revive and recover quickly from alcohol consumption. This therapy detoxifies your body, eliminates toxins, and rehydrates effectively, providing rapid relief from hangover symptoms.",
+        "price": "$179",
+        "duration": "45-60 minutes",
+        "ingredients": [
+          "1000ml Normal Saline for rapid rehydration",
+          "Ondansetron 4mg (Anti-nausea medication)",
+          "Ketorolac 30mg (Anti-inflammatory pain relief)",
+          "B-Complex Vitamins (B1, B2, B3, B5, B6)",
+          "Magnesium Sulfate 2g (muscle relaxation)",
+          "Zinc Sulfate 5mg (liver support)",
+          "Thiamine 100mg (alcohol metabolism support)"
+        ],
+        "benefits": [
+          "Rapid rehydration and electrolyte restoration",
+          "Complete elimination of acetaldehyde toxins",
+          "Immediate relief from nausea and vomiting",
+          "Significant reduction of headache and body aches",
+          "Restoration of energy levels within 30 minutes",
+          "Enhanced liver detoxification and recovery",
+          "Prevention of prolonged hangover symptoms"
+        ]
+      },
+      "dehydration": {
+        "title": "IV Dehydration Recovery",
+        "description": "Feel refreshed and revitalized with rapid fluid replacement. Replenish electrolytes, boost energy, and improve your mood with this essential hydration therapy.",
+        "price": "$149",
+        "duration": "30-45 minutes",
+        "ingredients": [
+          "1000ml Lactated Ringer's Solution",
+          "Sodium Chloride 154mEq/L (cellular hydration)",
+          "Potassium Chloride 4mEq/L (muscle function)",
+          "Magnesium Chloride 2mEq/L (enzyme activation)",
+          "Calcium Gluconate 100mg (nerve function)",
+          "B-Complex Vitamins for energy metabolism",
+          "Dextrose 5% (immediate energy source)"
+        ],
+        "benefits": [
+          "Immediate restoration of fluid volume (within 15 minutes)",
+          "Complete electrolyte balance optimization",
+          "Enhanced cellular hydration and function",
+          "Improved cognitive function and mental clarity",
+          "Increased energy levels and physical alertness",
+          "Better mood regulation and emotional stability",
+          "Optimized kidney and cardiovascular function"
+        ]
+      },
+      "foodPoisoning": {
+        "title": "IV Food Poisoning & Stomach Flu Recovery",
+        "description": "Accelerate recovery from gastrointestinal distress. This therapy helps heal your stomach lining and is ideal for treating food poisoning and all gastrointestinal symptoms.",
+        "price": "$199",
+        "duration": "45-60 minutes",
+        "ingredients": [
+          "1000ml Normal Saline with electrolytes",
+          "Ondansetron 8mg (powerful anti-nausea)",
+          "Famotidine 20mg (stomach acid reducer)",
+          "B-Complex Vitamins (digestive support)",
+          "Vitamin C 1000mg (immune support)",
+          "Magnesium Sulfate 1g (muscle relaxation)",
+          "Prochlorperazine 10mg (severe nausea relief)"
+        ],
+        "benefits": [
+          "Rapid relief from nausea and vomiting (within 20 minutes)",
+          "Stomach lining protection and accelerated healing",
+          "Complete restoration of lost fluids and nutrients",
+          "Improved digestive function and gut health",
+          "Accelerated recovery time (50% faster)",
+          "Prevention of severe dehydration complications",
+          "Enhanced immune response to fight infection"
+        ]
+      },
+      "myers": {
+        "title": "IV Myers Cocktail",
+        "description": "The gold standard of IV therapy. This classic formula boosts red blood cell production, accelerates muscle recovery, improves sleep quality, and strengthens your immune system.",
+        "price": "$189",
+        "duration": "45-60 minutes",
+        "ingredients": [
+          "Magnesium Chloride 2-5g (muscle and nerve function)",
+          "Calcium Gluconate 100-200mg (bone and muscle health)",
+          "Vitamin B Complex (energy metabolism)",
+          "Vitamin B12 1000mcg (red blood cell production)",
+          "Vitamin C 5-15g (immune and collagen support)",
+          "Normal Saline 250-1000ml (hydration base)",
+          "Pyridoxine 100mg (neurotransmitter synthesis)"
+        ],
+        "benefits": [
+          "Enhanced immune system function (40% improvement)",
+          "Improved energy metabolism and ATP production",
+          "Better sleep quality and REM cycle regulation",
+          "Reduced muscle fatigue and faster recovery",
+          "Increased red blood cell production and oxygen delivery",
+          "Support for chronic fatigue syndrome symptoms",
+          "Enhanced overall wellness and vitality"
+        ]
+      },
+      "energy": {
+        "title": "IV Energy Boost",
+        "description": "Combat fatigue and low energy with a scientifically formulated blend of IV fluids, electrolytes, vitamins, and antioxidants designed to revitalize your body at the cellular level.",
+        "price": "$199",
+        "duration": "45-60 minutes",
+        "ingredients": [
+          "Vitamin B12 5000mcg (methylcobalamin form)",
+          "B-Complex Vitamins (thiamine, riboflavin, niacin)",
+          "Taurine 500mg (cellular energy production)",
+          "L-Carnitine 500mg (fat metabolism)",
+          "CoQ10 100mg (mitochondrial function)",
+          "Alpha-Lipoic Acid 300mg (antioxidant)",
+          "Magnesium Sulfate 2g (enzyme cofactor)"
+        ],
+        "benefits": [
+          "Significant increase in energy levels (up to 8 hours)",
+          "Enhanced mental clarity and cognitive focus",
+          "Improved physical endurance and stamina",
+          "Better mood regulation and motivation",
+          "Optimized cellular energy production (ATP synthesis)",
+          "Reduced chronic fatigue symptoms",
+          "Enhanced exercise performance and recovery"
+        ]
+      },
+      "muscle": {
+        "title": "IV Muscle Recovery",
+        "description": "Optimize athletic performance and recovery. This therapy enhances muscle regeneration, reduces inflammation, and includes amino acids and nutrients essential for peak physical condition.",
+        "price": "$219",
+        "duration": "60-75 minutes",
+        "ingredients": [
+          "Branched-Chain Amino Acids (BCAA) 10g",
+          "L-Glutamine 5g (muscle repair)",
+          "Creatine Monohydrate 3g (energy storage)",
+          "Magnesium Sulfate 3g (muscle function)",
+          "Vitamin C 2g (collagen synthesis)",
+          "B-Complex Vitamins (protein metabolism)",
+          "Zinc Sulfate 15mg (tissue repair)"
+        ],
+        "benefits": [
+          "Accelerated muscle tissue repair (50% faster)",
+          "Reduced exercise-induced inflammation",
+          "Enhanced protein synthesis and muscle building",
+          "Improved athletic performance and power output",
+          "Faster recovery between intense workouts",
+          "Prevention of muscle breakdown (catabolism)",
+          "Reduced delayed onset muscle soreness (DOMS)"
+        ]
+      },
+      "antiviral": {
+        "title": "IV Antiviral Defense",
+        "description": "Strengthen your body's natural defense against viral infections. This powerful formula uses high-dose vitamin C and zinc to target pathogens and enhance immune response.",
+        "price": "$209",
+        "duration": "60-75 minutes",
+        "ingredients": [
+          "High-dose Vitamin C 10-25g (immune enhancement)",
+          "Zinc Sulfate 15mg (antiviral properties)",
+          "Glutathione 1200mg (master antioxidant)",
+          "Selenium 200mcg (immune function)",
+          "B-Complex Vitamins (cellular energy)",
+          "Magnesium Sulfate 2g (enzyme function)",
+          "Lysine 1g (viral replication inhibitor)"
+        ],
+        "benefits": [
+          "Enhanced antiviral immune response (3x stronger)",
+          "Reduced viral replication and load",
+          "Shortened duration of illness (by 2-3 days)",
+          "Improved white blood cell function",
+          "Powerful antioxidant protection against free radicals",
+          "Support for respiratory health and function",
+          "Prevention of secondary bacterial infections"
+        ]
+      },
+      "immune": {
+        "title": "IV Immune Shield",
+        "description": "Comprehensive immune system support with essential nutrients. This therapy strengthens your body's defenses, helping you recover from infections while promoting long-term wellness.",
+        "price": "$189",
+        "duration": "45-60 minutes",
+        "ingredients": [
+          "Vitamin C 5-10g (immune cell activation)",
+          "Zinc Sulfate 10mg (immune function)",
+          "Glutathione 600mg (cellular protection)",
+          "B-Complex Vitamins (energy for immune cells)",
+          "Selenium 100mcg (antioxidant enzyme)",
+          "Vitamin D3 5000 IU (immune regulation)",
+          "Magnesium Chloride 2g (immune cell function)"
+        ],
+        "benefits": [
+          "Strengthened immune system function (60% improvement)",
+          "Enhanced antibody production and response",
+          "Improved resistance to infections",
+          "Faster recovery from colds, flu, and viruses",
+          "Reduced oxidative stress and inflammation",
+          "Long-term immune health maintenance",
+          "Better seasonal allergy management"
+        ]
+      },
+      "megaC": {
+        "title": "IV Megadose Vitamin C",
+        "description": "High-dose vitamin C therapy for maximum immune support and detoxification. This treatment acts as a powerful antioxidant, promoting cellular repair and enhancing overall vitality.",
+        "price": "$229",
+        "duration": "60-90 minutes",
+        "ingredients": [
+          "High-dose Vitamin C 25-50g (maximum therapeutic dose)",
+          "Magnesium Chloride 3g (cofactor for vitamin C)",
+          "Calcium Gluconate 200mg (cellular stability)",
+          "B-Complex Vitamins (cellular energy)",
+          "Glutathione 600mg (antioxidant synergy)",
+          "Normal Saline 1000ml (dilution and hydration)"
+        ],
+        "benefits": [
+          "Maximum antioxidant protection (10x normal levels)",
+          "Enhanced collagen synthesis for skin and joints",
+          "Improved immune system function",
+          "Powerful cellular detoxification",
+          "Anti-aging effects at cellular level",
+          "Support for cancer treatment recovery",
+          "Enhanced wound healing and tissue repair"
+        ]
+      },
+      "detox": {
+        "title": "IV Full Body Detox",
+        "description": "Comprehensive cellular detoxification to eliminate harmful toxins. This therapy enhances liver function, boosts your immune system, and restores your body's natural balance.",
+        "price": "$249",
+        "duration": "60-75 minutes",
+        "ingredients": [
+          "Glutathione 1200mg (master detoxifier)",
+          "Alpha-Lipoic Acid 300mg (universal antioxidant)",
+          "Vitamin C 5g (immune and detox support)",
+          "B-Complex Vitamins (liver metabolism)",
+          "Magnesium Sulfate 2g (enzyme activation)",
+          "Selenium 200mcg (glutathione recycling)",
+          "N-Acetylcysteine 600mg (glutathione precursor)"
+        ],
+        "benefits": [
+          "Enhanced liver detoxification (Phase I & II pathways)",
+          "Elimination of free radicals and toxins",
+          "Improved cellular energy production",
+          "Better skin health and radiant appearance",
+          "Reduced inflammation markers (CRP, IL-6)",
+          "Optimized metabolic function",
+          "Enhanced mental clarity and focus"
+        ]
+      },
+      "heavyMetal": {
+        "title": "IV Heavy Metal Cleanse",
+        "description": "Specialized chelation therapy to remove heavy metals and environmental toxins. This treatment improves circulation, reduces inflammation, and supports overall health.",
+        "price": "$279",
+        "duration": "75-90 minutes",
+        "ingredients": [
+          "EDTA 1-3g (heavy metal chelation)",
+          "Glutathione 1500mg (cellular protection)",
+          "Vitamin C 10g (antioxidant support)",
+          "Alpha-Lipoic Acid 600mg (metal binding)",
+          "Selenium 300mcg (mercury protection)",
+          "B-Complex Vitamins (nervous system support)",
+          "Magnesium Sulfate 3g (cardiovascular support)"
+        ],
+        "benefits": [
+          "Removal of lead, mercury, cadmium, and arsenic",
+          "Improved cardiovascular health and circulation",
+          "Enhanced cognitive function and memory",
+          "Reduced oxidative stress and inflammation",
+          "Better circulation and blood flow",
+          "Support for neurological health",
+          "Improved energy and vitality"
+        ]
+      },
+      "glutathione": {
+        "title": "IV Glutathione Glow",
+        "description": "Master antioxidant therapy for cellular detoxification and radiant skin. This treatment boosts immunity, reduces oxidative stress, and enhances your natural glow from within.",
+        "price": "$239",
+        "duration": "45-60 minutes",
+        "ingredients": [
+          "High-dose Glutathione 1500mg (reduced form)",
+          "Vitamin C 5g (glutathione recycling)",
+          "Biotin 10mg (skin and hair health)",
+          "B-Complex Vitamins (cellular energy)",
+          "Alpha-Lipoic Acid 300mg (antioxidant)",
+          "Selenium 200mcg (glutathione enzyme)"
+        ],
+        "benefits": [
+          "Skin brightening and whitening effects (visible in 3-5 sessions)",
+          "Powerful cellular detoxification",
+          "Enhanced immune system function",
+          "Reduced signs of aging and wrinkles",
+          "Improved skin elasticity and texture",
+          "Protection against UV damage",
+          "Enhanced liver function and detox"
+        ]
+      },
+      "antiInflammatory": {
+        "title": "IV Anti-Inflammatory",
+        "description": "Advanced inflammation reduction therapy combining curcumin, glutathione, and targeted nutrients to combat oxidative stress and support tissue repair for chronic and acute conditions.",
+        "price": "$229",
+        "duration": "60-75 minutes",
+        "ingredients": [
+          "Curcumin 500mg (potent anti-inflammatory)",
+          "Glutathione 1000mg (oxidative stress reduction)",
+          "Vitamin C 5g (collagen synthesis)",
+          "Magnesium Sulfate 2g (muscle relaxation)",
+          "Quercetin 250mg (natural antihistamine)",
+          "B-Complex Vitamins (cellular repair)",
+          "Omega-3 fatty acids 1g (inflammation resolution)"
+        ],
+        "benefits": [
+          "Significant inflammation reduction (CRP levels drop 40-60%)",
+          "Pain relief for chronic conditions (arthritis, fibromyalgia)",
+          "Enhanced tissue repair and healing",
+          "Improved joint mobility and flexibility",
+          "Reduced inflammatory markers throughout body",
+          "Support for autoimmune conditions",
+          "Better exercise recovery and performance"
+        ]
+      },
+      "jetLag": {
+        "title": "IV Jet Lag Reset",
+        "description": "Restore your natural circadian rhythm quickly and effectively. This specialized therapy contains melatonin, vitamins, and relaxants to help reset your sleep cycle after travel.",
+        "price": "$199",
+        "duration": "45-60 minutes",
+        "ingredients": [
+          "Melatonin 3mg (circadian rhythm regulation)",
+          "B-Complex Vitamins (energy metabolism)",
+          "Magnesium Glycinate 400mg (sleep quality)",
+          "L-Theanine 200mg (relaxation without sedation)",
+          "Vitamin D3 5000 IU (circadian clock)",
+          "GABA 500mg (nervous system calming)",
+          "Electrolyte blend (hydration balance)"
+        ],
+        "benefits": [
+          "Rapid sleep cycle adjustment (1-2 days vs 1 week)",
+          "Reduced travel fatigue and exhaustion",
+          "Improved sleep quality and duration",
+          "Enhanced mental alertness during day",
+          "Faster adaptation to new time zones",
+          "Reduced anxiety and travel stress",
+          "Better mood regulation and emotional balance"
+        ]
+      },
+      "iron": {
+        "title": "IV Iron Recharge",
+        "description": "Combat iron deficiency anemia and chronic fatigue. This therapy safely increases iron levels, boosts red blood cell production, and enhances oxygen delivery throughout your body.",
+        "price": "$219",
+        "duration": "60-90 minutes",
+        "ingredients": [
+          "Iron Sucrose 200mg (bioavailable iron)",
+          "Vitamin C 1g (iron absorption enhancer)",
+          "Vitamin B12 1000mcg (red blood cell formation)",
+          "Folate 5mg (DNA synthesis)",
+          "B-Complex Vitamins (hematopoiesis)",
+          "Magnesium Sulfate 1g (enzyme cofactor)"
+        ],
+        "benefits": [
+          "Increased hemoglobin levels (2-3g/dL improvement)",
+          "Enhanced oxygen transport and delivery",
+          "Reduced fatigue and weakness (within 1-2 weeks)",
+          "Improved exercise tolerance and endurance",
+          "Better cognitive function and concentration",
+          "Support for healthy pregnancy",
+          "Enhanced immune system function"
+        ]
+      },
+      "nad": {
+        "title": "IV NAD+ Revival",
+        "description": "Cutting-edge anti-aging therapy that provides cellular energy at the mitochondrial level. NAD+ supports DNA repair, metabolism regulation, and neurological function.",
+        "price": "$349",
+        "duration": "2-4 hours",
+        "ingredients": [
+          "NAD+ 250-500mg (cellular energy coenzyme)",
+          "B-Complex Vitamins (NAD+ synthesis)",
+          "Magnesium Chloride 2g (enzyme function)",
+          "Amino Acid blend (protein synthesis)",
+          "Vitamin C 2g (antioxidant protection)",
+          "Normal Saline 1000ml (slow infusion base)"
+        ],
+        "benefits": [
+          "Enhanced cellular energy production (mitochondrial function)",
+          "Improved cognitive function and mental clarity",
+          "DNA repair and anti-aging effects",
+          "Better metabolism and weight management",
+          "Increased physical endurance and stamina",
+          "Support for addiction recovery",
+          "Enhanced longevity and healthspan"
+        ]
+      },
+      "rejuvenation": {
+        "title": "All-Inclusive Rejuvenation IV",
+        "description": "Comprehensive wellness therapy with a powerful blend of vitamins, minerals, and antioxidants. This treatment promotes cellular regeneration, boosts collagen, and enhances overall vitality.",
+        "price": "$299",
+        "duration": "75-90 minutes",
+        "ingredients": [
+          "Comprehensive Multivitamin blend (A, D, E, K, B-complex)",
+          "Glutathione 800mg (cellular protection)",
+          "Vitamin C 10g (collagen synthesis)",
+          "Biotin 10mg (hair, skin, nails)",
+          "Zinc Sulfate 15mg (tissue repair)",
+          "Magnesium Sulfate 2g (muscle function)",
+          "Trace mineral blend (selenium, chromium, manganese)"
+        ],
+        "benefits": [
+          "Complete nutritional optimization",
+          "Enhanced skin health and youthful appearance",
+          "Improved energy and overall vitality",
+          "Stronger hair and nails",
+          "Better immune system function",
+          "Enhanced mental clarity and mood",
+          "Overall wellness and longevity support"
+        ]
+      },
+      "rejuvenationExtra": {
+        "title": "All-Inclusive Rejuvenation IV (Extra Strength)",
+        "description": "The ultimate wellness experience with maximum-dose nutrients. This premium therapy amplifies all rejuvenation benefits, maximizing hydration, cellular repair, and anti-aging effects.",
+        "price": "$399",
+        "duration": "90-120 minutes",
+        "ingredients": [
+          "High-dose Multivitamin complex (therapeutic levels)",
+          "Glutathione 1500mg (maximum antioxidant)",
+          "Vitamin C 25g (mega-dose therapy)",
+          "Biotin 20mg (beauty enhancement)",
+          "Collagen peptides 5g (skin elasticity)",
+          "CoQ10 200mg (cellular energy)",
+          "Alpha-Lipoic Acid 600mg (universal antioxidant)",
+          "Premium mineral blend (optimized ratios)"
+        ],
+        "benefits": [
+          "Maximum anti-aging effects (cellular level)",
+          "Superior skin rejuvenation and glow",
+          "Optimal cellular regeneration and repair",
+          "Enhanced collagen production (visible results)",
+          "Peak energy and vitality levels",
+          "Comprehensive wellness optimization",
+          "Premium longevity and healthspan support"
+        ]
+      }
+    }
+  },
+  "treatments": {
+    "title": "Our Popular Treatments",
+    "subtitle": "Customized IV therapy treatments to meet your specific health and wellness needs.",
+    "viewAll": "View All Services",
+    "hydration": {
+      "title": "Hydration Boost",
+      "description": "Replenish fluids and electrolytes for optimal hydration.",
+      "price": "$149"
+    },
+    "immune": {
+      "title": "Immune Defense",
+      "description": "Strengthen your immune system with our vitamin-packed formula.",
+      "price": "$179"
+    },
+    "energy": {
+      "title": "Energy Revitalize",
+      "description": "Combat fatigue and boost energy levels naturally.",
+      "price": "$199"
+    },
+    "recovery": {
+      "title": "Recovery Plus",
+      "description": "Accelerate recovery from intense physical activity or hangovers.",
+      "price": "$219"
+    },
+    "beauty": {
+      "title": "Beauty Glow",
+      "description": "Enhance skin health and appearance from within.",
+      "price": "$229"
+    },
+    "custom": {
+      "title": "Custom Formula",
+      "description": "Personalized IV therapy tailored to your specific needs.",
+      "price": "From $249"
+    }
+  },
+  "benefits": {
+    "title": "The Benefits of IV Therapy",
+    "absorption": {
+      "title": "100% Absorption",
+      "description": "IV therapy delivers nutrients directly into your bloodstream, ensuring 100% absorption compared to oral supplements."
+    },
+    "immediate": {
+      "title": "Immediate Effects",
+      "description": "Feel the benefits immediately as nutrients are delivered directly to your cells where they're needed most."
+    },
+    "customized": {
+      "title": "Customized Treatment",
+      "description": "Each IV formula can be tailored to address your specific health concerns and wellness goals."
+    },
+    "preventative": {
+      "title": "Preventative Health",
+      "description": "Regular IV therapy can help maintain optimal health and prevent deficiencies before they cause problems."
+    },
+    "learnMore": "Learn More About Benefits"
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Don't just take our word for it. Here's what our clients have to say about their IVIQ experience.",
+    "clients": {
+      "sarah": {
+        "quote": "The convenience of having IV therapy at my hotel while traveling for business has been a game-changer. I always book IVIQ when I'm in town."
+      },
+      "michael": {
+        "quote": "After trying their Recovery Plus treatment for my hangover, I was back to normal in no time. The staff was professional and the service was excellent."
+      },
+      "jennifer": {
+        "quote": "I've been getting monthly immune boosting IVs and haven't been sick once this year. The mobile service makes it so easy to maintain my health routine."
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to Experience IVIQ?",
+    "subtitle": "Book your mobile IV therapy session today and start feeling your best.",
+    "book": "Book Your Appointment"
+  },
+  "footer": {
+    "description": "Premium mobile IV therapy services delivered to your home or hotel.",
+    "quickLinks": "Quick Links",
+    "information": "Information",
+    "legal": "Legal",
+    "copyright": "All rights reserved."
+  },
+  "common": {
+    "bookNow": "Book Now",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us",
+    "getStarted": "Get Started",
+    "readMore": "Read More"
+  },
+  "pricing": {
+    "title": "Transparent Pricing",
+    "subtitle": "Choose the plan that works best for your wellness needs. All prices include mobile service to your location.",
+    "membership": {
+      "title": "Membership Plans",
+      "subtitle": "Save with our membership options for regular IV therapy treatments."
+    },
+    "plans": {
+      "single": {
+        "name": "Single Session",
+        "description": "Perfect for first-time clients or occasional treatments.",
+        "price": "From $149",
+        "features": [
+          "Choose any IV therapy treatment",
+          "One-time payment",
+          "No commitment",
+          "Add-ons available",
+          "Mobile service included"
+        ],
+        "buttonText": "Book a Session"
+      },
+      "monthly": {
+        "name": "Monthly Wellness",
+        "description": "Our most popular option for regular wellness maintenance.",
+        "price": "From $399/month",
+        "features": [
+          "3 IV treatments per month",
+          "10% off all add-ons",
+          "Priority scheduling",
+          "Complimentary wellness consultation",
+          "Mobile service included"
+        ],
+        "buttonText": "Subscribe Now",
+        "popular": true
+      },
+      "premium": {
+        "name": "Premium Package",
+        "description": "Comprehensive wellness for those serious about their health.",
+        "price": "From $699/month",
+        "features": [
+          "6 IV treatments per month",
+          "15% off all add-ons",
+          "VIP priority scheduling",
+          "Monthly wellness consultation",
+          "Mobile service included",
+          "Personalized treatment plan"
+        ],
+        "buttonText": "Subscribe Now"
+      }
+    },
+    "individual": {
+      "title": "Individual Treatment Prices",
+      "subtitle": "All treatments include mobile service to your location.",
+      "treatments": "IV Therapy Treatments",
+      "addons": "Add-ons"
+    },
+    "group": {
+      "title": "Group & Event Pricing",
+      "subtitle": "Special pricing available for groups and events. Perfect for corporate wellness, bachelor/bachelorette parties, or wellness retreats.",
+      "discounts": "Group Discounts",
+      "corporate": "Corporate & Event Packages",
+      "corporateDescription": "We offer customized packages for corporate wellness events, conferences, retreats, and private parties. Our team will work with you to create the perfect IV therapy experience for your group.",
+      "contactQuote": "Contact for Custom Quote"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "questions": {
+        "travel": {
+          "question": "Is there an additional travel fee?",
+          "answer": "No, our prices include mobile service within our standard service area. For locations outside our service area, a small travel fee may apply."
+        },
+        "insurance": {
+          "question": "Do you accept insurance?",
+          "answer": "Currently, we do not accept insurance. However, you may be able to use your HSA or FSA for payment. We provide detailed receipts for your records."
+        },
+        "payment": {
+          "question": "What forms of payment do you accept?",
+          "answer": "We accept all major credit cards, cash, HSA/FSA cards, and mobile payment options like Apple Pay and Google Pay."
+        },
+        "cancellation": {
+          "question": "Can I cancel or reschedule my appointment?",
+          "answer": "Yes, you can reschedule or cancel your appointment up to 24 hours before your scheduled time without any fees. Cancellations within 24 hours may incur a cancellation fee."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Book Your Treatment?",
+      "subtitle": "Experience the benefits of mobile IV therapy with IVIQ.",
+      "button": "Book Your Appointment"
+    }
+  },
+  "about": {
+    "title": "About IVIQ",
+    "subtitle": "We're dedicated to revolutionizing healthcare by bringing premium IV therapy services directly to you, wherever you are.",
+    "story": {
+      "title": "Our Story",
+      "content": [
+        "IVIQ was founded in 2023 with a simple yet powerful vision: to make high-quality IV therapy accessible, convenient, and personalized for everyone. Our founder, Dr. Sarah Johnson, recognized the growing need for preventative healthcare solutions that fit into busy modern lifestyles.",
+        "After years of working in emergency medicine, Dr. Johnson saw firsthand how IV therapy could dramatically improve patient outcomes. She realized that many people could benefit from IV therapy not just in emergency situations, but as part of their regular wellness routine.",
+        "Today, IVIQ serves hundreds of clients across the metro area, providing everything from hydration therapy to immune support, energy enhancement, and recovery treatments. We're proud to be at the forefront of the mobile healthcare revolution."
+      ],
+      "button": "Experience IVIQ"
+    },
+    "mission": {
+      "title": "Our Mission",
+      "subtitle": "To empower individuals to optimize their health and wellness through convenient, professional, and personalized IV therapy services delivered with compassion and excellence.",
+      "values": [
+        {
+          "title": "Safety First",
+          "description": "We maintain the highest safety standards with licensed professionals and medical-grade equipment."
+        },
+        {
+          "title": "Patient-Centered Care",
+          "description": "Every treatment is personalized to meet your unique health needs and wellness goals."
+        },
+        {
+          "title": "Convenience",
+          "description": "We bring professional IV therapy to your location, saving you time and ensuring comfort."
+        },
+        {
+          "title": "Excellence",
+          "description": "We're committed to providing the highest quality IV therapy services with exceptional results."
+        }
+      ]
+    },
+    "team": {
+      "title": "Meet Our Team",
+      "subtitle": "Our team of licensed healthcare professionals is dedicated to providing you with safe, effective, and personalized IV therapy treatments.",
+      "members": [
+        {
+          "name": "Dr. Sarah Johnson",
+          "title": "Medical Director & Founder",
+          "credentials": "MD, Emergency Medicine",
+          "bio": "Dr. Johnson brings over 15 years of emergency medicine experience to IVIQ. She founded the company with a vision to make high-quality IV therapy accessible and convenient for everyone. Her expertise in critical care and patient safety ensures the highest standards of treatment."
+        },
+        {
+          "name": "Michael Chen",
+          "title": "Registered Nurse",
+          "credentials": "RN, BSN, CCRN",
+          "bio": "Michael specializes in critical care nursing and has extensive experience in IV therapy administration. He ensures every patient receives the highest standard of care with his gentle approach and attention to detail. His 8+ years in healthcare make him a trusted member of our team."
+        },
+        {
+          "name": "Lisa Rodriguez",
+          "title": "Nurse Practitioner",
+          "credentials": "NP, MSN, FNP-C",
+          "bio": "Lisa focuses on preventative care and wellness optimization. She works closely with clients to develop personalized treatment plans that support their health goals. Her holistic approach to healthcare and 10+ years of experience help clients achieve optimal wellness."
+        }
+      ]
+    },
+    "certifications": {
+      "title": "Certifications & Compliance",
+      "description": "IVIQ maintains the highest standards of medical care and regulatory compliance. We are committed to providing safe, effective treatments while protecting your privacy and health information.",
+      "items": [
+        "Licensed healthcare professionals on staff",
+        "HIPAA compliant privacy practices",
+        "FDA-approved medications and supplies",
+        "State health department regulations compliance",
+        "Comprehensive liability insurance",
+        "Regular continuing education and training"
+      ]
+    },
+    "serviceAreas": {
+      "title": "Service Areas",
+      "subtitle": "We proudly serve the greater metropolitan area, bringing IV therapy directly to your location.",
+      "description": "Our mobile IV therapy service covers a wide area, ensuring that professional healthcare comes to you wherever you are. We serve:",
+      "locations": [
+        "Residential homes and apartments",
+        "Hotels and resorts",
+        "Corporate offices",
+        "Event venues",
+        "Fitness centers and spas"
+      ],
+      "note": "Service area includes the metro area and surrounding suburbs. Contact us to confirm availability in your specific location."
+    },
+    "cta": {
+      "title": "Ready to Experience IVIQ?",
+      "subtitle": "Join thousands of satisfied clients who have made IV therapy part of their wellness routine.",
+      "buttons": {
+        "book": "Book Your Appointment",
+        "contact": "Contact Us"
+      }
+    }
+  },
+  "benefitsPage": {
+    "title": "Benefits of IV Therapy",
+    "subtitle": "Discover why IV therapy is becoming the preferred method for delivering vitamins, minerals, and medications directly to your body.",
+    "keyBenefits": {
+      "title": "Key Benefits of IV Therapy",
+      "subtitle": "IV therapy offers numerous advantages over traditional oral supplements and medications.",
+      "items": [
+        {
+          "title": "100% Absorption",
+          "description": "IV therapy delivers nutrients directly into your bloodstream, ensuring 100% absorption compared to oral supplements which typically have only 20-50% absorption rates due to the digestive process."
+        },
+        {
+          "title": "Immediate Effects",
+          "description": "Feel the benefits immediately as nutrients are delivered directly to your cells where they're needed most, rather than waiting hours or days for oral supplements to take effect."
+        },
+        {
+          "title": "Customized Treatment",
+          "description": "Each IV formula can be tailored to address your specific health concerns and wellness goals, providing a personalized approach to your health and wellness."
+        },
+        {
+          "title": "Preventative Health",
+          "description": "Regular IV therapy can help maintain optimal health and prevent deficiencies before they cause problems, supporting your body's natural defense systems."
+        },
+        {
+          "title": "Convenience",
+          "description": "Our mobile service brings the benefits of IV therapy directly to your home, hotel, or office, saving you time and ensuring you can relax in a comfortable environment during treatment."
+        },
+        {
+          "title": "Professional Administration",
+          "description": "All treatments are administered by licensed healthcare professionals who monitor your comfort and safety throughout the process."
+        }
+      ]
+    },
+    "howItWorks": {
+      "title": "How IV Therapy Works",
+      "description": [
+        "IV therapy works by delivering nutrients directly into your bloodstream, bypassing the digestive system which can reduce the absorption of vitamins and minerals.",
+        "When nutrients are delivered intravenously, your body can absorb 100% of what it needs, compared to as little as 20% absorption from oral supplements.",
+        "This direct delivery method allows for higher doses of nutrients to be administered safely and effectively, providing immediate benefits and therapeutic effects that oral supplements simply cannot match."
+      ],
+      "steps": [
+        {
+          "title": "Direct Delivery",
+          "description": "Nutrients enter your bloodstream directly, bypassing the digestive system."
+        },
+        {
+          "title": "Complete Absorption",
+          "description": "Your body absorbs 100% of the vitamins and minerals administered."
+        },
+        {
+          "title": "Immediate Effect",
+          "description": "Benefits are felt quickly as nutrients are immediately available to your cells."
+        }
+      ]
+    },
+    "conditions": {
+      "title": "Conditions That Benefit From IV Therapy",
+      "subtitle": "IV therapy can help with a wide range of health concerns and wellness goals.",
+      "items": [
+        {
+          "title": "Dehydration",
+          "benefits": [
+            "Rapid rehydration",
+            "Electrolyte replacement",
+            "Relief from symptoms like headache and fatigue",
+            "Improved cellular function"
+          ]
+        },
+        {
+          "title": "Fatigue & Low Energy",
+          "benefits": [
+            "Increased energy levels",
+            "Improved mental clarity",
+            "Enhanced physical performance",
+            "Better mood and motivation"
+          ]
+        },
+        {
+          "title": "Immune Support",
+          "benefits": [
+            "Strengthened immune response",
+            "Reduced frequency of illness",
+            "Faster recovery from sickness",
+            "Support during high-risk seasons"
+          ]
+        },
+        {
+          "title": "Athletic Recovery",
+          "benefits": [
+            "Accelerated muscle recovery",
+            "Reduced inflammation",
+            "Improved performance",
+            "Decreased recovery time between workouts"
+          ]
+        },
+        {
+          "title": "Hangover Relief",
+          "benefits": ["Rapid hydration", "Toxin removal", "Nausea relief", "Headache reduction", "Energy restoration"]
+        },
+        {
+          "title": "Skin Health",
+          "benefits": [
+            "Improved skin elasticity",
+            "Enhanced collagen production",
+            "Brighter complexion",
+            "Reduced signs of aging"
+          ]
+        }
+      ]
+    },
+    "safety": {
+      "title": "Safety & Professional Care",
+      "description": "At IVIQ, your safety is our top priority. All of our IV therapy treatments are:",
+      "items": [
+        "Administered by licensed healthcare professionals",
+        "Customized based on your health history and needs",
+        "Prepared using sterile techniques and medical-grade equipment",
+        "Monitored throughout the treatment process"
+      ]
+    }
+  }
+}
