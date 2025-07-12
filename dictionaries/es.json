@@ -116,7 +116,8 @@
     "learnMore": "Aprende Más",
     "contactUs": "Contáctanos",
     "getStarted": "Comenzar",
-    "readMore": "Leer Más"
+    "readMore": "Leer Más",
+    "pricing": "Precios"
   },
   "services": {
     "title": "Nuestros Servicios de Terapia IV",
@@ -128,26 +129,74 @@
     "duration": "Duración del Tratamiento:",
     "addons": {
       "title": "Complementos Opcionales",
-      "subtitle": "Mejora tu experiencia de terapia IV con estos complementos beneficiosos."
+      "subtitle": "Mejora tu experiencia de terapia IV con estos complementos beneficiosos.",
+      "vitaminB12": {
+        "name": "Impulso de Vitamina B12",
+        "description": "Soporte mejorado de energía y metabolismo"
+      },
+      "glutathione": {
+        "name": "Empuje de Glutatión",
+        "description": "Antioxidante maestro para desintoxicación"
+      },
+      "vitaminC": {
+        "name": "Vitamina C Extra",
+        "description": "Soporte adicional del sistema inmunológico"
+      },
+      "zinc": {
+        "name": "Impulso de Zinc",
+        "description": "Función inmune y cicatrización de heridas"
+      },
+      "antiNausea": {
+        "name": "Medicamento Anti-Náuseas",
+        "description": "Alivio de náuseas y vómitos"
+      },
+      "painReliever": {
+        "name": "Analgésico",
+        "description": "Manejo del dolor antiinflamatorio"
+      },
+      "magnesium": {
+        "name": "Impulso de Magnesio",
+        "description": "Relajación muscular y función nerviosa"
+      },
+      "biotin": {
+        "name": "Impulso de Belleza con Biotina",
+        "description": "Salud del cabello, piel y uñas"
+      }
     },
     "cta": {
       "title": "¿Listo para Experimentar los Beneficios?",
       "subtitle": "Reserva tu sesión de terapia IV móvil hoy y comienza a sentirte mejor."
     },
+    "process": {
+      "title": "Cómo Funciona",
+      "subtitle": "Pasos simples para obtener tu tratamiento de terapia IV",
+      "step1": {
+        "title": "Reservar en Línea",
+        "description": "Elige tu tratamiento y programa tu cita en línea"
+      },
+      "step2": {
+        "title": "Vamos a Ti",
+        "description": "Nuestros profesionales licenciados llegan a tu ubicación con todo el equipo"
+      },
+      "step3": {
+        "title": "Relájate y Recupérate",
+        "description": "Relájate mientras recibes tu tratamiento personalizado de terapia IV"
+      }
+    },
     "formulas": {
       "hangover": {
-        "title": "Alivio de Resaca IV",
+        "title": "Alivio IV para Resaca",
         "description": "Revive y recupérate rápidamente del consumo de alcohol. Esta terapia desintoxica tu cuerpo, elimina toxinas y rehidrata efectivamente, proporcionando alivio rápido de los síntomas de resaca.",
         "price": "$3,200 MXN",
         "duration": "45-60 minutos",
         "ingredients": [
-          "1000ml Suero Salino Normal para rehidratación rápida",
-          "Ondansetrón 4mg (medicamento anti-náusea)",
-          "Ketorolaco 30mg (alivio antiinflamatorio del dolor)",
+          "1000ml de Solución Salina Normal para rehidratación rápida",
+          "Ondansetrón 4mg (medicamento anti-náuseas)",
+          "Ketorolaco 30mg (alivio del dolor antiinflamatorio)",
           "Vitaminas del Complejo B (B1, B2, B3, B5, B6)",
           "Sulfato de Magnesio 2g (relajación muscular)",
-          "Sulfato de Zinc 5mg (apoyo hepático)",
-          "Tiamina 100mg (apoyo al metabolismo del alcohol)"
+          "Sulfato de Zinc 5mg (soporte hepático)",
+          "Tiamina 100mg (soporte del metabolismo del alcohol)"
         ],
         "benefits": [
           "Rehidratación rápida y restauración de electrolitos",
@@ -160,12 +209,12 @@
         ]
       },
       "dehydration": {
-        "title": "Recuperación de Deshidratación IV",
+        "title": "Recuperación IV de Deshidratación",
         "description": "Siéntete fresco y revitalizado con reemplazo rápido de fluidos. Repone electrolitos, aumenta la energía y mejora tu estado de ánimo con esta terapia esencial de hidratación.",
         "price": "$2,200 MXN",
         "duration": "30-45 minutos",
         "ingredients": [
-          "1000ml Solución de Ringer Lactato",
+          "1000ml de Solución de Ringer Lactato",
           "Cloruro de Sodio 154mEq/L (hidratación celular)",
           "Cloruro de Potasio 4mEq/L (función muscular)",
           "Cloruro de Magnesio 2mEq/L (activación enzimática)",
@@ -176,26 +225,26 @@
         "benefits": [
           "Restauración inmediata del volumen de fluidos (en 15 minutos)",
           "Optimización completa del equilibrio de electrolitos",
-          "Hidratación y función celular mejorada",
-          "Función cognitiva y claridad mental mejorada",
-          "Niveles de energía y alerta física aumentados",
+          "Hidratación celular mejorada y función",
+          "Función cognitiva mejorada y claridad mental",
+          "Niveles de energía aumentados y alerta física",
           "Mejor regulación del estado de ánimo y estabilidad emocional",
           "Función renal y cardiovascular optimizada"
         ]
       },
       "foodPoisoning": {
-        "title": "Recuperación de Intoxicación Alimentaria y Gripe Estomacal IV",
+        "title": "Recuperación IV de Intoxicación Alimentaria y Gripe Estomacal",
         "description": "Acelera la recuperación del malestar gastrointestinal. Esta terapia ayuda a sanar el revestimiento del estómago y es ideal para tratar intoxicación alimentaria y todos los síntomas gastrointestinales.",
         "price": "$2,500 MXN",
         "duration": "45-60 minutos",
         "ingredients": [
-          "1000ml Suero Salino Normal con electrolitos",
-          "Ondansetrón 8mg (anti-náusea potente)",
+          "1000ml de Solución Salina Normal con electrolitos",
+          "Ondansetrón 8mg (anti-náuseas potente)",
           "Famotidina 20mg (reductor de ácido estomacal)",
-          "Vitaminas del Complejo B (apoyo digestivo)",
-          "Vitamina C 1000mg (apoyo inmune)",
+          "Vitaminas del Complejo B (soporte digestivo)",
+          "Vitamina C 1000mg (soporte inmune)",
           "Sulfato de Magnesio 1g (relajación muscular)",
-          "Proclorperazina 10mg (alivio de náusea severa)"
+          "Proclorperazina 10mg (alivio de náuseas severas)"
         ],
         "benefits": [
           "Alivio rápido de náuseas y vómitos (en 20 minutos)",
@@ -203,12 +252,12 @@
           "Restauración completa de fluidos y nutrientes perdidos",
           "Función digestiva mejorada y salud intestinal",
           "Tiempo de recuperación acelerado (50% más rápido)",
-          "Prevención de complicaciones por deshidratación severa",
+          "Prevención de complicaciones de deshidratación severa",
           "Respuesta inmune mejorada para combatir infecciones"
         ]
       },
       "myers": {
-        "title": "Cóctel Myers IV",
+        "title": "Cóctel IV Myers",
         "description": "El estándar de oro de la terapia IV. Esta fórmula clásica aumenta la producción de glóbulos rojos, acelera la recuperación muscular, mejora la calidad del sueño y fortalece tu sistema inmunológico.",
         "price": "$2,400 MXN",
         "duration": "45-60 minutos",
@@ -217,8 +266,8 @@
           "Gluconato de Calcio 100-200mg (salud ósea y muscular)",
           "Vitaminas del Complejo B (metabolismo energético)",
           "Vitamina B12 1000mcg (producción de glóbulos rojos)",
-          "Vitamina C 5-15g (apoyo inmune y de colágeno)",
-          "Suero Salino Normal 250-1000ml (base de hidratación)",
+          "Vitamina C 5-15g (soporte inmune y de colágeno)",
+          "Solución Salina Normal 250-1000ml (base de hidratación)",
           "Piridoxina 100mg (síntesis de neurotransmisores)"
         ],
         "benefits": [
@@ -227,12 +276,12 @@
           "Mejor calidad del sueño y regulación del ciclo REM",
           "Fatiga muscular reducida y recuperación más rápida",
           "Producción aumentada de glóbulos rojos y entrega de oxígeno",
-          "Apoyo para síntomas del síndrome de fatiga crónica",
+          "Soporte para síntomas del síndrome de fatiga crónica",
           "Mejora general del bienestar y vitalidad"
         ]
       },
       "energy": {
-        "title": "Impulso de Energía IV",
+        "title": "Impulso IV de Energía",
         "description": "Combate la fatiga y la baja energía con una mezcla científicamente formulada de fluidos IV, electrolitos, vitaminas y antioxidantes diseñados para revitalizar tu cuerpo a nivel celular.",
         "price": "$2,500 MXN",
         "duration": "45-60 minutos",
@@ -247,8 +296,8 @@
         ],
         "benefits": [
           "Aumento significativo en los niveles de energía (hasta 8 horas)",
-          "Claridad mental y enfoque cognitivo mejorados",
-          "Resistencia física y vigor mejorados",
+          "Claridad mental mejorada y enfoque cognitivo",
+          "Resistencia física mejorada y vigor",
           "Mejor regulación del estado de ánimo y motivación",
           "Producción de energía celular optimizada (síntesis de ATP)",
           "Síntomas de fatiga crónica reducidos",
@@ -256,7 +305,7 @@
         ]
       },
       "muscle": {
-        "title": "Recuperación Muscular IV",
+        "title": "Recuperación IV Muscular",
         "description": "Optimiza el rendimiento atlético y la recuperación. Esta terapia mejora la regeneración muscular, reduce la inflamación e incluye aminoácidos esenciales y nutrientes para el máximo rendimiento físico.",
         "price": "$2,600 MXN",
         "duration": "60-75 minutos",
@@ -272,15 +321,15 @@
         "benefits": [
           "Reparación acelerada del tejido muscular (50% más rápido)",
           "Inflamación inducida por ejercicio reducida",
-          "Síntesis de proteínas y construcción muscular mejorada",
-          "Rendimiento atlético y potencia mejorados",
+          "Síntesis de proteínas mejorada y construcción muscular",
+          "Rendimiento atlético mejorado y potencia de salida",
           "Recuperación más rápida entre sesiones de entrenamiento intenso",
           "Prevención de la descomposición muscular (catabolismo)",
           "Dolor muscular de aparición tardía reducido (DOMS)"
         ]
       },
       "antiviral": {
-        "title": "Defensa Antiviral IV",
+        "title": "Defensa IV Antiviral",
         "description": "Fortalece la defensa natural de tu cuerpo contra infecciones virales. Esta fórmula poderosa usa vitamina C en altas dosis y zinc para atacar patógenos y mejorar la respuesta inmune.",
         "price": "$2,300 MXN",
         "duration": "60-75 minutos",
@@ -299,13 +348,13 @@
           "Duración de enfermedad acortada (2-3 días)",
           "Función de glóbulos blancos mejorada",
           "Protección antioxidante poderosa contra radicales libres",
-          "Apoyo para la salud y función respiratoria",
+          "Soporte para la salud y función respiratoria",
           "Prevención de infecciones bacterianas secundarias"
         ]
       },
       "immune": {
-        "title": "Escudo Inmune IV",
-        "description": "Apoyo integral del sistema inmunológico con nutrientes esenciales. Esta terapia fortalece las defensas de tu cuerpo, ayudándote a recuperarte de infecciones mientras promueve el bienestar a largo plazo.",
+        "title": "Escudo IV Inmune",
+        "description": "Soporte integral del sistema inmunológico con nutrientes esenciales. Esta terapia fortalece las defensas de tu cuerpo, ayudándote a recuperarte de infecciones mientras promueve el bienestar a largo plazo.",
         "price": "$2,600 MXN",
         "duration": "45-60 minutos",
         "ingredients": [
@@ -328,8 +377,8 @@
         ]
       },
       "megaC": {
-        "title": "Megadosis de Vitamina C IV",
-        "description": "Terapia de vitamina C en altas dosis para máximo apoyo inmune y desintoxicación. Este tratamiento actúa como un antioxidante poderoso, promoviendo la reparación celular y mejorando la vitalidad general.",
+        "title": "Megadosis IV de Vitamina C",
+        "description": "Terapia de vitamina C en altas dosis para máximo soporte inmune y desintoxicación. Este tratamiento actúa como un antioxidante poderoso, promoviendo la reparación celular y mejorando la vitalidad general.",
         "price": "$2,300 MXN",
         "duration": "60-90 minutos",
         "ingredients": [
@@ -338,7 +387,7 @@
           "Gluconato de Calcio 200mg (estabilidad celular)",
           "Vitaminas del Complejo B (energía celular)",
           "Glutatión 600mg (sinergia antioxidante)",
-          "Suero Salino Normal 1000ml (dilución e hidratación)"
+          "Solución Salina Normal 1000ml (dilución e hidratación)"
         ],
         "benefits": [
           "Protección antioxidante máxima (10x niveles normales)",
@@ -346,19 +395,19 @@
           "Función del sistema inmunológico potenciada",
           "Desintoxicación celular poderosa",
           "Efectos anti-envejecimiento a nivel celular",
-          "Apoyo para recuperación de tratamiento de cáncer",
+          "Soporte para recuperación de tratamiento de cáncer",
           "Curación de heridas y reparación de tejidos mejorada"
         ]
       },
       "detox": {
-        "title": "Desintoxicación Corporal Completa IV",
+        "title": "Desintoxicación IV de Cuerpo Completo",
         "description": "Desintoxicación celular integral para eliminar toxinas dañinas. Esta terapia mejora la función hepática, potencia tu sistema inmunológico y restaura el equilibrio natural de tu cuerpo.",
         "price": "$2,400 MXN",
         "duration": "60-75 minutos",
         "ingredients": [
           "Glutatión 1200mg (desintoxicante maestro)",
           "Ácido Alfa-Lipoico 300mg (antioxidante universal)",
-          "Vitamina C 5g (apoyo inmune y desintoxicante)",
+          "Vitamina C 5g (soporte inmune y desintoxicante)",
           "Vitaminas del Complejo B (metabolismo hepático)",
           "Sulfato de Magnesio 2g (activación enzimática)",
           "Selenio 200mcg (reciclaje de glutatión)",
@@ -369,37 +418,37 @@
           "Eliminación de radicales libres y toxinas",
           "Producción de energía celular mejorada",
           "Mejor salud de la piel y apariencia radiante",
-          "Marcadores inflamatorios reducidos (CRP, IL-6)",
+          "Marcadores inflamatorios reducidos (PCR, IL-6)",
           "Función metabólica optimizada",
           "Claridad mental y enfoque mejorados"
         ]
       },
       "heavyMetal": {
-        "title": "Limpieza de Metales Pesados IV",
+        "title": "Limpieza IV de Metales Pesados",
         "description": "Terapia de quelación especializada para remover metales pesados y toxinas ambientales. Este tratamiento mejora la circulación, reduce la inflamación y apoya la salud general.",
         "price": "$2,600 MXN",
         "duration": "75-90 minutos",
         "ingredients": [
           "EDTA 1-3g (quelación de metales pesados)",
           "Glutatión 1500mg (protección celular)",
-          "Vitamina C 10g (apoyo antioxidante)",
+          "Vitamina C 10g (soporte antioxidante)",
           "Ácido Alfa-Lipoico 600mg (unión de metales)",
           "Selenio 300mcg (protección contra mercurio)",
-          "Vitaminas del Complejo B (apoyo del sistema nervioso)",
-          "Sulfato de Magnesio 3g (apoyo cardiovascular)"
+          "Vitaminas del Complejo B (soporte del sistema nervioso)",
+          "Sulfato de Magnesio 3g (soporte cardiovascular)"
         ],
         "benefits": [
           "Remoción de plomo, mercurio, cadmio y arsénico",
-          "Salud cardiovascular y circulación mejorada",
-          "Función cognitiva y memoria mejorada",
+          "Salud cardiovascular mejorada y circulación",
+          "Función cognitiva y memoria mejoradas",
           "Estrés oxidativo e inflamación reducidos",
           "Mejor circulación y flujo sanguíneo",
-          "Apoyo para la salud neurológica",
+          "Soporte para salud neurológica",
           "Energía y vitalidad mejoradas"
         ]
       },
       "glutathione": {
-        "title": "Brillo de Glutatión IV",
+        "title": "Brillo IV de Glutatión",
         "description": "Terapia de antioxidante maestro para desintoxicación celular y piel radiante. Este tratamiento potencia la inmunidad, reduce el estrés oxidativo y mejora tu brillo natural desde adentro.",
         "price": "$2,700 MXN",
         "duration": "45-60 minutos",
@@ -416,14 +465,14 @@
           "Desintoxicación celular poderosa",
           "Función del sistema inmunológico mejorada",
           "Signos de envejecimiento y arrugas reducidos",
-          "Elasticidad y textura de la piel mejorada",
+          "Elasticidad y textura de la piel mejoradas",
           "Protección contra daño UV",
-          "Función hepática y desintoxicación mejorada"
+          "Función hepática y desintoxicación mejoradas"
         ]
       },
       "antiInflammatory": {
-        "title": "Antiinflamatorio IV",
-        "description": "Terapia avanzada de reducción de inflamación que combina cúrcuma, glutatión y nutrientes específicos para combatir el estrés oxidativo y apoyar la reparación de tejidos para condiciones crónicas y agudas.",
+        "title": "IV Antiinflamatorio",
+        "description": "Terapia avanzada de reducción de inflamación combinando cúrcuma, glutatión y nutrientes dirigidos para combatir el estrés oxidativo y apoyar la reparación de tejidos para condiciones crónicas y agudas.",
         "price": "$2,500 MXN",
         "duration": "60-75 minutos",
         "ingredients": [
@@ -436,17 +485,17 @@
           "Ácidos Grasos Omega-3 1g (resolución de inflamación)"
         ],
         "benefits": [
-          "Reducción significativa de inflamación (niveles de CRP bajan 40-60%)",
+          "Reducción significativa de inflamación (niveles de PCR bajan 40-60%)",
           "Alivio del dolor para condiciones crónicas (artritis, fibromialgia)",
           "Reparación y curación de tejidos mejorada",
-          "Movilidad y flexibilidad articular mejorada",
+          "Movilidad y flexibilidad articular mejoradas",
           "Marcadores inflamatorios reducidos en todo el cuerpo",
-          "Apoyo para condiciones autoinmunes",
+          "Soporte para condiciones autoinmunes",
           "Mejor recuperación y rendimiento del ejercicio"
         ]
       },
       "jetLag": {
-        "title": "Reinicio de Jet Lag IV",
+        "title": "Reinicio IV de Jet Lag",
         "description": "Restaura tu ritmo circadiano natural rápida y efectivamente. Esta terapia especializada contiene melatonina, vitaminas y relajantes para ayudar a reiniciar tu ciclo de sueño después de viajar.",
         "price": "$2,400 MXN",
         "duration": "45-60 minutos",
@@ -456,13 +505,13 @@
           "Glicinato de Magnesio 400mg (calidad del sueño)",
           "L-Teanina 200mg (relajación sin sedación)",
           "Vitamina D3 5000 UI (reloj circadiano)",
-          "GABA 500mg (calma del sistema nervioso)",
+          "GABA 500mg (calmante del sistema nervioso)",
           "Mezcla de electrolitos (equilibrio de hidratación)"
         ],
         "benefits": [
           "Ajuste rápido del ciclo de sueño (1-2 días vs 1 semana)",
           "Fatiga y agotamiento de viaje reducidos",
-          "Calidad y duración del sueño mejorada",
+          "Calidad y duración del sueño mejoradas",
           "Alerta mental diurna mejorada",
           "Adaptación más rápida a nuevas zonas horarias",
           "Ansiedad y estrés de viaje reducidos",
@@ -470,7 +519,7 @@
         ]
       },
       "iron": {
-        "title": "Recarga de Hierro IV",
+        "title": "Recarga IV de Hierro",
         "description": "Combate la anemia por deficiencia de hierro y la fatiga crónica. Esta terapia aumenta de manera segura los niveles de hierro, mejora la producción de glóbulos rojos y mejora la entrega de oxígeno en todo tu cuerpo.",
         "price": "$2,100 MXN",
         "duration": "60-90 minutos",
@@ -488,12 +537,12 @@
           "Fatiga y debilidad reducidas (en 1-2 semanas)",
           "Tolerancia al ejercicio y resistencia mejoradas",
           "Mejor función cognitiva y concentración",
-          "Apoyo para embarazo saludable",
+          "Soporte para embarazo saludable",
           "Función del sistema inmunológico mejorada"
         ]
       },
       "nad": {
-        "title": "Revitalización NAD+ IV",
+        "title": "Revitalización IV NAD+",
         "description": "Terapia anti-envejecimiento de vanguardia que proporciona energía celular a nivel mitocondrial. NAD+ apoya la reparación del ADN, regulación metabólica y función neurológica.",
         "price": "$3,200 MXN",
         "duration": "2-4 horas",
@@ -503,20 +552,20 @@
           "Cloruro de Magnesio 2g (función enzimática)",
           "Mezcla de aminoácidos (síntesis de proteínas)",
           "Vitamina C 2g (protección antioxidante)",
-          "Suero Salino Normal 1000ml (base de infusión lenta)"
+          "Solución Salina Normal 1000ml (base de infusión lenta)"
         ],
         "benefits": [
           "Producción de energía celular mejorada (función mitocondrial)",
-          "Función cognitiva y claridad mental mejorada",
+          "Función cognitiva y claridad mental mejoradas",
           "Reparación del ADN y efectos anti-envejecimiento",
           "Mejor metabolismo y manejo del peso",
           "Resistencia física y vigor aumentados",
-          "Apoyo para recuperación de adicciones",
+          "Soporte para recuperación de adicciones",
           "Longevidad y vida saludable mejoradas"
         ]
       },
       "rejuvenation": {
-        "title": "Rejuvenecimiento Todo Incluido IV",
+        "title": "Rejuvenecimiento IV Todo Incluido",
         "description": "Terapia de bienestar integral con una mezcla poderosa de vitaminas, minerales y antioxidantes. Este tratamiento promueve la regeneración celular, potencia el colágeno y mejora la vitalidad general.",
         "price": "$2,700 MXN",
         "duration": "75-90 minutos",
@@ -536,11 +585,11 @@
           "Cabello y uñas más fuertes",
           "Mejor función del sistema inmunológico",
           "Claridad mental y estado de ánimo mejorados",
-          "Apoyo general de bienestar y longevidad"
+          "Soporte general de bienestar y longevidad"
         ]
       },
       "rejuvenationExtra": {
-        "title": "Rejuvenecimiento Todo Incluido IV (Fuerza Extra)",
+        "title": "Rejuvenecimiento IV Todo Incluido (Fuerza Extra)",
         "description": "La experiencia de bienestar definitiva con nutrientes de dosis máxima. Esta terapia premium amplifica todos los beneficios de rejuvenecimiento, maximizando la hidratación, reparación celular y efectos anti-envejecimiento.",
         "price": "$3,000 MXN",
         "duration": "90-120 minutos",
@@ -552,16 +601,16 @@
           "Péptidos de Colágeno 5g (elasticidad de la piel)",
           "CoQ10 200mg (energía celular)",
           "Ácido Alfa-Lipoico 600mg (antioxidante universal)",
-          "Mezcla de minerales premium (proporciones optimizadas)"
+          "Mezcla premium de minerales (proporciones optimizadas)"
         ],
         "benefits": [
           "Efectos anti-envejecimiento máximos (nivel celular)",
           "Rejuvenecimiento y brillo superior de la piel",
-          "Regeneración y reparación celular óptima",
+          "Regeneración y reparación celular óptimas",
           "Producción de colágeno mejorada (resultados visibles)",
           "Niveles de energía y vitalidad máximos",
           "Optimización integral del bienestar",
-          "Apoyo premium de longevidad y vida saludable"
+          "Soporte premium de longevidad y vida saludable"
         ]
       }
     }
@@ -609,7 +658,7 @@
           "6 tratamientos IV por mes",
           "15% de descuento en todos los complementos",
           "Programación prioritaria VIP",
-          "Consulta de bienestar mensual",
+          "Consulta mensual de bienestar",
           "Servicio móvil incluido",
           "Plan de tratamiento personalizado"
         ],
@@ -620,15 +669,93 @@
       "title": "Precios de Tratamientos Individuales",
       "subtitle": "Todos los tratamientos incluyen servicio móvil a tu ubicación.",
       "treatments": "Tratamientos de Terapia IV",
-      "addons": "Complementos"
+      "treatmentsDesc": "Todos los tratamientos incluyen servicio móvil a tu ubicación",
+      "addonsTitle": "Complementos Disponibles",
+      "addonsDesc": "Mejora tu terapia IV con estos complementos beneficiosos",
+      "treatmentList": {
+        "hangover": "Alivio IV para Resaca",
+        "dehydration": "Recuperación IV de Deshidratación",
+        "foodPoisoning": "Recuperación IV de Intoxicación Alimentaria",
+        "myers": "Cóctel IV Myers",
+        "jetLag": "Reinicio IV de Jet Lag",
+        "energy": "Impulso IV de Energía",
+        "muscle": "Recuperación IV Muscular",
+        "iron": "Recarga IV de Hierro",
+        "nad": "Revitalización IV NAD+",
+        "antiviral": "Defensa IV Antiviral",
+        "immune": "Escudo IV Inmune",
+        "megaC": "Megadosis IV de Vitamina C",
+        "detox": "Desintoxicación IV de Cuerpo Completo",
+        "heavyMetal": "Limpieza IV de Metales Pesados",
+        "glutathione": "Brillo IV de Glutatión",
+        "antiInflammatory": "IV Antiinflamatorio",
+        "rejuvenation": "IV Rejuvenecimiento Todo Incluido",
+        "rejuvenationExtra": "IV Rejuvenecimiento Todo Incluido (Fuerza Extra)"
+      },
+      "addons": {
+        "aminoAcid": "Complejo de Aminoácidos",
+        "aminoAcidDesc": "Recuperación muscular y síntesis de proteínas",
+        "electrolyte": "Mejora de Electrolitos",
+        "electrolyteDesc": "Hidratación avanzada y equilibrio"
+      },
+      "note": {
+        "title": "Nota:",
+        "content": "Los precios de complementos varían según el tratamiento específico y la dosificación. Contáctanos para información detallada de precios."
+      }
     },
     "group": {
       "title": "Precios para Grupos y Eventos",
       "subtitle": "Precios especiales disponibles para grupos y eventos. Perfecto para bienestar corporativo, despedidas de soltero/a, o retiros de bienestar.",
       "discounts": "Descuentos para Grupos",
+      "discountsDesc": "Ahorra más cuando reservas para grupos",
+      "discount3to5": "3-5 personas",
+      "discount6to10": "6-10 personas",
+      "discount11plus": "11+ personas",
+      "discountNote": "Los descuentos grupales aplican a tratamientos del mismo día en la misma ubicación.",
       "corporate": "Paquetes Corporativos y de Eventos",
       "corporateDescription": "Ofrecemos paquetes personalizados para eventos de bienestar corporativo, conferencias, retiros y fiestas privadas. Nuestro equipo trabajará contigo para crear la experiencia perfecta de terapia IV para tu grupo.",
+      "corporatePackages": "Paquetes de Bienestar Corporativo",
+      "corporateList": {
+        "monthly": "Programas mensuales de bienestar para empleados",
+        "executive": "Paquetes de salud ejecutiva",
+        "events": "Servicios para eventos y conferencias",
+        "custom": "Precios personalizados basados en volumen"
+      },
       "contactQuote": "Contacta para Cotización Personalizada"
+    },
+    "serviceAreas": {
+      "title": "Áreas de Servicio y Viaje",
+      "subtitle": "Servicio móvil en toda el área metropolitana",
+      "free": {
+        "title": "Zona de Servicio Gratuito",
+        "description": "Sin tarifas adicionales de viaje",
+        "areas": {
+          "downtown": "Área central del centro",
+          "hotels": "Distritos hoteleros principales",
+          "business": "Distritos comerciales",
+          "residential": "Áreas residenciales dentro de 15km"
+        }
+      },
+      "extended": {
+        "title": "Zona Extendida",
+        "description": "Aplica una pequeña tarifa de viaje",
+        "areas": {
+          "distance": "15-30km del centro de la ciudad",
+          "suburban": "Áreas suburbanas",
+          "fee": "Tarifa adicional: $300 MXN",
+          "convenient": "Aún conveniente y asequible"
+        }
+      },
+      "premium": {
+        "title": "Zona Premium",
+        "description": "Precios personalizados para ubicaciones distantes",
+        "areas": {
+          "distance": "30km+ del centro de la ciudad",
+          "remote": "Ubicaciones remotas",
+          "events": "Eventos especiales",
+          "contact": "Contacta para cotización personalizada"
+        }
+      }
     },
     "faq": {
       "title": "Preguntas Frecuentes",
@@ -647,25 +774,34 @@
         },
         "cancellation": {
           "question": "¿Puedo cancelar o reprogramar mi cita?",
-          "answer": "Sí, puedes reprogramar o cancelar tu cita hasta 24 horas antes de tu hora programada sin cargos. Las cancelaciones dentro de 24 horas pueden incurrir en una tarifa de cancelación."
+          "answer": "Sí, puedes reprogramar o cancelar tu cita hasta 24 horas antes de tu hora programada sin cargos. Cancelaciones dentro de 24 horas pueden incurrir en una tarifa de cancelación."
+        },
+        "included": {
+          "question": "¿Qué está incluido en el precio?",
+          "answer": "Todos los tratamientos incluyen consulta profesional, administración de IV por proveedores de atención médica licenciados, equipo de grado médico y monitoreo post-tratamiento."
+        },
+        "addons": {
+          "question": "¿Cuánto cuestan los complementos?",
+          "answer": "Los precios de complementos varían según el tratamiento específico y los requisitos de dosificación. Te proporcionaremos precios detallados cuando reserves tu cita o nos contactes para una consulta."
         }
       }
     },
     "cta": {
-      "title": "¿Listo para Reservar tu Tratamiento?",
+      "title": "¿Listo para Reservar Tu Tratamiento?",
       "subtitle": "Experimenta los beneficios de la terapia IV móvil con IVIQ.",
-      "button": "Reserva tu Cita"
+      "button": "Reserva Tu Cita",
+      "customQuote": "Obtener Cotización Personalizada"
     }
   },
   "about": {
     "title": "Acerca de IVIQ",
-    "subtitle": "Estamos dedicados a revolucionar la atención médica llevando servicios premium de terapia IV directamente a ti, donde sea que estés.",
+    "subtitle": "Estamos dedicados a revolucionar la atención médica llevando servicios premium de terapia IV directamente a ti, donde quiera que estés.",
     "story": {
       "title": "Nuestra Historia",
       "content": [
-        "IVIQ fue fundada en 2023 con una visión simple pero poderosa: hacer que la terapia IV de alta calidad sea accesible, conveniente y personalizada para todos. Nuestra fundadora, la Dra. Sarah Johnson, reconoció la creciente necesidad de soluciones de atención médica preventiva que se adapten a los estilos de vida modernos ocupados.",
+        "IVIQ fue fundada en 2023 con una visión simple pero poderosa: hacer que la terapia IV de alta calidad sea accesible, conveniente y personalizada para todos. Nuestra fundadora, Dra. Sarah Johnson, reconoció la creciente necesidad de soluciones de atención médica preventiva que se adapten a los estilos de vida modernos ocupados.",
         "Después de años trabajando en medicina de emergencia, la Dra. Johnson vio de primera mano cómo la terapia IV podría mejorar dramáticamente los resultados de los pacientes. Se dio cuenta de que muchas personas podrían beneficiarse de la terapia IV no solo en situaciones de emergencia, sino como parte de su rutina regular de bienestar.",
-        "Hoy, IVIQ sirve a cientos de clientes en toda el área metropolitana, proporcionando todo desde terapia de hidratación hasta apoyo inmune, mejora de energía y tratamientos de recuperación. Estamos orgullosos de estar a la vanguardia de la revolución de la atención médica móvil."
+        "Hoy, IVIQ sirve a cientos de clientes en toda el área metropolitana, proporcionando todo desde terapia de hidratación hasta soporte inmune, mejora de energía y tratamientos de recuperación. Estamos orgullosos de estar a la vanguardia de la revolución de la atención médica móvil."
       ],
       "button": "Experimenta IVIQ"
     },
@@ -730,7 +866,7 @@
     "serviceAreas": {
       "title": "Áreas de Servicio",
       "subtitle": "Servimos con orgullo el área metropolitana mayor, llevando terapia IV directamente a tu ubicación.",
-      "description": "Nuestro servicio de terapia IV móvil cubre un área amplia, asegurando que la atención médica profesional llegue a ti donde sea que estés. Servimos:",
+      "description": "Nuestro servicio de terapia IV móvil cubre un área amplia, asegurando que la atención médica profesional llegue a ti donde quiera que estés. Servimos:",
       "locations": [
         "Hogares residenciales y apartamentos",
         "Hoteles y resorts",
@@ -744,7 +880,7 @@
       "title": "¿Listo para Experimentar IVIQ?",
       "subtitle": "Únete a miles de clientes satisfechos que han hecho de la terapia IV parte de su rutina de bienestar.",
       "buttons": {
-        "book": "Reserva tu Cita",
+        "book": "Reserva Tu Cita",
         "contact": "Contáctanos"
       }
     }
@@ -827,12 +963,12 @@
           ]
         },
         {
-          "title": "Apoyo Inmune",
+          "title": "Soporte Inmune",
           "benefits": [
             "Respuesta inmune fortalecida",
-            "Frecuencia reducida de enfermedades",
-            "Recuperación más rápida de enfermedades",
-            "Apoyo durante temporadas de alto riesgo"
+            "Frecuencia reducida de enfermedad",
+            "Recuperación más rápida de enfermedad",
+            "Soporte durante temporadas de alto riesgo"
           ]
         },
         {
@@ -880,22 +1016,22 @@
     "cta": {
       "title": "Experimenta los Beneficios Hoy",
       "subtitle": "¿Listo para sentir la diferencia que la terapia IV puede hacer? Reserva tu cita ahora.",
-      "button": "Reserva tu Cita"
+      "button": "Reserva Tu Cita"
     }
   },
   "booking": {
-    "title": "Reserva tu Sesión de Terapia IV",
+    "title": "Reserva Tu Sesión de Terapia IV",
     "subtitle": "Programa tu cita de terapia IV móvil y experimenta los beneficios de la atención médica profesional entregada a tu ubicación.",
     "personal": {
       "title": "Información Personal",
       "subtitle": "Por favor proporciona tu información de contacto para confirmación de cita.",
       "firstName": "Nombre",
       "lastName": "Apellido",
-      "email": "Dirección de Correo Electrónico",
+      "email": "Correo Electrónico",
       "phone": "Número de Teléfono"
     },
     "service": {
-      "title": "Selecciona tu Tratamiento",
+      "title": "Selecciona Tu Tratamiento",
       "subtitle": "Elige tu tratamiento de terapia IV y cualquier complemento adicional.",
       "treatment": "Tratamiento de Terapia IV",
       "selectTreatment": "Selecciona un tratamiento",
@@ -909,84 +1045,104 @@
       "selectTime": "Selecciona una hora"
     },
     "location": {
-      "title": "Ubicación del Servicio",
+      "title": "Detalles de Ubicación",
       "subtitle": "¿Dónde te gustaría recibir tu tratamiento de terapia IV?",
-      "type": "Tipo de Ubicación",
-      "selectType": "Selecciona tipo de ubicación",
+      "locationType": "Tipo de Ubicación",
+      "selectLocationType": "Selecciona tipo de ubicación",
       "types": {
-        "home": "Casa/Residencia",
-        "hotel": "Hotel",
-        "office": "Oficina",
-        "event": "Lugar de Evento",
+        "home": "Visita a Casa",
+        "hotel": "Visita a Hotel",
+        "office": "Visita a Oficina",
+        "event": "Ubicación de Evento",
         "other": "Otro"
       },
       "address": "Dirección",
-      "addressPlaceholder": "123 Calle Principal, Apt 4B",
+      "addressPlaceholder": "Dirección de la calle",
       "city": "Ciudad",
       "state": "Estado",
       "zipCode": "Código Postal"
     },
     "medical": {
       "title": "Información Médica",
-      "subtitle": "Esta información nos ayuda a proporcionar tratamiento seguro y efectivo. Toda la información se mantiene confidencial.",
-      "conditions": "Condiciones Médicas Actuales",
-      "conditionsPlaceholder": "Por favor lista cualquier condición médica actual, cirugías recientes, o preocupaciones de salud en curso",
+      "subtitle": "Por favor proporciona información médica relevante para asegurar un tratamiento seguro.",
+      "conditions": "Condiciones Médicas",
+      "conditionsPlaceholder": "Lista cualquier condición médica...",
       "medications": "Medicamentos Actuales",
-      "medicationsPlaceholder": "Por favor lista todos los medicamentos, suplementos y vitaminas que estás tomando actualmente",
-      "allergies": "Alergias",
-      "allergiesPlaceholder": "Por favor lista cualquier alergia conocida a medicamentos, alimentos u otras sustancias"
+      "medicationsPlaceholder": "Lista medicamentos actuales...",
+      "allergies": "Alergias Conocidas",
+      "allergiesPlaceholder": "Lista cualquier alergia..."
     },
     "emergency": {
       "title": "Contacto de Emergencia",
-      "subtitle": "Por favor proporciona un contacto de emergencia en caso de que necesitemos contactar a alguien durante tu tratamiento.",
-      "name": "Nombre del Contacto de Emergencia",
-      "relationship": "Relación",
-      "phone": "Número de Teléfono"
+      "subtitle": "Requerido por razones de seguridad",
+      "contactName": "Nombre del Contacto de Emergencia",
+      "contactPhone": "Teléfono del Contacto de Emergencia"
     },
-    "notes": {
-      "title": "Notas Adicionales",
-      "subtitle": "¿Hay algo más que te gustaría que sepamos sobre tu cita?",
-      "placeholder": "Cualquier solicitud especial, preguntas o información adicional que te gustaría compartir..."
-    },
-    "consent": {
-      "title": "Consentimiento y Acuerdo",
-      "items": [
-        "Confirmo que toda la información médica proporcionada es precisa y completa",
-        "Entiendo que la terapia IV es un procedimiento médico y conlleva riesgos potenciales",
-        "Acepto los términos de servicio y política de privacidad",
-        "Consiento recibir comunicaciones de seguimiento sobre mi cita"
-      ]
-    },
-    "summary": {
-      "title": "Resumen de Reserva",
-      "treatment": "Tratamiento:",
-      "addons": "Complementos:",
-      "date": "Fecha:",
-      "time": "Hora:",
-      "location": "Ubicación:",
-      "total": "Total:"
+    "special": {
+      "title": "Solicitudes Especiales",
+      "subtitle": "Cualquier información adicional o solicitudes",
+      "requests": "Solicitudes Adicionales",
+      "requestsPlaceholder": "Cualquier solicitud especial o notas..."
     },
     "submit": "Reservar Cita",
-    "submitting": "Procesando...",
-    "success": {
-      "title": "¡Reserva Confirmada!",
-      "message": "Tu cita de terapia IV ha sido programada exitosamente. Recibirás un correo de confirmación en breve con todos los detalles de tu cita.",
-      "next": "Qué Sigue:",
-      "steps": [
-        "Recibirás un correo de confirmación en 15 minutos",
-        "Nuestro equipo te contactará 24 horas antes de tu cita para confirmar",
-        "Asegúrate de mantenerte hidratado y comer antes de tu tratamiento",
-        "Ten tu identificación y cualquier medicamento actual listo para revisión"
-      ],
-      "contact": "Si tienes preguntas o necesitas reprogramar, contáctanos al (555) 123-4567.",
-      "bookAnother": "Reservar Otra Cita"
-    },
-    "validation": {
-      "required": "Este campo es requerido",
-      "email": "Por favor ingresa una dirección de correo válida",
-      "phone": "Por favor ingresa un número de teléfono válido",
-      "consent": "Debes aceptar los términos para continuar"
+    "submitting": "Enviando...",
+    "confirmationNote": "Te contactaremos dentro de 24 horas para confirmar tu cita",
+    "help": {
+      "title": "¿Necesitas Ayuda?",
+      "subtitle": "Contáctanos si tienes alguna pregunta",
+      "call": {
+        "title": "Llámanos",
+        "number": "+52 (998) 123-4567",
+        "availability": "Disponible 24/7"
+      },
+      "email": {
+        "title": "Envíanos un Email",
+        "address": "info@vitaflow.com",
+        "response": "Respuesta dentro de 2 horas"
+      },
+      "hours": {
+        "title": "Horarios de Servicio",
+        "time": "8:00 AM - 8:00 PM",
+        "days": "7 días a la semana"
+      }
     }
   },
-  "language": "es"
+  "terms": {
+    "title": "Términos de Servicio",
+    "lastUpdated": "Última actualización: 1 de enero de 2024",
+    "sections": {
+      "acceptance": {
+        "title": "1. Aceptación de Términos",
+        "content": "Al acceder y usar los servicios de IVIQ, aceptas y acuerdas estar sujeto a los términos y disposiciones de este acuerdo. Si no estás de acuerdo en cumplir con lo anterior, por favor no uses este servicio."
+      },
+      "services": {
+        "title": "2. Descripción de Servicios",
+        "content": "IVIQ proporciona servicios de terapia IV móvil administrados por profesionales de la salud licenciados. Nuestros servicios incluyen varios tratamientos de terapia IV diseñados para apoyar la salud y el bienestar. Todos los tratamientos se proporcionan con fines de bienestar y no están destinados a diagnosticar, tratar, curar o prevenir ninguna enfermedad."
+      },
+      "eligibility": {
+        "title": "3. Elegibilidad y Autorización Médica",
+        "content": "Debes tener 18 años de edad o más para recibir nuestros servicios. Debes proporcionar información médica precisa y divulgar cualquier alergia, condición médica o medicamento. IVIQ se reserva el derecho de rechazar el servicio si determinamos que puede no ser seguro o apropiado para ti."
+      },
+      "consent": {
+        "title": "4. Consentimiento Informado",
+        "content": "Al reservar nuestros servicios, reconoces que entiendes la naturaleza de la terapia IV, sus beneficios y riesgos potenciales, y consientes al tratamiento. Entiendes que no se ha hecho ninguna garantía de resultados específicos."
+      },
+      "payment": {
+        "title": "5. Pago y Cancelación",
+        "content": "El pago se debe al momento del servicio. Aceptamos efectivo, tarjetas de crédito y tarjetas HSA/FSA. Las cancelaciones deben hacerse al menos 24 horas antes para evitar tarifas de cancelación. Las cancelaciones del mismo día pueden incurrir en una tarifa igual al 50% del costo del servicio."
+      },
+      "liability": {
+        "title": "6. Limitación de Responsabilidad",
+        "content": "La responsabilidad de IVIQ está limitada al costo del servicio proporcionado. Mantenemos seguro de responsabilidad profesional y seguimos todas las regulaciones de salud y seguridad aplicables. Reconoces que la terapia IV, como cualquier procedimiento médico, conlleva riesgos inherentes."
+      },
+      "privacy": {
+        "title": "7. Privacidad y Confidencialidad",
+        "content": "Estamos comprometidos a proteger tu privacidad y mantener la confidencialidad de tu información de salud de acuerdo con las regulaciones HIPAA. Tu información personal y médica no será compartida sin tu consentimiento excepto según lo requiera la ley."
+      },
+      "modifications": {
+        "title": "8. Modificaciones a los Términos",
+        "content": "IVIQ se reserva el derecho de modificar estos términos en cualquier momento. Los cambios serán efectivos inmediatamente después de su publicación en nuestro sitio web. Tu uso continuado de nuestros servicios constituye la aceptación de cualquier modificación."
+      }
+    }
+  }
 }

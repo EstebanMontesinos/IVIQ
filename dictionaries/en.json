@@ -116,7 +116,8 @@
     "learnMore": "Learn More",
     "contactUs": "Contact Us",
     "getStarted": "Get Started",
-    "readMore": "Read More"
+    "readMore": "Read More",
+    "pricing": "Pricing"
   },
   "services": {
     "title": "Our IV Therapy Services",
@@ -128,11 +129,59 @@
     "duration": "Treatment Duration:",
     "addons": {
       "title": "Optional Add-ons",
-      "subtitle": "Enhance your IV therapy experience with these beneficial add-ons."
+      "subtitle": "Enhance your IV therapy experience with these beneficial add-ons.",
+      "vitaminB12": {
+        "name": "Vitamin B12 Boost",
+        "description": "Enhanced energy and metabolism support"
+      },
+      "glutathione": {
+        "name": "Glutathione Push",
+        "description": "Master antioxidant for detoxification"
+      },
+      "vitaminC": {
+        "name": "Extra Vitamin C",
+        "description": "Additional immune system support"
+      },
+      "zinc": {
+        "name": "Zinc Boost",
+        "description": "Immune function and wound healing"
+      },
+      "antiNausea": {
+        "name": "Anti-Nausea Medication",
+        "description": "Relief from nausea and vomiting"
+      },
+      "painReliever": {
+        "name": "Pain Reliever",
+        "description": "Anti-inflammatory pain management"
+      },
+      "magnesium": {
+        "name": "Magnesium Boost",
+        "description": "Muscle relaxation and nerve function"
+      },
+      "biotin": {
+        "name": "Biotin Beauty Boost",
+        "description": "Hair, skin, and nail health"
+      }
     },
     "cta": {
       "title": "Ready to Experience the Benefits?",
       "subtitle": "Book your mobile IV therapy session today and start feeling better."
+    },
+    "process": {
+      "title": "How It Works",
+      "subtitle": "Simple steps to get your IV therapy treatment",
+      "step1": {
+        "title": "Book Online",
+        "description": "Choose your treatment and schedule your appointment online"
+      },
+      "step2": {
+        "title": "We Come to You",
+        "description": "Our licensed professionals arrive at your location with all equipment"
+      },
+      "step3": {
+        "title": "Relax & Recover",
+        "description": "Relax while receiving your personalized IV therapy treatment"
+      }
     },
     "formulas": {
       "hangover": {
@@ -620,15 +669,93 @@
       "title": "Individual Treatment Pricing",
       "subtitle": "All treatments include mobile service to your location.",
       "treatments": "IV Therapy Treatments",
-      "addons": "Add-ons"
+      "treatmentsDesc": "All treatments include mobile service to your location",
+      "addonsTitle": "Available Add-ons",
+      "addonsDesc": "Enhance your IV therapy with these beneficial add-ons",
+      "treatmentList": {
+        "hangover": "IV Hangover Relief",
+        "dehydration": "IV Dehydration Recovery",
+        "foodPoisoning": "IV Food Poisoning Recovery",
+        "myers": "IV Myers Cocktail",
+        "jetLag": "IV Jet Lag Reset",
+        "energy": "IV Energy Boost",
+        "muscle": "IV Muscle Recovery",
+        "iron": "IV Iron Recharge",
+        "nad": "IV NAD+ Revival",
+        "antiviral": "IV Antiviral Defense",
+        "immune": "IV Immune Shield",
+        "megaC": "IV Megadose Vitamin C",
+        "detox": "IV Full Body Detox",
+        "heavyMetal": "IV Heavy Metal Cleanse",
+        "glutathione": "IV Glutathione Glow",
+        "antiInflammatory": "IV Anti-Inflammatory",
+        "rejuvenation": "All-Inclusive Rejuvenation IV",
+        "rejuvenationExtra": "All-Inclusive Rejuvenation IV (Extra Strength)"
+      },
+      "addons": {
+        "aminoAcid": "Amino Acid Complex",
+        "aminoAcidDesc": "Muscle recovery and protein synthesis",
+        "electrolyte": "Electrolyte Enhancement",
+        "electrolyteDesc": "Advanced hydration and balance"
+      },
+      "note": {
+        "title": "Note:",
+        "content": "Add-on pricing varies based on the specific treatment and dosage. Contact us for detailed pricing information."
+      }
     },
     "group": {
       "title": "Group & Event Pricing",
       "subtitle": "Special pricing available for groups and events. Perfect for corporate wellness, bachelor/bachelorette parties, or wellness retreats.",
       "discounts": "Group Discounts",
+      "discountsDesc": "Save more when you book for groups",
+      "discount3to5": "3-5 people",
+      "discount6to10": "6-10 people",
+      "discount11plus": "11+ people",
+      "discountNote": "Group discounts apply to same-day treatments at the same location.",
       "corporate": "Corporate & Event Packages",
       "corporateDescription": "We offer customized packages for corporate wellness events, conferences, retreats, and private parties. Our team will work with you to create the perfect IV therapy experience for your group.",
+      "corporatePackages": "Corporate Wellness Packages",
+      "corporateList": {
+        "monthly": "Monthly employee wellness programs",
+        "executive": "Executive health packages",
+        "events": "Event and conference services",
+        "custom": "Custom pricing based on volume"
+      },
       "contactQuote": "Contact for Custom Quote"
+    },
+    "serviceAreas": {
+      "title": "Service Areas & Travel",
+      "subtitle": "Mobile service throughout the metro area",
+      "free": {
+        "title": "Free Service Zone",
+        "description": "No additional travel fees",
+        "areas": {
+          "downtown": "Downtown core area",
+          "hotels": "Major hotel districts",
+          "business": "Business districts",
+          "residential": "Residential areas within 15km"
+        }
+      },
+      "extended": {
+        "title": "Extended Zone",
+        "description": "Small travel fee applies",
+        "areas": {
+          "distance": "15-30km from city center",
+          "suburban": "Suburban areas",
+          "fee": "Additional fee: $300 MXN",
+          "convenient": "Still convenient and affordable"
+        }
+      },
+      "premium": {
+        "title": "Premium Zone",
+        "description": "Custom pricing for distant locations",
+        "areas": {
+          "distance": "30km+ from city center",
+          "remote": "Remote locations",
+          "events": "Special events",
+          "contact": "Contact for custom quote"
+        }
+      }
     },
     "faq": {
       "title": "Frequently Asked Questions",
@@ -648,13 +775,22 @@
         "cancellation": {
           "question": "Can I cancel or reschedule my appointment?",
           "answer": "Yes, you can reschedule or cancel your appointment up to 24 hours before your scheduled time without any charges. Cancellations within 24 hours may incur a cancellation fee."
+        },
+        "included": {
+          "question": "What's included in the price?",
+          "answer": "All treatments include professional consultation, IV administration by licensed healthcare providers, medical-grade equipment, and post-treatment monitoring."
+        },
+        "addons": {
+          "question": "How much do add-ons cost?",
+          "answer": "Add-on pricing varies based on the specific treatment and dosage requirements. We'll provide detailed pricing when you book your appointment or contact us for a consultation."
         }
       }
     },
     "cta": {
       "title": "Ready to Book Your Treatment?",
       "subtitle": "Experience the benefits of mobile IV therapy with IVIQ.",
-      "button": "Book Your Appointment"
+      "button": "Book Your Appointment",
+      "customQuote": "Get Custom Quote"
     }
   },
   "about": {
@@ -909,83 +1045,104 @@
       "selectTime": "Select a time"
     },
     "location": {
-      "title": "Service Location",
+      "title": "Location Details",
       "subtitle": "Where would you like to receive your IV therapy treatment?",
-      "type": "Location Type",
-      "selectType": "Select location type",
+      "locationType": "Location Type",
+      "selectLocationType": "Select location type",
       "types": {
-        "home": "Home/Residence",
-        "hotel": "Hotel",
-        "office": "Office",
-        "event": "Event Venue",
+        "home": "Home Visit",
+        "hotel": "Hotel Visit",
+        "office": "Office Visit",
+        "event": "Event Location",
         "other": "Other"
       },
       "address": "Address",
-      "addressPlaceholder": "123 Main Street, Apt 4B",
+      "addressPlaceholder": "Street address",
       "city": "City",
       "state": "State",
-      "zipCode": "Zip Code"
+      "zipCode": "ZIP Code"
     },
     "medical": {
       "title": "Medical Information",
-      "subtitle": "This information helps us provide safe and effective treatment. All information is kept confidential.",
-      "conditions": "Current Medical Conditions",
-      "conditionsPlaceholder": "Please list any current medical conditions, recent surgeries, or ongoing health concerns",
+      "subtitle": "Please provide relevant medical information to ensure safe treatment.",
+      "conditions": "Medical Conditions",
+      "conditionsPlaceholder": "List any medical conditions...",
       "medications": "Current Medications",
-      "medicationsPlaceholder": "Please list all medications, supplements, and vitamins you are currently taking",
-      "allergies": "Allergies",
-      "allergiesPlaceholder": "Please list any known allergies to medications, foods, or other substances"
+      "medicationsPlaceholder": "List current medications...",
+      "allergies": "Known Allergies",
+      "allergiesPlaceholder": "List any allergies..."
     },
     "emergency": {
       "title": "Emergency Contact",
-      "subtitle": "Please provide an emergency contact in case we need to reach someone during your treatment.",
-      "name": "Emergency Contact Name",
-      "relationship": "Relationship",
-      "phone": "Phone Number"
+      "subtitle": "Required for safety purposes",
+      "contactName": "Emergency Contact Name",
+      "contactPhone": "Emergency Contact Phone"
     },
-    "notes": {
-      "title": "Additional Notes",
-      "subtitle": "Is there anything else you'd like us to know about your appointment?",
-      "placeholder": "Any special requests, questions, or additional information you'd like to share..."
-    },
-    "consent": {
-      "title": "Consent and Agreement",
-      "items": [
-        "I confirm that all medical information provided is accurate and complete",
-        "I understand that IV therapy is a medical procedure and carries potential risks",
-        "I agree to the terms of service and privacy policy",
-        "I consent to receive follow-up communications about my appointment"
-      ]
-    },
-    "summary": {
-      "title": "Booking Summary",
-      "treatment": "Treatment:",
-      "addons": "Add-ons:",
-      "date": "Date:",
-      "time": "Time:",
-      "location": "Location:",
-      "total": "Total:"
+    "special": {
+      "title": "Special Requests",
+      "subtitle": "Any additional information or requests",
+      "requests": "Additional Requests",
+      "requestsPlaceholder": "Any special requests or notes..."
     },
     "submit": "Book Appointment",
-    "submitting": "Processing...",
-    "success": {
-      "title": "Booking Confirmed!",
-      "message": "Your IV therapy appointment has been successfully scheduled. You'll receive a confirmation email shortly with all your appointment details.",
-      "next": "What's Next:",
-      "steps": [
-        "You'll receive a confirmation email within 15 minutes",
-        "Our team will contact you 24 hours before your appointment to confirm",
-        "Make sure to stay hydrated and eat before your treatment",
-        "Have your ID and any current medications ready for review"
-      ],
-      "contact": "If you have any questions or need to reschedule, contact us at (555) 123-4567.",
-      "bookAnother": "Book Another Appointment"
-    },
-    "validation": {
-      "required": "This field is required",
-      "email": "Please enter a valid email address",
-      "phone": "Please enter a valid phone number",
-      "consent": "You must agree to the terms to continue"
+    "submitting": "Submitting...",
+    "confirmationNote": "We'll contact you within 24 hours to confirm your appointment",
+    "help": {
+      "title": "Need Help?",
+      "subtitle": "Contact us if you have any questions",
+      "call": {
+        "title": "Call Us",
+        "number": "+52 (998) 123-4567",
+        "availability": "Available 24/7"
+      },
+      "email": {
+        "title": "Email Us",
+        "address": "info@vitaflow.com",
+        "response": "Response within 2 hours"
+      },
+      "hours": {
+        "title": "Service Hours",
+        "time": "8:00 AM - 8:00 PM",
+        "days": "7 days a week"
+      }
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: January 1, 2024",
+    "sections": {
+      "acceptance": {
+        "title": "1. Acceptance of Terms",
+        "content": "By accessing and using IVIQ's services, you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service."
+      },
+      "services": {
+        "title": "2. Description of Services",
+        "content": "IVIQ provides mobile IV therapy services administered by licensed healthcare professionals. Our services include various IV therapy treatments designed to support health and wellness. All treatments are provided for wellness purposes and are not intended to diagnose, treat, cure, or prevent any disease."
+      },
+      "eligibility": {
+        "title": "3. Eligibility and Medical Clearance",
+        "content": "You must be 18 years of age or older to receive our services. You must provide accurate medical information and disclose any allergies, medical conditions, or medications. IVIQ reserves the right to refuse service if we determine it may not be safe or appropriate for you."
+      },
+      "consent": {
+        "title": "4. Informed Consent",
+        "content": "By booking our services, you acknowledge that you understand the nature of IV therapy, its potential benefits and risks, and you consent to treatment. You understand that no guarantee of specific results has been made."
+      },
+      "payment": {
+        "title": "5. Payment and Cancellation",
+        "content": "Payment is due at the time of service. We accept cash, credit cards, and HSA/FSA cards. Cancellations must be made at least 24 hours in advance to avoid cancellation fees. Same-day cancellations may incur a fee equal to 50% of the service cost."
+      },
+      "liability": {
+        "title": "6. Limitation of Liability",
+        "content": "IVIQ's liability is limited to the cost of the service provided. We maintain professional liability insurance and follow all applicable health and safety regulations. You acknowledge that IV therapy, like any medical procedure, carries inherent risks."
+      },
+      "privacy": {
+        "title": "7. Privacy and Confidentiality",
+        "content": "We are committed to protecting your privacy and maintaining the confidentiality of your health information in accordance with HIPAA regulations. Your personal and medical information will not be shared without your consent except as required by law."
+      },
+      "modifications": {
+        "title": "8. Modifications to Terms",
+        "content": "IVIQ reserves the right to modify these terms at any time. Changes will be effective immediately upon posting on our website. Your continued use of our services constitutes acceptance of any modifications."
+      }
     }
   }
 }

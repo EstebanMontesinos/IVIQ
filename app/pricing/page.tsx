@@ -37,37 +37,37 @@ export default function PricingPage() {
   ]
 
   const treatmentPrices = [
-    { name: "IV Hangover Relief", price: "$3,200 MXN" },
-    { name: "IV Dehydration Recovery", price: "$2,200 MXN" },
-    { name: "IV Food Poisoning Recovery", price: "$2,500 MXN" },
-    { name: "IV Myers Cocktail", price: "$2,400 MXN" },
-    { name: "IV Jet Lag Reset", price: "$2,400 MXN" },
-    { name: "IV Energy Boost", price: "$2,500 MXN" },
-    { name: "IV Muscle Recovery", price: "$2,600 MXN" },
-    { name: "IV Iron Recharge", price: "$2,100 MXN" },
-    { name: "IV NAD+ Revival", price: "$3,200 MXN" },
-    { name: "IV Antiviral Defense", price: "$2,300 MXN" },
-    { name: "IV Immune Shield", price: "$2,600 MXN" },
-    { name: "IV Megadose Vitamin C", price: "$2,300 MXN" },
-    { name: "IV Full Body Detox", price: "$2,400 MXN" },
-    { name: "IV Heavy Metal Cleanse", price: "$2,600 MXN" },
-    { name: "IV Glutathione Glow", price: "$2,700 MXN" },
-    { name: "IV Anti-Inflammatory", price: "$2,500 MXN" },
-    { name: "All-Inclusive Rejuvenation IV", price: "$2,700 MXN" },
-    { name: "All-Inclusive Rejuvenation IV (Extra Strength)", price: "$3,000 MXN" },
+    { name: t("pricing.individual.treatmentList.hangover"), price: "$3,200 MXN" },
+    { name: t("pricing.individual.treatmentList.dehydration"), price: "$2,200 MXN" },
+    { name: t("pricing.individual.treatmentList.foodPoisoning"), price: "$2,500 MXN" },
+    { name: t("pricing.individual.treatmentList.myers"), price: "$2,400 MXN" },
+    { name: t("pricing.individual.treatmentList.jetLag"), price: "$2,400 MXN" },
+    { name: t("pricing.individual.treatmentList.energy"), price: "$2,500 MXN" },
+    { name: t("pricing.individual.treatmentList.muscle"), price: "$2,600 MXN" },
+    { name: t("pricing.individual.treatmentList.iron"), price: "$2,100 MXN" },
+    { name: t("pricing.individual.treatmentList.nad"), price: "$3,200 MXN" },
+    { name: t("pricing.individual.treatmentList.antiviral"), price: "$2,300 MXN" },
+    { name: t("pricing.individual.treatmentList.immune"), price: "$2,600 MXN" },
+    { name: t("pricing.individual.treatmentList.megaC"), price: "$2,300 MXN" },
+    { name: t("pricing.individual.treatmentList.detox"), price: "$2,400 MXN" },
+    { name: t("pricing.individual.treatmentList.heavyMetal"), price: "$2,600 MXN" },
+    { name: t("pricing.individual.treatmentList.glutathione"), price: "$2,700 MXN" },
+    { name: t("pricing.individual.treatmentList.antiInflammatory"), price: "$2,500 MXN" },
+    { name: t("pricing.individual.treatmentList.rejuvenation"), price: "$2,700 MXN" },
+    { name: t("pricing.individual.treatmentList.rejuvenationExtra"), price: "$3,000 MXN" },
   ]
 
   const addOns = [
-    { name: "Vitamin B12 Boost", description: "Enhanced energy and metabolism support" },
-    { name: "Glutathione Push", description: "Master antioxidant for detoxification" },
-    { name: "Extra Vitamin C", description: "Additional immune system support" },
-    { name: "Zinc Boost", description: "Immune function and wound healing" },
-    { name: "Anti-Nausea Medication", description: "Relief from nausea and vomiting" },
-    { name: "Pain Reliever", description: "Anti-inflammatory pain management" },
-    { name: "Magnesium Boost", description: "Muscle relaxation and nerve function" },
-    { name: "Biotin Beauty Boost", description: "Hair, skin, and nail health" },
-    { name: "Amino Acid Complex", description: "Muscle recovery and protein synthesis" },
-    { name: "Electrolyte Enhancement", description: "Advanced hydration and balance" },
+    { name: t("services.addons.vitaminB12.name"), description: t("services.addons.vitaminB12.description") },
+    { name: t("services.addons.glutathione.name"), description: t("services.addons.glutathione.description") },
+    { name: t("services.addons.vitaminC.name"), description: t("services.addons.vitaminC.description") },
+    { name: t("services.addons.zinc.name"), description: t("services.addons.zinc.description") },
+    { name: t("services.addons.antiNausea.name"), description: t("services.addons.antiNausea.description") },
+    { name: t("services.addons.painReliever.name"), description: t("services.addons.painReliever.description") },
+    { name: t("services.addons.magnesium.name"), description: t("services.addons.magnesium.description") },
+    { name: t("services.addons.biotin.name"), description: t("services.addons.biotin.description") },
+    { name: t("pricing.individual.addons.aminoAcid"), description: t("pricing.individual.addons.aminoAcidDesc") },
+    { name: t("pricing.individual.addons.electrolyte"), description: t("pricing.individual.addons.electrolyteDesc") },
   ]
 
   return (
@@ -145,7 +145,7 @@ export default function PricingPage() {
             <Card>
               <CardHeader>
                 <CardTitle>{t("pricing.individual.treatments")}</CardTitle>
-                <CardDescription>All treatments include mobile service to your location</CardDescription>
+                <CardDescription>{t("pricing.individual.treatmentsDesc")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-4">
@@ -161,8 +161,8 @@ export default function PricingPage() {
 
             <Card>
               <CardHeader>
-                <CardTitle>Available Add-ons</CardTitle>
-                <CardDescription>Enhance your IV therapy with these beneficial add-ons</CardDescription>
+                <CardTitle>{t("pricing.individual.addonsTitle")}</CardTitle>
+                <CardDescription>{t("pricing.individual.addonsDesc")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-4">
@@ -175,8 +175,7 @@ export default function PricingPage() {
                 </ul>
                 <div className="mt-6 p-4 bg-blue-50 rounded-lg">
                   <p className="text-sm text-blue-800">
-                    <strong>Note:</strong> Add-on pricing varies based on the specific treatment and dosage. Contact us
-                    for detailed pricing information.
+                    <strong>{t("pricing.individual.note.title")}</strong> {t("pricing.individual.note.content")}
                   </p>
                 </div>
               </CardContent>
@@ -197,26 +196,24 @@ export default function PricingPage() {
             <Card>
               <CardHeader>
                 <CardTitle>{t("pricing.group.discounts")}</CardTitle>
-                <CardDescription>Save more when you book for groups</CardDescription>
+                <CardDescription>{t("pricing.group.discountsDesc")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-4">
                   <li className="flex justify-between items-center pb-2 border-b">
-                    <span className="font-medium">3-5 people</span>
+                    <span className="font-medium">{t("pricing.group.discount3to5")}</span>
                     <span className="font-bold text-primary">10% off</span>
                   </li>
                   <li className="flex justify-between items-center pb-2 border-b">
-                    <span className="font-medium">6-10 people</span>
+                    <span className="font-medium">{t("pricing.group.discount6to10")}</span>
                     <span className="font-bold text-primary">15% off</span>
                   </li>
                   <li className="flex justify-between items-center pb-2 border-b">
-                    <span className="font-medium">11+ people</span>
+                    <span className="font-medium">{t("pricing.group.discount11plus")}</span>
                     <span className="font-bold text-primary">20% off</span>
                   </li>
                 </ul>
-                <p className="mt-4 text-sm text-muted-foreground">
-                  Group discounts apply to same-day treatments at the same location.
-                </p>
+                <p className="mt-4 text-sm text-muted-foreground">{t("pricing.group.discountNote")}</p>
               </CardContent>
             </Card>
 
@@ -225,12 +222,12 @@ export default function PricingPage() {
               <p className="mb-6">{t("pricing.group.corporateDescription")}</p>
               <div className="space-y-4">
                 <div className="p-4 bg-muted rounded-lg">
-                  <h4 className="font-semibold mb-2">Corporate Wellness Packages</h4>
+                  <h4 className="font-semibold mb-2">{t("pricing.group.corporatePackages")}</h4>
                   <ul className="text-sm space-y-1">
-                    <li>• Monthly employee wellness programs</li>
-                    <li>• Executive health packages</li>
-                    <li>• Event and conference services</li>
-                    <li>• Custom pricing based on volume</li>
+                    <li>• {t("pricing.group.corporateList.monthly")}</li>
+                    <li>• {t("pricing.group.corporateList.executive")}</li>
+                    <li>• {t("pricing.group.corporateList.events")}</li>
+                    <li>• {t("pricing.group.corporateList.custom")}</li>
                   </ul>
                 </div>
                 <Button asChild>
@@ -246,52 +243,52 @@ export default function PricingPage() {
       <section className="py-16 md:py-24 bg-muted">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Service Areas & Travel</h2>
-            <p className="text-lg text-muted-foreground">Mobile service throughout the metro area</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("pricing.serviceAreas.title")}</h2>
+            <p className="text-lg text-muted-foreground">{t("pricing.serviceAreas.subtitle")}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card>
               <CardHeader>
-                <CardTitle className="text-green-600">Free Service Zone</CardTitle>
-                <CardDescription>No additional travel fees</CardDescription>
+                <CardTitle className="text-green-600">{t("pricing.serviceAreas.free.title")}</CardTitle>
+                <CardDescription>{t("pricing.serviceAreas.free.description")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm">
-                  <li>• Downtown core area</li>
-                  <li>• Major hotel districts</li>
-                  <li>• Business districts</li>
-                  <li>• Residential areas within 15km</li>
+                  <li>• {t("pricing.serviceAreas.free.areas.downtown")}</li>
+                  <li>• {t("pricing.serviceAreas.free.areas.hotels")}</li>
+                  <li>• {t("pricing.serviceAreas.free.areas.business")}</li>
+                  <li>• {t("pricing.serviceAreas.free.areas.residential")}</li>
                 </ul>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-yellow-600">Extended Zone</CardTitle>
-                <CardDescription>Small travel fee applies</CardDescription>
+                <CardTitle className="text-yellow-600">{t("pricing.serviceAreas.extended.title")}</CardTitle>
+                <CardDescription>{t("pricing.serviceAreas.extended.description")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm">
-                  <li>• 15-30km from city center</li>
-                  <li>• Suburban areas</li>
-                  <li>• Additional fee: $300 MXN</li>
-                  <li>• Still convenient and affordable</li>
+                  <li>• {t("pricing.serviceAreas.extended.areas.distance")}</li>
+                  <li>• {t("pricing.serviceAreas.extended.areas.suburban")}</li>
+                  <li>• {t("pricing.serviceAreas.extended.areas.fee")}</li>
+                  <li>• {t("pricing.serviceAreas.extended.areas.convenient")}</li>
                 </ul>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
-                <CardTitle className="text-blue-600">Premium Zone</CardTitle>
-                <CardDescription>Custom pricing for distant locations</CardDescription>
+                <CardTitle className="text-blue-600">{t("pricing.serviceAreas.premium.title")}</CardTitle>
+                <CardDescription>{t("pricing.serviceAreas.premium.description")}</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 text-sm">
-                  <li>• 30km+ from city center</li>
-                  <li>• Remote locations</li>
-                  <li>• Special events</li>
-                  <li>• Contact for custom quote</li>
+                  <li>• {t("pricing.serviceAreas.premium.areas.distance")}</li>
+                  <li>• {t("pricing.serviceAreas.premium.areas.remote")}</li>
+                  <li>• {t("pricing.serviceAreas.premium.areas.events")}</li>
+                  <li>• {t("pricing.serviceAreas.premium.areas.contact")}</li>
                 </ul>
               </CardContent>
             </Card>
@@ -328,19 +325,13 @@ export default function PricingPage() {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold mb-3">What's included in the price?</h3>
-              <p className="text-muted-foreground">
-                All treatments include professional consultation, IV administration by licensed healthcare providers,
-                medical-grade equipment, and post-treatment monitoring.
-              </p>
+              <h3 className="text-xl font-bold mb-3">{t("pricing.faq.questions.included.question")}</h3>
+              <p className="text-muted-foreground">{t("pricing.faq.questions.included.answer")}</p>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold mb-3">How much do add-ons cost?</h3>
-              <p className="text-muted-foreground">
-                Add-on pricing varies based on the specific treatment and dosage requirements. We'll provide detailed
-                pricing when you book your appointment or contact us for a consultation.
-              </p>
+              <h3 className="text-xl font-bold mb-3">{t("pricing.faq.questions.addons.question")}</h3>
+              <p className="text-muted-foreground">{t("pricing.faq.questions.addons.answer")}</p>
             </div>
           </div>
         </div>
@@ -362,7 +353,7 @@ export default function PricingPage() {
                 className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
                 asChild
               >
-                <Link href="/contact">Get Custom Quote</Link>
+                <Link href="/contact">{t("pricing.cta.customQuote")}</Link>
               </Button>
             </div>
           </div>

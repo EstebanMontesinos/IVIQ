@@ -142,44 +142,36 @@ export default function ServicesPage() {
 
   const addOns = [
     {
-      name: "Vitamin B12 Boost",
-      description: "Enhanced energy and metabolism support",
-      price: "$300 MXN",
+      name: t("services.addons.vitaminB12.name") || "Vitamin B12 Boost",
+      description: t("services.addons.vitaminB12.description") || "Enhanced energy and metabolism support",
     },
     {
-      name: "Glutathione Push",
-      description: "Master antioxidant for detoxification",
-      price: "$500 MXN",
+      name: t("services.addons.glutathione.name") || "Glutathione Push",
+      description: t("services.addons.glutathione.description") || "Master antioxidant for detoxification",
     },
     {
-      name: "Extra Vitamin C",
-      description: "Additional immune system support",
-      price: "$250 MXN",
+      name: t("services.addons.vitaminC.name") || "Extra Vitamin C",
+      description: t("services.addons.vitaminC.description") || "Additional immune system support",
     },
     {
-      name: "Zinc Boost",
-      description: "Immune function and wound healing",
-      price: "$200 MXN",
+      name: t("services.addons.zinc.name") || "Zinc Boost",
+      description: t("services.addons.zinc.description") || "Immune function and wound healing",
     },
     {
-      name: "Anti-Nausea Medication",
-      description: "Relief from nausea and vomiting",
-      price: "$300 MXN",
+      name: t("services.addons.antiNausea.name") || "Anti-Nausea Medication",
+      description: t("services.addons.antiNausea.description") || "Relief from nausea and vomiting",
     },
     {
-      name: "Pain Reliever",
-      description: "Anti-inflammatory pain management",
-      price: "$300 MXN",
+      name: t("services.addons.painReliever.name") || "Pain Reliever",
+      description: t("services.addons.painReliever.description") || "Anti-inflammatory pain management",
     },
     {
-      name: "Magnesium Boost",
-      description: "Muscle relaxation and nerve function",
-      price: "$250 MXN",
+      name: t("services.addons.magnesium.name") || "Magnesium Boost",
+      description: t("services.addons.magnesium.description") || "Muscle relaxation and nerve function",
     },
     {
-      name: "Biotin Beauty Boost",
-      description: "Hair, skin, and nail health",
-      price: "$350 MXN",
+      name: t("services.addons.biotin.name") || "Biotin Beauty Boost",
+      description: t("services.addons.biotin.description") || "Hair, skin, and nail health",
     },
   ]
 
@@ -289,7 +281,7 @@ export default function ServicesPage() {
 
           <div className="text-center mt-12">
             <Button size="lg" variant="outline" asChild>
-              <Link href="/pricing">{t("treatments.viewAll") || "View All Pricing"}</Link>
+              <Link href="/pricing">{t("common.pricing") || "Pricing"}</Link>
             </Button>
           </div>
         </div>
@@ -313,7 +305,6 @@ export default function ServicesPage() {
                     <Plus className="h-5 w-5 text-primary" />
                     <CardTitle className="text-lg">{addon.name}</CardTitle>
                   </div>
-                  {addon.price && <div className="text-sm font-semibold text-primary">{addon.price}</div>}
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">{addon.description}</p>
@@ -391,7 +382,7 @@ export default function ServicesPage() {
                 variant="outline"
                 className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
               >
-                <Link href="/pricing">{t("services.viewPricing") || "View Pricing"}</Link>
+                <Link href="/pricing">{t("common.pricing") || "Pricing"}</Link>
               </Button>
             </div>
           </div>
