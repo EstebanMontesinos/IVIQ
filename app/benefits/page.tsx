@@ -32,24 +32,35 @@ export default function BenefitsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {Array.isArray(t("benefitsPage.keyBenefits.items"))
-              ? t("benefitsPage.keyBenefits.items").map((benefit, index) => (
-                  <Card key={index} className="flex flex-col">
-                    <div className="relative h-[200px]">
-                      <Image
-                        src="/placeholder.svg?height=200&width=400"
-                        alt={benefit.title}
-                        fill
-                        className="object-cover rounded-t-lg"
-                      />
-                    </div>
-                    <CardHeader>
-                      <CardTitle>{benefit.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="flex-1">
-                      <p>{benefit.description}</p>
-                    </CardContent>
-                  </Card>
-                ))
+              ? t("benefitsPage.keyBenefits.items").map((benefit, index) => {
+                  const benefitImages = [
+                    "/images/100-percent-absorption.png", // 100% Absorption
+                    "/images/patient-effects.jpg", // Immediate Effects
+                    "/images/home-nurse.jpg", // Customized Treatment
+                    "/images/health-clinic.jpg", // Preventative Health
+                    "/images/nurse-portrait.jpg", // Convenience
+                    "/images/professional-care.jpg", // Professional Administration
+                  ]
+
+                  return (
+                    <Card key={index} className="flex flex-col">
+                      <div className="relative h-[200px]">
+                        <Image
+                          src={benefitImages[index] || "/placeholder.svg?height=200&width=400"}
+                          alt={benefit.title}
+                          fill
+                          className="object-cover rounded-t-lg"
+                        />
+                      </div>
+                      <CardHeader>
+                        <CardTitle>{benefit.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent className="flex-1">
+                        <p>{benefit.description}</p>
+                      </CardContent>
+                    </Card>
+                  )
+                })
               : null}
           </div>
         </div>
@@ -89,7 +100,7 @@ export default function BenefitsPage() {
 
             <div className="relative h-[400px] md:h-[500px]">
               <Image
-                src="/placeholder.svg?height=500&width=600"
+                src="/images/rainbow-iv-bag.jpg"
                 alt="How IV Therapy Works"
                 fill
                 className="object-cover rounded-lg"
@@ -105,6 +116,17 @@ export default function BenefitsPage() {
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("benefitsPage.conditions.title")}</h2>
             <p className="text-lg text-muted-foreground">{t("benefitsPage.conditions.subtitle")}</p>
+          </div>
+
+          <div className="mb-12 text-center">
+            <div className="relative h-[300px] max-w-2xl mx-auto">
+              <Image
+                src="/images/elderly-patient-2.png"
+                alt="Happy patient receiving IV therapy"
+                fill
+                className="object-cover rounded-lg"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -155,7 +177,7 @@ export default function BenefitsPage() {
 
             <div className="relative h-[400px] md:h-[500px] order-1 md:order-2">
               <Image
-                src="/placeholder.svg?height=500&width=600"
+                src="/images/elderly-patient.jpg"
                 alt="Professional IV Therapy Administration"
                 fill
                 className="object-cover rounded-lg"

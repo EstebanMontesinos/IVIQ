@@ -311,40 +311,41 @@ export default function Home() {
             {[
               {
                 name: "Sarah M.",
-                image: "/placeholder.svg?height=80&width=80",
+                image: "/images/testimonials/review1.png",
                 quote: t("testimonials.clients.sarah.quote"),
                 rating: 5,
               },
               {
                 name: "Michael T.",
-                image: "/placeholder.svg?height=80&width=80",
+                image: "/images/testimonials/review3.png",
                 quote: t("testimonials.clients.michael.quote"),
                 rating: 5,
               },
               {
                 name: "Jennifer L.",
-                image: "/placeholder.svg?height=80&width=80",
+                image: "/images/testimonials/review2.png",
                 quote: t("testimonials.clients.jennifer.quote"),
                 rating: 5,
               },
             ].map((testimonial, index) => (
-              <Card key={index} className="text-center">
+              <Card key={index} className="text-center overflow-hidden">
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={testimonial.image || "/placeholder.svg"}
+                    alt={`${testimonial.name} - IV Therapy Treatment`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                </div>
                 <CardContent className="pt-6">
-                  <div className="relative h-20 w-20 mx-auto mb-4">
-                    <Image
-                      src={testimonial.image || "/placeholder.svg"}
-                      alt={testimonial.name}
-                      fill
-                      className="object-cover rounded-full"
-                    />
-                  </div>
                   <div className="flex justify-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="h-5 w-5 fill-primary text-primary" />
                     ))}
                   </div>
-                  <p className="mb-6 italic">"{testimonial.quote}"</p>
-                  <p className="font-semibold">{testimonial.name}</p>
+                  <p className="mb-6 italic text-muted-foreground">"{testimonial.quote}"</p>
+                  <p className="font-semibold text-lg">{testimonial.name}</p>
                 </CardContent>
               </Card>
             ))}
